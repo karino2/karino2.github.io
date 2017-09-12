@@ -21,7 +21,7 @@ url: "https://karino2.github.io" # the base hostname & protocol for your site, e
 github_username:  karino2
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
