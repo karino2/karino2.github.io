@@ -1,0 +1,22 @@
+language: go
+go:
+    - master
+branches:
+    only:
+        - build
+install:
+    - go get github.com/saneyuki/github-issue2markdown
+script:
+    - rm -rf ./articles
+    - mkdir ./articles
+    - github-issue2markdown -owner karino2 -repo karino2.github.io
+after_success:
+    - git config --global user.email ${GIT_EMAIL}
+    - git clone --quiet --branch=master https://${GH_TOKEN}@github.com/karino2/karino2.github.io masterdir > /dev/null 2>&1
+    - cp ./articles/* masterdir/_posts/
+    - pushd masterdir
+    - git commit -a -m "Travis CI autocommit from travis build ${TRAVIS_BUILD_NUMBER}"
+    - git push -fq origin master > /dev/null
+    - popd
+notifications:
+  email: false
