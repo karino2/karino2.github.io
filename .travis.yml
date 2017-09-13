@@ -16,7 +16,7 @@ after_success:
     - cp ./articles/* masterdir/_posts/
     - pushd masterdir
     - git commit -a -m "Travis CI autocommit from travis build ${TRAVIS_BUILD_NUMBER}"
-    - git push -fq origin master > /dev/null
+    - git push -fq origin master > /dev/null 2>&1
     - popd
 notifications:
   email: false
