@@ -56,9 +56,15 @@ NUS-WIDEとMIRFlickrというデータセットがちょくちょく出てくる
 2.2.2で言及されている、learn visual classifiers from socially tagged examples、というのはちょっと気になるな。
 
 - Wang et al. 2009
+   - Building text features for object image classificationかな？
 - Chen et al. 2012
+  - Tag-Based Image Retrieval Improved by Augmented Features and Group-Based Refinementかな？
 - Li and Snoek 2013
+  - う、この条件を満たす論文が2つ参考文献リストに含まれている…
+  - Classifying tag relevance with relevant positive and negative examples
+  - Tag-Based Image Retrieval Improved by Augmented Features and Group-Based Refinement
 - Yang et al. 2014
+  - image tagging with social assistance
 
 この4つが挙げられていた。
 
