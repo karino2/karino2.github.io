@@ -14,11 +14,13 @@ script:
     - git clone --quiet --branch=MeatPieDay https://${OAUTH_TOKEN}@github.com/karino2/karino2.github.io mpddir > /dev/null 2>&1
     - cp mpddir/ipynb/*.ipynb workjekyll/
     - pushd workjekyll
+    - ls *.ipynb
     - ls -t *.ipynb | head -n 100 | xargs -L 1 mpd2md
     - popd    
 after_success:
     - git config --global user.email ${GIT_EMAIL}
     - git clone --quiet --branch=master https://${OAUTH_TOKEN}@github.com/karino2/karino2.github.io masterdir > /dev/null 2>&1
+    - ls -r workjekyll/work/*
     - cp -r workjekyll/work/* masterdir/_posts/
     - pushd masterdir
     - git add -A
