@@ -1,0 +1,29 @@
+sudo: required
+language: go
+go:
+    - master
+branches:
+    only:
+        - MeatPieDay
+install:
+    - go get github.com/karino2/mpd2md
+script:
+    - rm -rf ./workjekyll
+    - mkdir ./workjekyll
+    - git config --global user.email ${GIT_EMAIL}
+    - git clone --quiet --branch=MeatPieDay https://${OAUTH_TOKEN}@github.com/karino2/karino2.github.io mpddir > /dev/null 2>&1
+    - cp mpddir/ipynb/*.ipynb workjekyll/
+    - pushd workjekyll
+    - ls -t *.ipynb | head -n 100 | xargs -L 1 mpd2md
+    - popd    
+after_success:
+    - git config --global user.email ${GIT_EMAIL}
+    - git clone --quiet --branch=master https://${OAUTH_TOKEN}@github.com/karino2/karino2.github.io masterdir > /dev/null 2>&1
+    - cp -r workjekyll/work/* masterdir/_posts/
+    - pushd masterdir
+    - git add -A
+    - git commit -m "Travis CI autocommit from travis build ${TRAVIS_BUILD_NUMBER}"
+    - git push -fq origin master > /dev/null 2>&1
+    - popd
+notifications:
+  email: false
