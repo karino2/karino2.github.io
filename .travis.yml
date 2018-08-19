@@ -14,12 +14,13 @@ script:
     - git clone --quiet --branch=MeatPieDay https://${OAUTH_TOKEN}@github.com/karino2/karino2.github.io mpddir > /dev/null 2>&1
     - cp mpddir/ipynb/*.ipynb workjekyll/
     - pushd workjekyll
-    - ls -t *.ipynb | head -n 100 | xargs -L 1 mpd2md
+    - ls -t *.ipynb | head -n 100 | xargs -L 1 mpd2md -type=post
     - popd    
 after_success:
     - git config --global user.email ${GIT_EMAIL}
     - git clone --quiet --branch=master https://${OAUTH_TOKEN}@github.com/karino2/karino2.github.io masterdir > /dev/null 2>&1
-    - cp -r workjekyll/work/* masterdir/_posts/
+    - mv workjekyll/work/*.md masterdir/_posts/
+    - mv -r workjekyll/work/* masterdir/assets/
     - pushd masterdir
     - git add -A
     - git commit -m "Travis CI autocommit from travis build ${TRAVIS_BUILD_NUMBER}"
