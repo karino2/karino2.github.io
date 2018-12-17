@@ -52,13 +52,17 @@ suspending functionを理解するにはあまり必要ないが、適当なコ�
 suspending functionからContinuationを得るのは、最終的にはIntrinsic/IntrinsicsJvm.ktの以下
 
 ```
-public inline fun <T> createCoroutineFromSuspendFunction(completion: Continuation<T>, crossline block: (ContinuationT>)->Any?)...
+public inline fun <T> createCoroutineFromSuspendFunction(
+    completion: Continuation<T>,
+    crossline block: (ContinuationT>)->Any?)...
 ```
 
 crosslineというのが何なのか分からないが、このラムダ式は以下みたいに作られる。(thisがsuspending function)
 
 ```
-public actual fun<R,T> (suspend R.()->T).createCoroutineUnintercepted(receiver: R, completion: Continuation<T>)... {
+public actual fun<R,T> (suspend R.()->T).createCoroutineUnintercepted(
+    receiver: R,
+    completion: Continuation<T>)... {
     ...
     // 上記のblockになるラムダ式
     { (this as Function2...).invoke(receiver, it) }
