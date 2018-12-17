@@ -18,7 +18,7 @@ suspending functionが良く分からないので調査した事のメモ。
 
 [KEEPのデザインドキュメント](https://github.com/Kotlin/KEEP/blob/master/proposals/coroutines.md)は良く書けているが、デザインドキュメントなのでいろいろ厳密ではなく、やはりsuspending function回りは良く分からない。
 
-仕方ないので自分で調べる事にした。ただ説明を書く気はあまり無くて、調べたリンクとかを残す程度のつもり。
+仕方ないので自分で調べる事にした。ただ他人に分かるような説明を書く気はあまり無くて、調べたリンクとかを残す程度のつもり。
 他の言語のasync awaitとかがCPS化してswitchにする、とかの基本は知っているという前提で（その辺は上記の動画にも詳しい）。
 
 # ソースコード
@@ -45,3 +45,91 @@ suspending functionを理解するにはあまり必要ないが、適当なコ�
 [https://github.com/karino2/SuspendTest](https://github.com/karino2/SuspendTest)
 
 
+
+
+### suspending functionはどう呼ばれるか
+
+suspending functionからContinuationを得るのは、最終的にはIntrinsic/IntrinsicsJvm.ktの以下
+
+```
+public inline fun <T> createCoroutineFromSuspendFunction(completion: Continuation<T>, crossline block: (ContinuationT>)->Any?)...
+```
+
+crosslineというのが何なのか分からないが、このラムダ式は以下みたいに作られる。(thisがsuspending function)
+
+```
+public actual fun<R,T> (suspend R.()->T).createCoroutineUnintercepted(receiver: R, completion: Continuation<T>)... {
+    ...
+    // 上記のblockになるラムダ式
+    { (this as Function2...).invoke(receiver, it) }
+}
+```
+
+ようするにsuspending functionは、最終的にはFunction2にキャストしてinvokeされる。
+このblockはどこから呼ばれるかというとinvokeSuspend。
+これはBaseContinuationImpleのresumeWithから呼ばれる。
+
+resumeWithは最初の一回は普通にstartCoroutineの中で呼ばれている(呼ばれてるのはresumeだが)。
+
+### suspending functionの型
+
+例えば
+
+```
+class Test {
+    suspend fun susAll(a: Int): Int {
+        ...
+```
+
+は、以下になる。
+
+```
+.method public final susAll(ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .registers 10
+    .param p1, "a"    # I
+    .param p2    # Lkotlin/coroutines/Continuation;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Ljava/lang/Integer;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    .annotation build Lorg/jetbrains/annotations/Nullable;
+    .end annotation
+```
+
+IとContinuation。Iはもともとの引数なので、末尾にCPS用のContinuation型が足される。
+
+
+### ローカル変数とステートマシンのデータの持ち方
+
+suspendingメソッド一つにつき、そのメソッドにドルを付けたような名前のクラスが生成される。
+先ほどの例なら
+
+```
+class Test$susAll$1
+.super Lkotlin/coroutines/jvm/internal/ContinuationImpl;
+```
+
+というクラス。
+
+このクラスはcontinuationをラッパするcontinuationで、resumeWithは
+
+1. invokeSuspendが終わってなければこれを繰り返し呼ぶ
+2. invokeSuspendが結果を返したらラップしてた元のcontinuationのresumeWithを呼ぶ
+
+となっている。通常のCPSをinvokeSuspendをoverrideする事で実現できるクラス。
+このContinuationImplのサブクラスにステートマシンの必要な要素やローカル変数などを持たせて一回resumeWithを呼ぶ。
+
+以後のresumeWithの呼び出しはCOROUTINE_SUSPENDEDを返した人の責任（つまり普通のCPS）。
+
+
+自身が終わったらラップしてる中身のcontinuationのresumeWithを呼び出す。
