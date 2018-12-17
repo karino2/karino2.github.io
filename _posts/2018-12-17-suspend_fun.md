@@ -3,7 +3,7 @@ title: "kotlinのsuspending function調査メモ"
 layout: page	
 ---
 
-suspend functionが良く分からないので調査した事のメモ。
+suspending functionが良く分からないので調査した事のメモ。
 
 ### あらすじ
 
@@ -19,6 +19,7 @@ suspend functionが良く分からないので調査した事のメモ。
 [KEEPのデザインドキュメント](https://github.com/Kotlin/KEEP/blob/master/proposals/coroutines.md)は良く書けているが、デザインドキュメントなのでいろいろ厳密ではなく、やはりsuspending function回りは良く分からない。
 
 仕方ないので自分で調べる事にした。ただ説明を書く気はあまり無くて、調べたリンクとかを残す程度のつもり。
+他の言語のasync awaitとかがCPS化してswitchにする、とかの基本は知っているという前提で（その辺は上記の動画にも詳しい）。
 
 # ソースコード
 
