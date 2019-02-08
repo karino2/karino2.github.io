@@ -9,13 +9,19 @@ install:
     - go get github.com/karino2/mpd2md
 script:
     - rm -rf ./workjekyll
+    - rm -rf ./worksplit
     - mkdir ./workjekyll
+    - mkdir ./worksplit
     - git config --global user.email ${GIT_EMAIL}
     - git clone --quiet --branch=MeatPieDay https://${OAUTH_TOKEN}@github.com/karino2/karino2.github.io mpddir > /dev/null 2>&1
     - cp mpddir/ipynb/*.ipynb workjekyll/
+    - cp -r mpddir/ipynb/split/* ./worksplit
+    - pushd worksplit
+    - ls | xargs -L 1 ../mpddir/scripts/merge_split.sh ../workjekyll
+    - popd
     - pushd workjekyll
     - ls -t *.ipynb | head -n 100 | xargs -L 1 mpd2md -type=post
-    - popd    
+    - popd
 after_success:
     - git config --global user.email ${GIT_EMAIL}
     - git clone --quiet --branch=master https://${OAUTH_TOKEN}@github.com/karino2/karino2.github.io masterdir > /dev/null 2>&1
