@@ -17,7 +17,7 @@ script:
     - cp mpddir/ipynb/*.ipynb workjekyll/
     - cp -r mpddir/ipynb/split/* ./worksplit
     - pushd worksplit
-    - ls | xargs -L 1 ../mpddir/scripts/merge_split.sh ../workjekyll
+    - ls | xargs -L 1 sh ../mpddir/scripts/merge_split.sh ../workjekyll
     - popd
     - pushd workjekyll
     - ls -t *.ipynb | head -n 100 | xargs -L 1 mpd2md -type=post
