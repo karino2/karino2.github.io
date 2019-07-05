@@ -38,7 +38,7 @@ IBの論文を開くと、まずトレーニングデータが無いものとし
 
 最適輸送問題の定式化は2.11なので以下。
 
-$$ L_C(a, b) \equiv \min_{P \in U(a, b)} (C, P)_F \equib \sum _{i, j} C_{i, j} P_{i, j} $$
+$$ L_C(a, b) \equiv \min_{P \in U(a, b)} (C, P)_F \equiv \sum _{i, j} C_{i, j} P_{i, j} $$
 
 なんかequivの場所がフロベニウス積にかかるべきな気がするがまぁいい。
 あとはこれのdualを書きたい。
