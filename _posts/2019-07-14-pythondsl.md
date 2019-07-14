@@ -199,6 +199,9 @@ one_symbole_datasetが58kくらいあったので、他も同じ比率という�
 けど次はまず$$x$$なのか$$a_x$$なのか$$2 x$$なのか$$ 2 a_x $$なのかをサンプリングして、
 そのあとxとかaとか2の部分に実際に何入れるかをサンプリングする。
 
+あと、$$\mathbb{R}^2$$とかも出てくるのでこれもサポートしよう。
+ただし$$\mathbb{R}$$は普通の等式などには出てこないので、この実数の次元とかを表す表記だけにしたい。
+
 データセットとしては、最初は解ける程度の簡単な奴から始めて、
 だんだんと複雑にしていって最終的には普段使いそうなのを全部サポートしたい。
 だからこの手の変更は今後どんどん続いて行く。
@@ -212,63 +215,133 @@ one_symbole_datasetが58kくらいあったので、他も同じ比率という�
 
 この辺をPythonでやる時の話をしたい。
 
-### 作ったもの
-
-まずは作ったものを見る。
+### 作ったものを軽く見る
 
 ```
-CharS = OneOfNamesF(char_ids)
-NumCharS = OneOfNamesF(char_ids+num_ids)
-
-SubS = SubscF(CharS, NumCharS)
-SupS = SupscF(CharS, NumCharS)
-TwoTermS = TwoTermF(NumCharS, CharS)
-
 MathbbrS = OneOfNamesF(["\\mathbb{R}"])
 SupOfRnS = OneOfNamesF(nonzero_num_names+ ["n", "m"])
 RnS = SupscF(MathbbrS, SupOfRnS)
+```
 
-OneSymbolS = OneOfIdsF(list(set(catids.num + catids.char + catids.eqop + [mathbbrId])))
+とかいう感じで、$$\mathbb{R}^2$$とか$$\mathbb{R}^n$$とかを作った。
+なお、nとm以外はあんま使わないので今回は入れてない。
 
-normalBinOpS = OneOfNamesF(['+', '-', '\\times'])
-rareBinOpS = OneOfNamesF(['\\div', '\\pm'])
+等式は、各項の、係数以外を以下のように定義し、
 
-BinopRawS = OrF([0.9, normalBinOpS],
-               [0.1, rareBinOpS])
-               
-otherEqOpNames = list(set(eqop_names).difference(set(["="])))
-equalEqOpS = OneOfNamesF(["="])
-otherEqOpS = OneOfNamesF(otherEqOpNames)
-EqopRawS = OrF([0.5, equalEqOpS],
-              [0.5, otherEqOpS])
-              
-BinopS = ScaleF(BinopRawS, 0.6)
-EqopS = ScaleF(EqopRawS, 0.6)
-
-termBaseS = OrF(
+```
+TermBaseS = OrF(
     [0.33, CharS],
     [0.33, SupS],
     [0.33, SubS]
 )
+```
 
-oneTermS = OrF(
-    [0.3, TwoTermF(NonzeroNumS, termBaseS)],
-    [0.7, termBaseS]
-)
-
-OneBinopOneS = HoriF(oneTermS, BinopS, oneTermS)
-EqExpS = HoriF(oneTermS, BinopS, oneTermS, MoveLeftF(EqopS, 1000))
-
-Pattern2S = OrF(
-    [0.15, OneSymbolS],
-    [0.025, RnS],
-    [0.1, SubS],
-    [0.1, SupS],
-    [0.1, TwoTermS],
-    [0.2, OneBinopOneS],
-    [0.3, EqExpS]
-)
+さらに係数がある場合と無い場合で以下のように書いた。
 
 ```
+OneTermS = OrF(
+    [0.3, TwoTermF(NonzeroNumS, TermBaseS)],
+    [0.7, TermBaseS]
+)
+```
+
+係数がある場合が30%、係数が無い場合が70%。
+$$ax + b$$とかのプラスの部分は以下のように定義した。
+
+```
+NormalBinOpS = OneOfNamesF(['+', '-', '\\times'])
+RareBinOpS = OneOfNamesF(['\\div', '\\pm'])
+
+BinopRawS = OrF([0.9, NormalBinOpS],
+               [0.1, RareBinOpS])
+BinopS = ScaleF(BinopRawS, 0.6)
+```
+
+割るはあんまり使わないのとデータセットの質が悪いのであまり使わない事にした。
+プラスマイナスもあまり使わないので頻度を減らした。
+さらに記号のサイズは少し小さめにした方が自然に見えたので、60%のサイズにした。
+
+同様に最後の等号の所もEqopSという名前で作り、以下みたいに式を作る関数を作った。
+
+```
+EqExpS = HoriF(OneTermS, BinopS, OneTermS, MoveLeftF(EqopS, 1000))
+```
+
+これがコンビネータ型のライブラリ、という言葉で呼んでいるものの実体となる。
+
+全体像はこちら。 [https://gist.github.com/karino2/132b249314d250eb85ee198992f8825f/6a9eecc8aff8075e6c31589425959fdc552326a3](https://gist.github.com/karino2/132b249314d250eb85ee198992f8825f/6a9eecc8aff8075e6c31589425959fdc552326a3)
+
+### 作り方
+
+この手の物は作り方を知らないと作れない類の物と思うので、作り方を簡単に。
+なお、パーサーコンビネータと一緒です。
+
+まずは引数無しで、呼ぶとサンプルを返す関数を作る。
+これは末尾にxxSとSをつける事にした（サンプラーのS）。
+
+そして、この「サンプラーを合成してサンプラーを返す関数」を作る。
+これはxxFと末尾にFをつける事にした（サンプラーファクトリーのF）。
+
+今回の例だとOrFとか、HoriFとかMoveFとかScaleFとかがファクトリとなる。
+
+こういう基本的なビルディングブロックを用意して、これらのビルディングブロック
+
+
+まず、呼ぶとサンプルを一つ返す関数を、xxSと末尾にSをつけて名づける事にする。
+さらに、このxxSを返す関数をxxFと名付ける事にする。
+
+**サンプラーの例**
+
+```
+CharS
+NumCharS
+```
+
+**サンプラーファクトリの例**
+
+```
+SubscF
+SupscF
+OrF
+ScaleF
+MoveLeftF
+```
+
+今回はこの最初のサンプラーを作るのもファクトリになっていて、OneOfNamesFというのを使っている。
+別に引数無しの関数で同じ型の物を返していれば普通の関数でも良いのですが。
+
+### SupscFの実装を見る
+
+具体的にどう実装しているかを見る為に、さきほど見たsupscのコンビネータ版を見てみよう。
+
+supscはもともとの実装があったので、それを少しいじって以下のようにした。
+
+```
+def SupscF(baseS, termS):
+  def supscS():
+    lbase, sbase = baseS()
+    lterm, sterm = termS()
+    
+    base1 = scale_to(sbase, 0.5)
+    sup2 = scale_to(sterm, 0.2)
+    
+    basetop = height_of(sup2)/2
+    supleft = next_to(base1)
+        
+    base1 = translate_to(base1, 0, basetop)
+    sup2 = translate_to(sup2, supleft, 0)
+
+    stroke = post_process(base1+sup2)
+    syms = lbase+ [SUPERSCRIPT_ID] + lterm
+    return [syms, stroke]
+  return supscS
+```
+
+関数を受け取って関数を返す、という所が前のsupscと違うけれど、supscSの中でやっている事はsupscとそんなに変わらない（一部可読性を上げる為にコードを変えたけど）。
+関数の関数にして、中の関数は前と同じ感じになる、というのはコンビネータ型のライブラリにする時に良くあるパターンと思う。
+
+こんな感じでその他のファクトリも実装していった。
+実装自体はやれば出来ると思う。
+
 
 つづく。
