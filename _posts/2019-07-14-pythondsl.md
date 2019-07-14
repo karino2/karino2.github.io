@@ -11,6 +11,8 @@ layout: page
 
 ライブラリじゃないので他人に使って欲しいとか思ってる訳じゃなくて、
 なんというか、コンビネータの流儀が便利でいいんじゃないか、という、流儀の話をしたい。
+この手の話はすぐ関数型言語でパーサーコンビネータの話になってしまうのだが、
+Pythonで機械学習の話がしたいんだ、私は。
 
 ## 問題設定
 
@@ -20,7 +22,7 @@ aとかnとか、一文字のシンボルのストロークデータがある。
 ストロークデータというのは1ストロークがx, y座標のリストで、そのストロークのリストで表現される。
 
 これらのストロークデータを拡大縮小したり移動したりして、例えば $$a^n$$とかのストロークデータを作り、
-これのラベルデータを`a^n`としたい。
+これのラベルデータを`["a", "^", "n"]`としたい。
 
 こういうのをいろいろなパターンで作りたい。
 だから生成結果は、
@@ -74,6 +76,8 @@ lislisは歴史的な事情でリストのリストをそう書いているが�
 - sym1, SUPERSCRIPT_ID, sym2というtexのリストを作る
 
 という感じの事をやっている。
+このやっている事とコードの間の距離がまぁまぁある、というのが本題なのだが、
+このレベルならそんなに悪いコードという訳でも無いと思う。
 
 この他同様に、subscとかtwo_termというのも作っている。
 two_termは$$2 a$$ とか$$ a x $$とかそういう二つの構成要素で出来た項。
@@ -132,8 +136,25 @@ class DatasetFactory:
     return [[[self.ls.labels[one]], self.ls.strokes[one]] for one in one_syms]
 ```
 
-ちょっと読むのは大変だけど、ようするに適当な字種と先ほどのsupscなどを与えると、
+ちょっと読むのは大変だが、subsc, supsc, two_termはだいたい同じなので、どれかh凸を読めば良い。
+
+例えばsupscを見ると以下。
+
+```
+  def supsc(self, num):
+    return self._bin_op(supsc, self.char_indices, self.numchar_indices, num)
+```
+
+bin_opの中身は読みたければ読んでもらえば良いが、ようするに適当な字種と先ほどのsupscなどを与えると、
 lsから対象となる字種をサンプリングして、supscを呼んで結果のリストを返す。
+
+だから
+
+```
+fac.supsc(10)
+```
+
+とすると、10個ほど$$X^Y$$的なデータが得られる。
 
 これを使って、こんなコードを書いた。
 
@@ -184,7 +205,70 @@ one_symbole_datasetが58kくらいあったので、他も同じ比率という�
 
 こういう時、コンビネータ型のライブラリに慣れている人ならコンビネータ型のライブラリを作るか、となると思う。
 
+## コンビネータ型のライブラリ
 
-続く。
+ライブラリにした訳じゃないのでライブラリというのは誤っているのだが、
+とにかくパーサーコンビネータとかにありがちな、primitiveと合成で作っていくようなコードにした。
 
+この辺をPythonでやる時の話をしたい。
 
+### 作ったもの
+
+まずは作ったものを見る。
+
+```
+CharS = OneOfNamesF(char_ids)
+NumCharS = OneOfNamesF(char_ids+num_ids)
+
+SubS = SubscF(CharS, NumCharS)
+SupS = SupscF(CharS, NumCharS)
+TwoTermS = TwoTermF(NumCharS, CharS)
+
+MathbbrS = OneOfNamesF(["\\mathbb{R}"])
+SupOfRnS = OneOfNamesF(nonzero_num_names+ ["n", "m"])
+RnS = SupscF(MathbbrS, SupOfRnS)
+
+OneSymbolS = OneOfIdsF(list(set(catids.num + catids.char + catids.eqop + [mathbbrId])))
+
+normalBinOpS = OneOfNamesF(['+', '-', '\\times'])
+rareBinOpS = OneOfNamesF(['\\div', '\\pm'])
+
+BinopRawS = OrF([0.9, normalBinOpS],
+               [0.1, rareBinOpS])
+               
+otherEqOpNames = list(set(eqop_names).difference(set(["="])))
+equalEqOpS = OneOfNamesF(["="])
+otherEqOpS = OneOfNamesF(otherEqOpNames)
+EqopRawS = OrF([0.5, equalEqOpS],
+              [0.5, otherEqOpS])
+              
+BinopS = ScaleF(BinopRawS, 0.6)
+EqopS = ScaleF(EqopRawS, 0.6)
+
+termBaseS = OrF(
+    [0.33, CharS],
+    [0.33, SupS],
+    [0.33, SubS]
+)
+
+oneTermS = OrF(
+    [0.3, TwoTermF(NonzeroNumS, termBaseS)],
+    [0.7, termBaseS]
+)
+
+OneBinopOneS = HoriF(oneTermS, BinopS, oneTermS)
+EqExpS = HoriF(oneTermS, BinopS, oneTermS, MoveLeftF(EqopS, 1000))
+
+Pattern2S = OrF(
+    [0.15, OneSymbolS],
+    [0.025, RnS],
+    [0.1, SubS],
+    [0.1, SupS],
+    [0.1, TwoTermS],
+    [0.2, OneBinopOneS],
+    [0.3, EqExpS]
+)
+
+```
+
+つづく。
