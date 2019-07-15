@@ -504,6 +504,57 @@ DSLというとどうしても言語外DSLの話が多くなりがちだが、
 DSL上では面倒だがPythonで書けば早い、という時に気軽にPythonに降りられるのがメリット。
 言語外DSLにしてしまうとこの行き来が面倒になる。
 
+例えば、
+
+```
+Pattern2S = OrF(
+    [0.15, OneSymbolS],
+    [0.025, RnS],
+    [0.1, SubS],
+    [0.1, SupS],
+    [0.1, TwoTermS],
+    [0.2, OneBinopOneS],
+    [0.3, EqExpS]
+)
+```
+
+という物は、YAMLで以下のように書く事も出来るだろう。
+
+```
+Pattern2S:
+  - name: OneSymbolS
+    ratio: 0.15
+  - name: RnS
+    ratio: 0.025
+  - name: SubS
+    ratio: 0.1
+  - name: SupS
+    ratio: 0.1
+  - name: TwoTermS
+    ratio: 0.1
+  - name: OneBinopOneS
+    ratio: 0.2
+  - name: EqExpS
+    ratio: 0.3
+```
+
+だが、例えばこのRnSがどう出来ているのか、というのをYAML内で辿れるかは作り手の匙加減になる。
+
+仕様の記述として完結するように全部をYAML側にしてしまうと、外部化するメリットが薄れる。Pythonで書く方が楽な事を面倒なやり方でやるだけになってしまう。
+だが一部だけにしてしまうと、その一部の外の情報が必要になった時にコードを見ないといけない。
+コードを見る時は言語内DSLの方が普通は読みやすい。
+
+言語内DSLにはPythonの抽象化の力を使える、というメリットがある。
+だから適切な抽象のレイヤーが構築できるので、読み手が必要な所まで調べる、という事がやりやすい。
+
+また、上記の例を比較すると、言語内DSLに比べて、外部DSLにすると可読性が上がっている訳でも無いと思う。
+YAMLよりもっと良い言語を作る事は出来るが、それでもそんなには違わないと思う。
+
+DSL側がかなり固まっているケース以外では言語内DSLの方が良い事が多く、
+そしてDSLがかなり固まるのはドメインの理解がかなり固まったという事を意味している。
+パーサージェネレータなどのようなケースならばそれも可能かもしれないが、
+機械学習でデータ生成とかモデルとかを扱う場合には、そんな事は普通は最後まで無い。
+
 という事で言語内DSLは非常にメリットが多くて、言語内DSLを選ぶべき所は多い。
 でもDSLの話ってなんかみんな外部DSLの方のパーサー回りが多くなってしまって、言語内DSLの話はあまり無い。
 そして言語内DSLはだいたいはメタプログラミングの機能でこんな変な事も実現できるよ！みたいなのが多くなってしまう。
@@ -523,10 +574,82 @@ DSL化する、つまり他の部分と分離して別のルールを組み込�
 
 そこで、このデータセットの性質を簡潔に記述した部分が、コードと分離されている事には意義がある。
 
-今回のコードでも最初のコードよりはコンビネータスタイルにした後の方がデータセットの記述という点ではより良いと実務家なら理解してもらえると思う。
+例えば元の例を考えると、以下のようなコードになっていた。
+
+```
+ONE_CATEGORY_SIZE=60000
+fac = DatasetFactory(train_ls, char_ids, nonzero_num_ids, num_ids)
+
+one_symboles = fac.one_symbol_dataset()
+suplist = fac.supsc(ONE_CATEGORY_SIZE)
+sublist = fac.subsc(ONE_CATEGORY_SIZE)
+twotermlist = fac.two_term(ONE_CATEGORY_SIZE)
+
+all_data = one_symboles+suplist+sublist+twotermlist
+random.shuffle(all_data)
+```
+
+これでも一つのシンボルと、上付きの式60k、下付きの式60k, 二項の式60kがある、というのは分かる。
+だが、このsupscのベースの所に何を許していたのか、はここだけを見ると分からない。
+どう見るかというとここを見る事になる。
+
+```
+class DatasetFactory:
+  def __init__(self, labelstroke, char_ids, nonzero_num_ids, num_ids):
+    self.ls = labelstroke
+    
+    self.char_indices = idset2indices(self.ls.labels, char_ids)
+    self.nonzer_num_indices = idset2indices(self.ls.labels, nonzero_num_ids)
+    self.num_indices = idset2indices(self.ls.labels, num_ids)
+    self.numchar_indices = idset2indices(self.ls.labels, char_ids|num_ids)
+  def _bin_op(self, binop, indices1, indices2, num):
+    """binop(sym1, sym2, st1, st2)"""
+    term1ids = random.choices(indices1, k=num)
+    term2ids = random.choices(indices2, k=num)
+    def binop_ids(baseid, subid):
+      basesym, basest = self.ls.labels[baseid], self.ls.strokes[baseid]
+      subsym, subst =  self.ls.labels[subid], self.ls.strokes[subid]
+      return binop(basesym, subsym, basest, subst)
+    return [binop_ids(t1, t2) for t1,t2 in zip(term1ids, term2ids)]
+  
+  def subsc(self, num):
+    return self._bin_op(subsc, self.char_indices, self.numchar_indices, num)
+  
+  def supsc(self, num):
+    return self._bin_op(supsc, self.char_indices, self.numchar_indices, num)
+...
+```
+
+関係ない所に必要な所が埋もれがちと思う。
+
+言語内DSLでの記述だと、以下みたいになる。
+
+```
+Pattern1S = Or(
+    [0.58, OneSymbolS],
+    [0.6, SupS],
+    [0.6, SubS],
+    [0.6, TwoTermS]
+)
+```
+
+そしてSupSはどうなっているかというとこうだ。
+
+```
+CharS = OneOfNamesF(char_names)
+NumCharS = OneOfNamesF(list(set(char_names+num_names)))
+
+SupS = SupscF(CharS, NumCharS)
+```
+
+よりプリミティブに近い所までDSLのレイヤーで追えて、こちらのコードの方が普通は読みやすくなる。
+だからデータセットの仕様の記述、みたいな類の仕事には向いている。
+
+最初のコードよりはコンビネータスタイルにした後の方がデータセットの記述という点ではより良いと実務家なら理解してもらえると思う。
 
 例えば $$ 3 x_2 + a y $$ をpredictするとどうもaが誤認識する、という事があったとする。
 そこで元のデータセットで、係数が文字の場合もあっただろうか？とこのデータセットを生成しているコードを確認したい。
+
 こういうのはいかにもありそうな話だ。こういう時に最初の書き方と言語内DSL化して書いた書き方でどちらが追いやすいかを考えてみて欲しい。
 
 ### どこまでDSL上で記述すべきか？
