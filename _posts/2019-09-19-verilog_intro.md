@@ -352,7 +352,7 @@ Paperwhiteで読めるか？お、読めるな。これで行こう。
 
 リセットアドレスは0にしたい、と書いてあるが、NULLを読むとコードが読めてしまうのはちょっと気分が悪いので、mipsのメモリマップの先頭アドレスである0x0040_0000にする。といってもROMもメモリも14bitしか線を用意してないので、下しか使わないが。
 
-### lwの回路図を作る
+### beqまでの回路図を作る
 
 本書に従い、まずはlwだけの回路を作る。
 
@@ -365,3 +365,27 @@ Paperwhiteで読めるか？お、読めるな。これで行こう。
 これ、ひたすら貼っていくと凄い重いページになりそうだな。まぁいいか。
 
 次はR形式。
+
+![images/2019-09-19-verilog_intro/lw_sw_add.png]({{"/assets/images/2019-09-19-verilog_intro/lw_sw_add.png" | absolute_url}})
+
+次にbeq。
+
+![images/2019-09-19-verilog_intro/lw_sw_add_beq.png]({{"/assets/images/2019-09-19-verilog_intro/lw_sw_add_beq.png" | absolute_url}})
+
+割とストレートに実装出来るな。
+
+### beqまでの制御部を作る
+
+jとかaddiも実装してみても良かったのだが、あまり制御部が無い状態で先に進むのも不安。
+ここまでの制御部を作ってみるかな。
+
+制御信号とニモニックの表を作って埋めてみよう。
+
+![images/2019-09-19-verilog_intro/ctrl_table.png]({{"/assets/images/2019-09-19-verilog_intro/ctrl_table.png" | absolute_url}})
+
+ALUCtrlは今の所2種類しか無いので3bitは不要ではあるが。
+
+本文の解説を見るとaddとsubを一つにまとめて、ALUCtrlは別のテーブルを作っているな。
+そっちの方が筋は良さそうだが、YAGNIの精神的には自分の方が良い気もする。
+
+まぁいいや。とりあえずここまでは機械語から自力で作れそうに思える。
