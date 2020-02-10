@@ -47,6 +47,7 @@ ConstraintLayoutの中に以下のように入れた。
         <ProgressBar
                 android:id="@+id/progressBar"
                 android:indeterminateTint="@color/colorAccent"
+                android:indeterminateTintMode="src_atop"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="gone" />
@@ -55,7 +56,9 @@ ConstraintLayoutの中に以下のように入れた。
 
 さらにこの下に置いていたViewをToolbarの下になるように`app:layout_constraintTop_toBottomOf="@+id/toolbar"`を追加した。（これいるかしら？）
 
-このProgressBarの所にある`android:indeterminateTint="@color/colorAccent"`というのが今回追加しないと表示されなかった所。
+このProgressBarの所にある`android:indeterminateTint="@color/colorAccent"`と`android:indeterminateTintMode="src_atop"`いうのが今回追加しないと表示されなかった所。
+前者はNのタブレットでで、後者はLのスマホで必要になった。（support library v7時代はLのスマホはどちらも要らなかったはずだが…）
+
 テーマ回りのデフォルトとかが変わっているのかしら？
 
 ### onCreateでsetSupportActionBarを呼び、上記のToolbarを渡す
