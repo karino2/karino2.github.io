@@ -10,7 +10,7 @@ rubyを入れたりいろいろ設定すると同じような事をする事は�
 
 ### URL
 
-[colab: narou_epub.ipynb](https://colab.research.google.com/drive/1rs6q0NgFJAFbEA66rNywx1Ge1EkvXRIn)
+[colab: narou_epub.ipynb](https://colab.research.google.com/drive/1R7R9SxIOqnEwxF7wcqBLUP1udGQ7_Dgd)
 
 ### 使い方
 
