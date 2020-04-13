@@ -177,7 +177,8 @@ tasks.jsonは以下。とりあえず`-j 16`してるが、MacBook Proだと幾�
             }
         }
     ]
-}```
+}
+```
 
 で、launch.jsonはCodeLLDBを使うように以下のように書く。
 
