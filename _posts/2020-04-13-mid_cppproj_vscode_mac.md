@@ -89,8 +89,8 @@ macConsoleの所はmac依存の割と自分が好きにして良いディレク�
 ### コンパイラ(clang++)とかExtensionとか
 
 コンパイラはxcode-selectで普通に入れたclang。[公式のVSCodeのドキュメント](https://code.visualstudio.com/docs/cpp/config-clang-mac)と同様。
-ExtensionはC/C++拡張を最初は入れていたが、うまくデバッグ実行出来ず、
-[MacのCatallina上でデバッグ実行出来ないというissue](https://github.com/microsoft/vscode-cpptools/issues/3829)を見つけてそこで推薦されていたようにデバッグ実行時にはCodeLLDBを入れる事にした。
+ExtensionはC/C++拡張を最初は入れてデバッグ実行もこれを使おうとしたのだが、、うまくデバッグ実行出来ず、
+[MacのCatallina上でデバッグ実行出来ないというissue](https://github.com/microsoft/vscode-cpptools/issues/3829)を見つけて、そこで推薦されていたようにデバッグ実行時にはCodeLLDBを使うようにした。という事でCodeLLDB Extentionも入れた。
 
 ### Makefile
 
