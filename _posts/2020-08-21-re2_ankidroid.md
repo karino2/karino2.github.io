@@ -1,5 +1,5 @@
 ---
-title: Re: Re: 語学の入門における語彙力とAnkiDroidについて
+title: Re： Re： 語学の入門における語彙力とAnkiDroidについて
 layout: page
 ---
 
