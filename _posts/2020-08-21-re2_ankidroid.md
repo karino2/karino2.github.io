@@ -3,9 +3,9 @@ title: Re： Re： 語学の入門における語彙力とAnkiDroidについて
 layout: page
 ---
 
-[Re: 語学の入門における語彙力とAnkiDroidについて](https://blog2.issei.org/2020/08/14/how-should-use-ankidroid.html)
-
 ### 反応的な話
+
+[Re: 語学の入門における語彙力とAnkiDroidについて](https://blog2.issei.org/2020/08/14/how-should-use-ankidroid.html)
 
 どうもです。（久しぶりにweb日記的なやりとりするなぁ）
 
