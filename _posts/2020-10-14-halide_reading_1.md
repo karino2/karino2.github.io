@@ -91,7 +91,12 @@ specializationsはなんとなく無視して良さそうだな。stage_schedule
 predicate、values、argsがDefinitionContentsの本体のExprっぽいな。
 
 多分valuesの中に関数呼び出しがあって、それのvisitで元のFindCallsで呼び出し先関数を集めるんだろうなぁ。
+predicateってのが何かは少し見てみないと分からない。
+この辺は組み立て側を追う事でわかりそうなので、次はこのDefinitionContentsがどう組み立てられるのかを追いたいなぁ。
 
-雰囲気は分かった。次はこのDefinitionContentsがどう組み立てられるのかを追いたいなぁ。
+でもここまでで組み立て側はだいぶ雰囲気は分かった。
+
+
+
 
 
