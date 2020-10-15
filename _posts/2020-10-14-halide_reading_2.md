@@ -149,3 +149,5 @@ valuesとoutputsは一対一に対応するのか。Tupleじゃなければoutpu
 まだ分からない所もあるが、大分全体の流れはつかめてきたかな。
 
 分からない所、Pipelineが出てこない。RDom回り。ただそれよりは次は中間コード生成を見たい気もする。
+
+[Halideコード読み その3](https://karino2.github.io/2020/10/15/halide_reading_3.html)へ続く。
