@@ -54,7 +54,10 @@ Stmt s = schedule_functions(outputs, fused_groups, env, t, any_memoized);
 ```
 
 このStmtが目的の中間コードっぽいな。schedule_functionsを読んでみよう。
-う、ちょっと辛い感じだ。その前にStmt周辺を見てみるか。
+
+う、ちょっと辛い感じだ。もうちょっと周辺知識を集めてからじゃないと理解出来なさそうだな。
+
+schedule_functionsに挑む前に、Stmt周辺を見てみるか。
 
 ### StmtとIR周辺を追う
 
