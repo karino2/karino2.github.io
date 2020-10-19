@@ -390,4 +390,6 @@ orderが上で言う所のtemp。つまり呼び出し先の一番下から順�
 
 なるほど。
 
+これでだいたいrealization_orderは理解出来たな。lowerに戻ろう。
+
 [Halideコード読み その4](https://karino2.github.io/2020/10/19/halide_reading_4.html)へ続く
