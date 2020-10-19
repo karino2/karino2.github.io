@@ -1,9 +1,9 @@
 ---
-title: Halideコード読み その2
+title: Halideコード読み その2：Funcの組み立て
 layout: page
 ---
 
-[Halideコード読み その1](https://karino2.github.io/2020/10/14/halide_reading_1.html)の続き。
+[Halideコード読み その1： realizeからlowerまで](https://karino2.github.io/2020/10/14/halide_reading_1.html)の続き。
 
 今度は組み立て側から追いたい。DefinitionContentsのpredicateが何者でどうやって出来るのか、と、valuesはどうやって出来ているのかあたりから始めたい。
 
@@ -150,4 +150,4 @@ valuesとoutputsは一対一に対応するのか。Tupleじゃなければoutpu
 
 分からない所、Pipelineが出てこない。RDom回り。ただそれよりは次は中間コード生成を見たい気もする。
 
-[Halideコード読み その3](https://karino2.github.io/2020/10/15/halide_reading_3.html)へ続く。
+[Halideコード読み その3：lowerとIRの組み立て](https://karino2.github.io/2020/10/15/halide_reading_3.html)へ続く。

@@ -1,5 +1,5 @@
 ---
-title: Halideコード読み その1
+title: Halideコード読み その1： realizeからlowerまで
 layout: page
 ---
 
@@ -104,4 +104,4 @@ lowerの中はまだ最初のpopulate_environmentしか見てないが、ここ�
 ここから先lowerを読む前に、ここまでの流れで依存してる関数を集める所に登場するデータ構造はなんとなく見たので、
 次は組み立て側を見てここまでいろいろ推測した事を確認していきたい。
 
-以下へつづく。[Halideコード読み その2](https://karino2.github.io/2020/10/14/halide_reading_2.html)
+以下へつづく。[Halideコード読み その2：Funcの組み立て](https://karino2.github.io/2020/10/14/halide_reading_2.html)
