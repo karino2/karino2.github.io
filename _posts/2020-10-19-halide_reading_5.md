@@ -124,11 +124,67 @@ for (size_t i = fused_groups.size(); i > 0; --i) {
 
 という事をやる。
 
-### InjectFunctionRealization周辺を読む
+### InjectFunctionRealization周辺を読もうとする（がひとまず撤退）
 
-まずはinline化出来ない方を読もう。こっちが本体だろうから。
+まずはinline化出来ない方、つまりInjectFunctionRealizationを読もう。こっちが本体だろうから。
 
-続く。
+InjectFunctionRealizationクラスはIRMutatorを継承してvisitを実装している。
+IRMutatorのmutateを呼ぶとvisitが呼ばれていくらしい。
+
+本体はForのvisitっぽい。この中から呼ばれる`build_pipeline_group`と`build_realize_function_from_group`が重要そうだが、
+この２つがまたごつい。
+
+という事で、いろいろ適当なコードをビルドしてデバッグログつけて動かしてみる事にする。
+
+### OS XでHalideを動かす
+
+ソースコードはgithubからクローンしたが、バイナリ自体はbrewで入れてしまう。
+
+```
+% brew install halide
+```
+
+そしてクローンしたコードのtutorial下でlesson_01_basic.cppの冒頭のコメントを見ると以下のように書いてある。
+
+```
+// On os x:
+// g++ lesson_01*.cpp -g -I <path/to/Halide.h> -L <path/to/libHalide.so> -lHalide -o lesson_01 -std=c++11
+// DYLD_LIBRARY_PATH=<path/to/libHalide.dylib> ./lesson_01
+```
+
+`<path/to/Halide.h>`とかってどこやねん、と/usr/local/includeを`ls -l`してみると、`/usr/local/Cellar/halide/10.0.0_1/`にhalide関連のモノがあるっぽいので、以下のようにしてみた。
+
+```
+% g++ lesson_01*.cpp -g -I /usr/local/Cellar/halide/10.0.0_1/include -L /usr/local/Cellar/halide/10.0.0_1/lib -lHalide -o lesson_01 -std=c++11
+```
+
+ビルド出来た。
+
+```
+% DYLD_LIBRARY_PATH=/usr/local/Cellar/halide/10.0.0_1/lib ./lesson_01
+```
+
+実行出来た。次にデバッグログの出力。最大は3らしいので、以下のように環境変数を設定。
+
+```
+% export HL_DEBUG_CODEGEN=3
+```
+
+その後上記のコードを動かすといろいろログが出た。ちょこちょこ書き換えて、読んでる所との対応を眺めたりする。
+ただ、期待したほど目的のあたりの情報は得られないなぁ。
+
+ただその後の段階でなにが出力されるかは見れたので、ゴールまでの距離は分かってやる気は出た。
+
+
+### InjectFunctionRealizationのbuild_pipeline_groupを読む
+
+さて、気合を入れてbuild_pipeline_groupの解読に戻る。
+
+つづく。
+
+
+
+
 
 
 
