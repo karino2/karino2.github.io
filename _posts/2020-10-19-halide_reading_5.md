@@ -132,9 +132,10 @@ InjectFunctionRealizationクラスはIRMutatorを継承してvisitを実装し�
 IRMutatorのmutateを呼ぶとvisitが呼ばれていくらしい。
 
 本体はForのvisitっぽい。この中から呼ばれる`build_pipeline_group`と`build_realize_function_from_group`が重要そうだが、
-この２つがまたごつい。
+この２つがまたごつい。読んでて辛い。
 
-という事で、いろいろ適当なコードをビルドしてデバッグログつけて動かしてみる事にする。
+という事でこのまま読み進めるのはひとまずやめて、いろいろ適当なコードをビルドしてデバッグログつけて動かしてみる事にする。
+いろいろ周辺知識が増えたらまた戻ってきて読もう。
 
 ### OS XでHalideを動かす
 
