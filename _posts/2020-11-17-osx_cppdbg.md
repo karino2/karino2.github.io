@@ -6,7 +6,7 @@ Macで、前からなんかcppdbgが動かなくてCode LLDBを代わりに使�
 
 正しいやり方は良く分からないが適当にやったら動いたのでやった事のメモ。
 
-launch.jsonでmiDebuggerPathを指定したいのだが、lldb-miが最新のXCodeには入ってない。
+普通に公式のドキュメントにあるようにlaunch.jsonを書いてF5を実行すると、launch.jsonでmiDebuggerPathを指定しろと言ってくるが、lldb-miが最新のXCodeには入ってない。
 で、VS Codeのissueに貼られているリンクも古いバージョンのllvmにリンクされていて最新版では動かないので、
 自前でlldb-miをビルドした。
 
@@ -30,7 +30,6 @@ LLVM_DIRは`brew list llvm | grep LLVMConfig.cmake`のディレクトリ。
   "miDebuggerPath": "/Users/karino2/work/lldb-mi/buildspace/src/lldb-mi",
 ```
 
-なんで最新版のMacでC++のデバッグというのに公式のドキュメントに正しいやり方が載ってないのかは良く分からないし、自分でビルドしないといけないのもなんか納得行かないが、
-動いたので良しとする。
+なんで最新版のMacでC++のデバッグといういかにも普通の人がやる事なのに公式のドキュメントに正しいやり方が載ってないのかは良く分からないし、自分でビルドしないといけないのもたぶんおかしい気がするが、動いたので良しとする。
 
 やはりcppdbgの方がウォッチはちゃんと動くね。
