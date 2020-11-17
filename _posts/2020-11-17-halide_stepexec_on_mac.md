@@ -25,6 +25,8 @@ dependencies/CMakeLists.txtに以下を足す。
 これは`brew list llvm | grep LLVMConfig.cmake`した時のディレクトリ。
 VS CodeのCMake Toolsに環境変数とか渡す方法を調べるのが面倒だったので。
 
+でもステップ7で結局手作業でビルドしているので環境変数足す方が良かったかも。
+
 ### 6 tutorialsに自分用のファイルを足す（optional)
 
 lesson_01_basics.cppとかをいじっても良いのだが、
