@@ -3,6 +3,7 @@ title: OS XでVS Codeのcppdbgを動かす
 layout: page
 ---
 Macで、前からなんかcppdbgが動かなくてCode LLDBを代わりに使っていたのだが、ウォッチが微妙なので重い腰を上げてデフォルトのcppdbgを動かすようにする。
+たぶん[MacのCatallina上でデバッグ実行出来ないというissue](https://github.com/microsoft/vscode-cpptools/issues/3829) が未だに治ってないように見えるのだが、ちょっと信じがたいので何か勘違いしているのかも。
 
 正しいやり方は良く分からないが適当にやったら動いたのでやった事のメモ。
 
