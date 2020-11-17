@@ -65,3 +65,5 @@ VS CodeでF5を押すとlaunch.jsonが立ち上がるが、前述の通りなん
 
 これでブレークポイントを貼ってF5でステップ実行が出来るようになった。
 
+追記: あとでcppdbgも動くようにした [OS XでVS Codeのcppdbgを動かす](https://karino2.github.io/2020/11/17/osx_cppdbg.html)
+
