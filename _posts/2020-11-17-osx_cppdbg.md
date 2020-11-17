@@ -8,7 +8,7 @@ Macで、前からなんかcppdbgが動かなくてCode LLDBを代わりに使�
 正しいやり方は良く分からないが適当にやったら動いたのでやった事のメモ。
 
 普通に公式のドキュメントにあるようにlaunch.jsonを書いてF5を実行すると、launch.jsonでmiDebuggerPathを指定しろと言ってくるが、lldb-miが最新のXCodeには入ってない。
-で、VS Codeのissueに貼られているリンクも古いバージョンのllvmにリンクされていて最新版では動かないので、
+で、VS Codeのissueに貼られているlldb-miのバイナリのリンクも古いバージョンのllvmにリンクされていて最新版では動かないので、
 自前でlldb-miをビルドした。
 
 ```
