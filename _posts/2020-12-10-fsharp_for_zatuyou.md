@@ -36,7 +36,7 @@ scratchバッファ感覚でサクサク動いて良い。
 
 [F# for Fun and Profie](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/)が素晴らしい。
 何故かe-pubのダウンロードは出来なくなっているっぽいが、最近BOOXを買ったのでそれで読んでいれば特に不満も無い。
-F#のバージョンはちょっと古いか？関数の型の定義でvalとか使っているが今はtypeになっているっぽい？良くわからないがこちらではコンパイルは通らなかった（typeにしたら通った）。
+F#のバージョンはちょっと古いか？関数の型の定義でvalとか使っているが今はtypeになっているっぽい？良くわからないがこちらではコンパイルは通らなかった（typeにしたら通った）。＜ 追記: これは勘違いでシグニチャファイルに書くものらしい。後述。
 
 このドキュメントは技術ブログの中でも最高ランクの出来では無いか。
 最初はどこから読んだらいいか少し途方に暮れるが、慣れてくるとそれぞれのトピックがいい感じの長さでまとまっていて、楽しく気楽に読めながら勉強になる。
@@ -49,6 +49,17 @@ F#のバージョンはちょっと古いか？関数の型の定義でvalとか
 あとMSDNもまぁまぁ良く書かれている。
 必要な事が全部分かるという程では無いが、それなりに良く整備されているので疑問のかなりの部分は片付く。
 Fun and Profitと両方を使い分けて、たまにググってstackoverflowとかを眺めていればだいたい知りたい事は分かるようになっている。
+
+----
+
+訂正: 上記のvalでは関数の型が定義出来なかった、というのは、.fsiというファイルに書く物だと[twitterで @matarillo氏に教えてもらった。](https://twitter.com/matarillo/status/1337066397466320896?s=20)
+
+typeではType Abbreviationsという別の機能になっているとの事
+
+- [MSDN: Signatures](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/signature-files)
+- [MSDN: Type Abbreviations](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/type-abbreviations)
+
+ただ、type firstにfsxで開発したい場合にはtype abbreviationsを使えば良さそう。これはFun and Profitの[Calculatorの所のコードのgistを見ると](https://gist.github.com/swlaschin/0e954cbdc383d1f5d9d3#file-calculator_v2-fsx)そうなっている。
 
 ### F#という言語が良い
 
