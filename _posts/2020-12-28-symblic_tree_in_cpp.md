@@ -38,3 +38,105 @@ tupleをCRTPすればどうにかなる？
 うーむ、なんかそんなに簡単では無いが、頑張れば実現出来そうな気もするなぁ。
 少しググった感じでは見つからなかったが。
 BoostのPropertyTreeとか近そうなので、これを良く理解していれば作れそうな気もするが。
+
+----
+
+追記: 寝起きに布団の中で考えたらいけそうな気がしてきたのでメモ。
+
+ツリーは、プリミティブ型のunionのようなもの（実際はanyか）で表す。
+あとの都合でObjectと呼ぶ。
+
+```
+template<typename ENUMTYPE>
+struct Object_
+{
+   union
+   {
+       ENUMTYPE e;
+       int64_t i;
+       std::string s;
+   };
+
+   enum class Type{ Enum, Int, String };
+   Type t;
+};
+
+using Object = Object_<ObjectType>;
+
+Tree<Object> tree;
+```
+
+ENUMTYPEはこのツリーのシンボルを表すenum classで外から与える。
+実際はさらに外からのユーザーデータ的なのをぶらさげたい気はするが、クローン時の寿命管理をどうすべきかは良くわからないな。
+
+で、このツリーに対し、アクセサクラスを作る。
+このアクセサを作る為の、tupleに似たテンプレートベースのライブラリを提供する。
+
+```
+template <class ...T>
+Accessor
+{
+    ...
+};
+```
+
+Accessorのテンプレートには、
+
+1. 自身を表すenum
+2. 子供の種類（複数）
+
+を指定する。例えば以下。enum classはINT_IMMのようなコンベンションとする。
+
+```
+using IntImm = Accessor<INT_IMM, int64_t>;
+using StringImm = Accessor<STRING_IMM, string>;
+using UIntImm = Accessor<UINT_IMM, int64_t>;
+using TypeNode = Accessor<TYPE, int64_t, int64_t>; // signed, unsignedとかとビット長とか
+using Variable = Accessor<VARIABLE, TypeNode, string>;
+using Expr = Accessor<EXPR, int64_t, Object>;  // 真ん中はこのexprの種別を表すint値。
+using ExprList = Accessor<EXPR_LIST, List<Expr>>; // Listは子供をvectorっぽくアクセス出来るなにか。後述。
+using Call = Accessor<CALL, string, ExprList>;
+using Let = Accessor<LET, Variable, Expr>;
+using Def = Accessor<DEF, string, ExprList, Expr>; // somfunc(a, b, c) = value 的な定義
+```
+
+これらの型は、Treeを渡してインスタンス化出来る。
+
+```
+Tree<Object> someSubTree, anotherSubTree;
+
+Let l(someSubTree);
+ASSERT( LET == e.getType() );
+Variable v = l.get<1>();
+Expr e = e.get<2>();
+
+Expr e2( anotherSubTree );
+
+// ハッシュや比較演算子は自動生成出来ると思う、
+e == e2
+```
+
+ようするにデータとしてはプリミティブ型のS式のような物として扱う事でハッシュとかequalityはサブツリー単位で自動生成出来て、レコード型のように扱える。
+
+一方でツリーのDTD的な知識はAccessorとして表現して、テンプレートのライブラリとして提供する事で、
+専用の構造体のように扱える。
+ビルダとしてもたぶん使えるよな。
+
+Exprのようになにかのunionになってるケースでは、別のノードとして作って、子供の種別を表すintと子供の
+オブジェクトを持たせて代用する。子供のObjectはキャストして使う。かっこ悪いが仕方ない。
+
+可変長のリストはList型として表されて、List型はいつも最後の子供になっている。
+List型の子供はコンストラクタで子供をなめてvector的な構造に詰める、みたいな感じ。
+構築時にも使えるようにvector型そのままでは無くて独自の型になるが、vector的なアクセスが出来る。
+
+ツリーを走査して新しいツリーを作るような関数などをいろいろ提供することで、
+シンボリックなツリーを作ってそれをtransformしていくような事が出来る。
+
+Accessor作る所がちょっと大変だが、tupleが出来るのだから実現可能なはず。
+このライブラリがあれば仕事で書いたコードもたくさんのノードの定義のコードが自動生成になるのでだいぶ楽になるのになぁ。
+
+仕事のコードを書く前だったら多分作ったと思うが、すでに手で書いてしまったあとなので、
+次必要になるまではやらんかなぁ。Accessorさえできれば他は書き直してもいい気分ではあるが。
+Exprのequality比較が自動で出来るのは嬉しい気がする（共通のsub expressionとか探すとO^2だが…）。
+
+うーむ、これは計算グラフ時代のC++ライブラリとしてはなかなかクールな気がするなぁ。
