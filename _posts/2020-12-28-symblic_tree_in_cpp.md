@@ -115,7 +115,7 @@ using StringImm = Accessor<STRING_IMM, string>;
 using UIntImm = Accessor<UINT_IMM, int64_t>;
 using TypeNode = Accessor<TYPE, int64_t, int64_t>; // signed, unsignedとかとビット長とか
 using Variable = Accessor<VARIABLE, TypeNode, string>;
-using Expr = Accessor<EXPR, int64_t, Object>;  // 真ん中はこのexprの種別を表すint値。
+using Expr = Accessor<EXPR, int64_t, Node>;  // 真ん中はこのexprの種別を表すint値。
 using ExprList = Accessor<EXPR_LIST, List<Expr>>; // Listは子供をvectorっぽくアクセス出来るなにか。後述。
 using Call = Accessor<CALL, string, ExprList>;
 using Let = Accessor<LET, Variable, Expr>;
@@ -125,7 +125,7 @@ using Def = Accessor<DEF, string, ExprList, Expr>; // somfunc(a, b, c) = value �
 これらの型は、Treeを渡してインスタンス化出来る。
 
 ```
-Tree<Object> someSubTree, anotherSubTree;
+Tree<Atom> someSubTree, anotherSubTree;
 
 Let l(someSubTree);
 ASSERT( LET == e.getType() );
@@ -145,7 +145,8 @@ e == e2
 ビルダとしてもたぶん使えるよな。
 
 Exprのようになにかのunionになってるケースでは、別のノードとして作って、子供の種別を表すintと子供の
-オブジェクトを持たせて代用する。子供のObjectはキャストして使う。かっこ悪いが仕方ない。
+オブジェクトを持たせて代用する。子供のNodeはキャストして使う。かっこ悪いが仕方ない。
+Nodeはサブツリーになっていて、別のアクセサでラップして使う。
 
 可変長のリストはList型として表されて、List型はいつも最後の子供になっている。
 List型の子供はコンストラクタで子供をなめてvector的な構造に詰める、みたいな感じ。
