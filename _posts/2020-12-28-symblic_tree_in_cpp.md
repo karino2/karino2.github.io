@@ -45,11 +45,11 @@ BoostのPropertyTreeとか近そうなので、これを良く理解していれ
 
 ツリーの中のデータは、プリミティブ型のunionのようなもの（実際はanyか）で表す。(ツリーはコンテナとしてすでに実装がある)
 
-あとの都合でObjectと呼ぶ。
+とりあえずAtomと呼ぶ。
 
 ```
 template<typename ENUMTYPE>
-struct Object_
+struct Atom_
 {
    union
    {
@@ -62,12 +62,31 @@ struct Object_
    Type t;
 };
 
-using Object = Object_<ObjectType>;
+using Atom = Atom_<AtomType>;
 
-Tree<Object> tree;
+Tree<Atom> tree;
+
+using Node = Tree<Atom>::Node;
 ```
 
-ENUMTYPEはこのツリーのシンボルを表すenum classで外から与える。
+ENUMTYPEはこのツリーのシンボルを表すenum classで、このライブラリを使う側から与える。例えば以下みたいな感じ。
+
+```
+enum class AtomType {
+    INT_IMM,
+    UINT_IMM,
+    STRING,
+    TYPE,
+    VARIABLE,
+    EXPR,
+    EXPR_LIST,
+    CALL,
+    LET,
+    DEF,
+    ...
+};
+```
+
 実際はさらに外からのユーザーデータ的なのをぶらさげたい気はするが、クローン時の寿命管理をどうすべきかは良くわからないな。
 
 で、このツリーに対し、アクセサクラスを作る。
@@ -86,7 +105,9 @@ Accessorのテンプレートには、
 1. 自身を表すenum
 2. 子供の種類（複数）
 
-を指定する。例えば以下。enum classはINT_IMMのようなコンベンションとする。
+を指定する。子供というのはメンバ変数的なもの。
+
+例えば以下のような感じ。
 
 ```
 using IntImm = Accessor<INT_IMM, int64_t>;
@@ -120,7 +141,7 @@ e == e2
 ようするにデータとしてはプリミティブ型のS式のような物として扱う事でハッシュとかequalityはサブツリー単位で自動生成出来て、レコード型のように扱える。
 
 一方でツリーのDTD的な知識はAccessorとして表現して、テンプレートのライブラリとして提供する事で、
-専用の構造体のように扱える。
+使う側は自分のドメインの専用の構造体のように扱える。
 ビルダとしてもたぶん使えるよな。
 
 Exprのようになにかのunionになってるケースでは、別のノードとして作って、子供の種別を表すintと子供の
