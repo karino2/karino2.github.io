@@ -116,7 +116,7 @@ using UIntImm = Accessor<UINT_IMM, int64_t>;
 using TypeNode = Accessor<TYPE, int64_t, int64_t>; // signed, unsignedとかとビット長とか
 using Variable = Accessor<VARIABLE, TypeNode, string>;
 using Expr = Accessor<EXPR, int64_t, Node>;  // 真ん中はこのexprの種別を表すint値。
-using ExprList = Accessor<EXPR_LIST, List<Expr>>; // Listは子供をvectorっぽくアクセス出来るなにか。後述。
+using ExprList = Accessor<EXPR_LIST, vector<Expr>>; // 最後の子がvectorだったらそれい以後の子供をコンストラクタで全部vectorにまとめる
 using Call = Accessor<CALL, string, ExprList>;
 using Let = Accessor<LET, Variable, Expr>;
 using Def = Accessor<DEF, string, ExprList, Expr>; // somfunc(a, b, c) = value 的な定義
@@ -148,9 +148,8 @@ Exprのようになにかのunionになってるケースでは、別のノー�
 オブジェクトを持たせて代用する。子供のNodeはキャストして使う。かっこ悪いが仕方ない。
 Nodeはサブツリーになっていて、別のアクセサでラップして使う。
 
-可変長のリストはList型として表されて、List型はいつも最後の子供になっている。
-List型の子供はコンストラクタで子供をなめてvector的な構造に詰める、みたいな感じ。
-構築時にも使えるようにvector型そのままでは無くて独自の型になるが、vector的なアクセスが出来る。
+可変長のリストはvector型として表されて、vector型は最後の子供だけ許される。
+vector型の子供はコンストラクタで子供をなめてvector的な構造に詰める、みたいな感じ。
 
 ツリーを走査して新しいツリーを作るような関数などをいろいろ提供することで、
 シンボリックなツリーを作ってそれをtransformしていくような事が出来る。
@@ -160,6 +159,6 @@ Accessor作る所がちょっと大変だが、tupleが出来るのだから実�
 
 うーむ、これは計算グラフ時代のC++ライブラリとしてはなかなかクールな気がするなぁ。
 
-２ヶ月前に思いついていたら作っていたが、もうすでに手で書いてしまったあとなので、
+2ヶ月前に思いついていたら作っていたが、もうすでに手で書いてしまったあとなので、
 次必要になるまではやらんかなぁ。Accessorさえできれば他は書き直してもいい気分ではあるが。
-Exprのequality比較が自動で出来るのは嬉しい気がする（共通のsub expressionとか探すとO^2だが…）。
+Exprのequality比較が自動で出来るのは嬉しい気がする（共通のsub expressionとか探すとO^2だが…いや、immutableならhashがキャッシュ出来るな）。
