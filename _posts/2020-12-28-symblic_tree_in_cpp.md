@@ -122,10 +122,10 @@ using Let = Accessor<LET, Variable, Expr>;
 using Def = Accessor<DEF, string, ExprList, Expr>; // somfunc(a, b, c) = value 的な定義
 ```
 
-これらの型は、Treeを渡してインスタンス化出来る。
+これらの型は、サブツリー（ASLのforest同様、ノードがサブツリーを表す）を渡してインスタンス化出来る。
 
 ```
-Tree<Atom> someSubTree, anotherSubTree;
+Node someSubTree, anotherSubTree;
 
 Let l(someSubTree);
 ASSERT( LET == e.getType() );
@@ -158,8 +158,8 @@ List型の子供はコンストラクタで子供をなめてvector的な構造�
 Accessor作る所がちょっと大変だが、tupleが出来るのだから実現可能なはず。
 このライブラリがあれば仕事で書いたコードもたくさんのノードの定義のコードが自動生成になるのでだいぶ楽になるのになぁ。
 
-仕事のコードを書く前だったら多分作ったと思うが、すでに手で書いてしまったあとなので、
+うーむ、これは計算グラフ時代のC++ライブラリとしてはなかなかクールな気がするなぁ。
+
+２ヶ月前に思いついていたら作っていたが、もうすでに手で書いてしまったあとなので、
 次必要になるまではやらんかなぁ。Accessorさえできれば他は書き直してもいい気分ではあるが。
 Exprのequality比較が自動で出来るのは嬉しい気がする（共通のsub expressionとか探すとO^2だが…）。
-
-うーむ、これは計算グラフ時代のC++ライブラリとしてはなかなかクールな気がするなぁ。
