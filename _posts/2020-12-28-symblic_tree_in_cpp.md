@@ -162,3 +162,60 @@ Accessor作る所がちょっと大変だが、tupleが出来るのだから実�
 2ヶ月前に思いついていたら作っていたが、もうすでに手で書いてしまったあとなので、
 次必要になるまではやらんかなぁ。Accessorさえできれば他は書き直してもいい気分ではあるが。
 Exprのequality比較が自動で出来るのは嬉しい気がする（共通のsub expressionとか探すとO^2だが…いや、immutableならhashがキャッシュ出来るな）。
+
+----
+
+さらに追記:
+
+途中まで実装してみた。
+
+[https://github.com/karino2/symtree](https://github.com/karino2/symtree)
+
+symtree_test.cppを見ると雰囲気は分かるが、要点は以下の所。
+
+```
+enum class test_sym
+{
+  int_imm,
+  variable,
+  sub,
+  add,
+  let
+};
+
+template<test_sym eid, typename... CHLDS>
+using taccessor = accessor<test_sym, eid, CHLDS...>;
+
+using var_op = taccessor<test_sym::variable, string>;
+using int_imm = taccessor<test_sym::int_imm, int64_t>;
+using add_op = taccessor<test_sym::add, ttree, ttree>;
+using sub_op = taccessor<test_sym::sub, ttree, ttree>;
+
+// var_op=tree1 in ttree2.
+using let_op = taccessor<test_sym::let, var_op, ttree, ttree>;
+```
+
+letの定義でvarを含んでいる所が見どころ。
+以下みたいにアクセス出来る。
+
+```
+  let_op op1(*root);
+  auto v = get<0>(op1);
+```
+
+`get<0>`でちゃんとvar_opが自動で返ってそのまま中の値が触れる。
+手実装するのとそんなに遜色ない使い心地に思う。
+
+こういうのをusingで定義していけるのはまぁまぁ楽ではある。
+
+一方でexprみたいなor型が全てttreeになってしまうのがださい。
+中のenumでswitchして処理する必要がある。
+F#のDiscrimanated Unionとパターンマッチだってパターンマッチするんだからそれと同様といえば同様なのだが、どうもswitchがあると萎えるんだよなぁ。
+
+残りはequalityやhashを実装して、さらにツリーをなめて新しいツリーを作る時に必要になりそうなライブラリを揃えれば完成なのだが、
+コアになる部分はここまでで完成してるので、わりと満足した。
+なのでもうこの辺でいいかなぁ。
+
+variadic templateのいい練習にはなった。
+インデックスをタグにして継承して、getでキャストして取り出すのね。
+empty base optimizationが効くのでruntimeのコストはゼロだ。賢いね。
