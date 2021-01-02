@@ -219,3 +219,5 @@ F#のDiscrimanated Unionとパターンマッチだってパターンマッチ�
 variadic templateのいい練習にはなった。
 インデックスをタグにして継承して、getでキャストして取り出すのね。
 empty base optimizationが効くのでruntimeのコストはゼロだ。賢いね。
+
+さらに追記: [variadic templateを用いいたライブラリについての雑感](https://karino2.github.io/2021/01/02/variadic_template_lib.html)
