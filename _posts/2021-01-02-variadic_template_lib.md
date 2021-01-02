@@ -3,7 +3,7 @@ title: variadic templateを用いいたライブラリについての雑感
 layout: page
 ---
 年末年始にvariadic templateを用いたライブラリを遊びで作っていて、
-これはちょっと面白いな、と思っての雑感。
+これはちょっと面白いな、と思っての雑感。([C++でシンボリックなツリーを扱うライブラリとかは無いものか？](https://karino2.github.io/2020/12/28/symblic_tree_in_cpp.html))
 
 tupleとかは良く使っているし、variadic templateを用いたテンプレートのutilityみたいなの(is_allなんちゃらとかそういう述語の実装)は作った事もあるが、
 ある程度の再帰構造を持ったvariadic templateのクラスを実装したのは今回が初めてだ。
