@@ -41,3 +41,6 @@ layout: page
 このMessage Passingはそのものずばりの解決では無いと思うけれど、
 何か新しいカタチというか可能性を模索する試みとしては面白いんじゃないかな、と自分は感じている。
 何かのヒントにはなりそうかな、と。
+
+----
+追記： [blog.8-p.info: Message Passing はじめました](https://blog.8-p.info/ja/2021/01/05/message-passing/)
