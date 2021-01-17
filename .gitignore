@@ -1,3 +1,5 @@
 ._config.yml.un~
 _config.yml~
 _posts/newfile.app/
+.jekyll-cache/
+_site/
