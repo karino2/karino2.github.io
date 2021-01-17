@@ -44,7 +44,7 @@ dockerのイメージとしては[jekyll/jekyll](https://hub.docker.com/r/jekyll
 ```
 
 jekyllのビルドをすると何が出来るんだろう？
-一通り作業が終わったあとに比較したら`_site`と`.jekyll-cache`が出来るだけっぽいので、これを.gitignoreに追加して、普通にgithub pagesをcloneしたサイトで作業すれば良いか。
+一通り作業が終わったあとに比較したら`_site`と`.jekyll-cache`が出来るだけっぽいので、これを.gitignoreに追加して、普通にgithub pagesをcloneしたディレクトリで作業すれば良いか。
 
 ```
 > cd karino2.github.io
