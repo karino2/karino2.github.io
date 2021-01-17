@@ -2,6 +2,16 @@
 layout: default
 ---
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <style>
+    .myquote{
+         padding: 0em 1em;
+         margin: 2em 0;
+         color: #5d627b;
+         background: white;
+         border-top: solid 5px #5d627b;
+         box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+     }
+  </style>  
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       TeX: {
@@ -23,7 +33,6 @@ layout: default
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
       {% endif %}</p>
   </header>
-
   <div class="post-content" itemprop="articleBody">
       {{ content }}
   </div>
