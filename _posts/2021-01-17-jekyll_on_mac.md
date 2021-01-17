@@ -64,4 +64,4 @@ serveを試すにはどうしたらいいんだ？
 > docker run --rm --volume="$PWD:/srv/jekyll" -it -p 4000:4000 jekyll/jekyll jekyll serve
 ```
 
-これでブラウザから`http://loalhost:4000`でアクセス出来た。これもシェルスクリプトにしておく。
+これでブラウザから`http://loalhost:4000`でアクセス出来た。いかにも忘れそうなのでシェルスクリプトにしておく。
