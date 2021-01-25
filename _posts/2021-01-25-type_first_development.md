@@ -81,7 +81,7 @@ type Tweet = {
 これで良いかはおいといて、こういう試行錯誤をする、という前提がTFDには含まれていると思う。もっと例が見たい人は[Designing with typesシリーズ](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/designing-with-types-intro.html)がオススメです。
 
 さて、こうした試行錯誤をする為には、型でより多くを表現する、という前提があると思う。
-例えば最初に以下のように定義してそのまま突き進むなら、そうした試行錯誤を行う余地は無い。
+例えば最初に以下のように定義してそのまま突き進むなら、型の定義で試行錯誤を行う余地は無い。
 
 ```
 type Link = {
