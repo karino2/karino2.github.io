@@ -6,7 +6,7 @@ F#と言えばType-first developmentである(以下TFDと略す)。
 TFDに関してちゃんと知りたければ、[Why type-first development matters](http://tomasp.net/blog/type-first-development.aspx/)が良く書けているし、[F# for Fun and ProfitのCalculatorの記事](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/calculator-design.html)で具体例も見れる。
 TFDは別にF#以外の言語でも出来ると思うのだが、やっぱり代数的データ型（とパターンマッチ）がある言語という条件は要る気もする。
 
-あんまりTFDの記事って見かけない気がするので、ここにもうひとつTFDの記事をwebに追加する事にも意義があるかもしれない、と思い書いてみる。
+あんまりTFDの記事って見かけない気がするので、ここにもうひとつTFDの記事をwebに追加する事にも意義があるかもしれないと思い、書いてみる。
 TFDの話は、型によるモデリングや代数的データ型の意義など、関数型言語によるプログラミングらしさが見えやすい視点でもあると思うので、そういう話にも触れてみる。
 
 ### TFDをする為には、型での表現が複雑である必要がある
