@@ -48,7 +48,7 @@ type LinkTweet = {
 }
 
 type Tweet = 
-| Nromal of BaseTweet
+| Normal of BaseTweet
 | Image of ImageTweet
 | Link of LinkTweet
 ```
