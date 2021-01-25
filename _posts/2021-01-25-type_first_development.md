@@ -162,7 +162,7 @@ REPLのボトムアップの試行錯誤といい感じに相互作用してプ�
 2. 外部とのやり取りは最初にドメインモデルへの変換をして
 3. 以後はpureなドメインモデルの世界でコーディングを行う、
 
-という、関数型プログラミング的にも良いとされているスタイルに自然となる。
+という、関数型プログラミング的にも良いとされているスタイルになりやすい。
 （[Calculator designのDefining the input and output to the functionあたり参照](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/calculator-design.html)）
 
 ### 代数的データ型とパターンマッチの話
