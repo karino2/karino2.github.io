@@ -9,7 +9,7 @@ BOOX Note3の話。
 
 前のエントリ [ONYX BOOX Note3を買った](https://karino2.github.io/2020/12/10/boox_note3.html)
 
-最近はMessage Passingでkzysとかmorritaさんがいろいろリンクを貼るのだけど、どの記事も長い！こんなの読んでられるか！と思うかもしれないが、大丈夫、そう、BOOXならね（ニヤリ）。
+最近は[Message Passing](https://messagepassing.github.io)でkzysとかmorritaさんがいろいろリンクを貼るのだけど、どの記事も長い！こんなの読んでられるか！と思うかもしれないが、大丈夫、そう、BOOXならね（ニヤリ）。
 
 という感じで、最近はPocketで個々の技術ブログ記事などを読んでます。
 Pocketは画像とかが入っていると割と駄目なので、webビューとかPCとか併用しながらだけど、
