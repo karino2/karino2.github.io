@@ -91,14 +91,15 @@ let udir = UDir.fromDI di
 メソッドの場合はList.mapに渡すラムダ式の引数にドットをつけなきゃいけない訳だが、これはF# 的には書くのが少し面倒くさいので、あまり嬉しくない。（kotlinならもうちょっと楽なんだけど）
 
 高階関数はコードを書いている時にthisがなかなか確定しないのだよなぁ。
-まだthisが確定してない所でもmodule名にドットをつければ関数の一覧が出るので、
+コードは左から順番に書いていくので、書いている段階ではまだ確定していない。
+でも、まだthisが確定してない所でもmodule名にドットをつければ関数の一覧が出るので、
 そっちの方がパイプ演算子につなげてコードを書いている時には都合が良い。
 
 ADT的にmoduleを使うのは例外的な使い方で、
 普段は関数のグルーピングとして使う方が普通と思う。
 関数を単にグルーピングするだけのmodule、原始的には思えるけれど、使い慣れると便利だ。
 
-この辺の事情は冒頭にはった[Downsides of methods](https://fsharpforfunandprofit.com/posts/type-extensions/#downsides-of-methods)の、高階関数とうまく混ざらない、というあたりにも書いてある。（なお、このリンクにあるtype inferenceがうまく働かない、という所もclassを使わずにmoduleを使いたくなる重要なポイントと思う）。
+この辺の事情は冒頭に貼った[Downsides of methods](https://fsharpforfunandprofit.com/posts/type-extensions/#downsides-of-methods)の、高階関数とうまく混ざらない、というあたりにも書いてある。なお、このリンクにあるtype inferenceがうまく働かない、という所もclassを使わずにmoduleを使いたくなる重要なポイントと思う。
 
 また、F#は型推論をなるべく利かすため、コード上に型の名前が出てこない。
 hintには出るのだけど。
