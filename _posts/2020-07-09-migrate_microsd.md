@@ -2,6 +2,17 @@
 title: スマホのmicroSD乗り換え
 layout: page
 ---
+
+追記: 手順を一番上にまとめておく。
+
+1. まずMiniTool ShadowMakerで古いmicroSDのext2をバックアップする
+2. 新しいmicroSDにMiniTool ShadowMakerでext2を復元する
+3. 新しいmicroSDにMiniTool PartitionWizardでext2領域を後ろへ移動
+4. MiniTool PartitionWizardで最初の領域をexFATにする (3と4をまとめてやるとアクセス中でダメとか言われるので順番にやる方が良いかも)
+5. ファイルを手動でコピーする
+
+----
+
 手持ちのGalaxyNote3が落ちまくるようになって、いろいろ調べた所どうもLink2SDのところでmicroSDの読み書きに失敗している気配。
 ファイルシステムが壊れているだけかもしれないが、microSDは消耗品と思っているので乗り換える事にする。
 
