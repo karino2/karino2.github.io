@@ -7,7 +7,9 @@ layout: page
 
 ### step1: nugetのページで該当するパッケージを調べる
 
-https://www.nuget.org/packages/Argu
+[https://www.nuget.org/packages/Argu](https://www.nuget.org/packages/Argu)
+
+Arguの場合はここ。
 
 ### setep2: donetコマンドでCLIからfsprojにパッケージを追加
 
