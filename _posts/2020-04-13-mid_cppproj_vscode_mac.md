@@ -8,6 +8,8 @@ Mac上でのVSCodeでの開発が、入門的なのばかりで実際にやっ�
 結論としては、clang++とMakefileとVSCodeに拡張としてはC/C++拡張とCodeLLDB拡張で開発する、とう結論になった。
 今更Makefileかよ、という気は自分もするのだが、その理由の話も後述する。
 
+追記: その後、CMake+Ninjaに移行した。 [CMake+Ninjaの組み合わせが素晴らしい](https://karino2.github.io/2021/03/12/cmake_plus_ninja.html)
+
 ### 中規模とはどういう意味か
 
 中規模という言葉に込めたい事としては、
