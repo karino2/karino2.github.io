@@ -25,7 +25,7 @@ layout: page
 **v0.1.0**
 
 Markdownを読んで表示し、誤植を見つけたらタップして直す、という基本的な機能は出来たのでv0.1.0としてリースする。
-現状はMac版しかビルド方法が分からなかったのでバイナリはMac版のみ。LinuxとかWindowsの人からのPR待ってます。
+現状はMac版しかビルド方法が分からなかったのでバイナリはMac版のみ。LinuxとかWindowsのビルドってMacでやるの大変なのかね？
 
 ![screenshot](https://raw.githubusercontent.com/karino2/MdMinaosi/main/misc/screenshot_md_minaosi.png)
 
