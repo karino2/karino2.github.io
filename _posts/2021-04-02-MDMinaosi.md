@@ -16,10 +16,10 @@ layout: page
 
 名前はmd-minaosiとする。markdownの見直し、という事で。
 
-# ソース
+# ソースとバイナリ
 
-[https://github.com/karino2/MdMinaosi](https://github.com/karino2/MdMinaosi)
-
+- [https://github.com/karino2/MdMinaosi](https://github.com/karino2/MdMinaosi)
+- [バイナリリリース: https://github.com/karino2/MdMinaosi/releases](https://github.com/karino2/MdMinaosi/releases)
 
 # 制作日記
 
@@ -84,4 +84,11 @@ Recently Openも欲しいが、それはおいおい追加していこう。
 ### キーボードショートカット
 
 Cmd+Rでファイルの開き直しを実装した。またtextareaでCmd+Enterのsubmitも実装した。
-この辺はとりあえず生きていくのに必要な範囲で。
+この辺はとりあえず生きていくのに必要な範囲で。Cmd+RはElectron自身のreloadとかぶっているが、とりあえずはいいだろう（そのうちメニューはちゃんと直すつもり）。
+
+### カラーリング
+
+ファンシーなのは後回しでいいと思ったが、ブロッククオートが分かりにくいのでやはり色はつけよう、と決意する。
+Message Passingのソースを見てたらBulmaといのを使っているので真似する。いい感じ！
+
+これでとりあえず使える所までは来たな。v0.1.0としてリリースしよう。
