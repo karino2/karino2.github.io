@@ -27,6 +27,8 @@ layout: page
 Markdownを読んで表示し、誤植を見つけたらタップして直す、という基本的な機能は出来たのでv0.1.0としてリースする。
 現状はMac版しかビルド方法が分からなかったのでバイナリはMac版のみ。LinuxとかWindowsの人からのPR待ってます。
 
+![screenshot](https://raw.githubusercontent.com/karino2/MdMinaosi/main/misc/screenshot_md_minaosi.png)
+
 
 # 制作日記
 
@@ -99,3 +101,18 @@ Cmd+Rでファイルの開き直しを実装した。またtextareaでCmd+Enter�
 Message Passingのソースを見てたらBulmaといのを使っているので真似する。いい感じ！
 
 これでとりあえず使える所までは来たな。v0.1.0としてリリースしよう。
+
+### スクリーンショット
+
+せっかくなのでスクリーンショットを足してみた。
+ついでにこのページのトップにもスクリーンショットを貼る。
+
+### アイコン周り
+
+[How to Generate Mac and Windows Icons for an Electron Forge App](https://chasingcode.dev/blog/electron-generate-mac-windows-app-icons/)に詳しく書いてある。
+1024x1024のpngを作って、electron-icon-builderというのを使ってアイコンを生成するらしい。なるほど。
+
+上記ページからリンクされてたテンプレート、Maker周りの参考になるか？
+
+https://github.com/breadthe/electron-forge-svelte/blob/master/package.json
+
