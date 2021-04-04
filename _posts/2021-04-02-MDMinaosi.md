@@ -16,7 +16,7 @@ layout: page
 というのが正しいはず。
 でもそういうツールが見つからなかったので作る。
 
-名前はmd-minaosiとする。markdownの見直し、という事で。
+名前はMDMinaosiとする。markdownの見直し、という事で。
 
 
 # ソースとバイナリ
@@ -52,7 +52,7 @@ preload.jsのデバッグ方法は、[https://github.com/Microsoft/vscode-recipe
 
 ### 簡単なMarkdown viewerを作る
 
-パッケージ名はMDMinaosiとしたら怒られたのでmd-minaosiにする。
+パッケージ名はMDMinaosiとしたら怒られたのでmd-minaosiにする。（追記: electron-forgeでビルドする時のアプリの名前はMDMinaosiにした）
 
 公式から辿れるAPI DemoのshowOpenDialogがコールバックを渡しているのに、手元のはPormiseを返していて気づかずに少しハマる。
 うー、そこはエラー出ないのか…
