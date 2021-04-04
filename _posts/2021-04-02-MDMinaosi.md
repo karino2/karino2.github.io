@@ -107,6 +107,14 @@ Message Passingのソースを見てたらBulmaといのを使っているので
 せっかくなのでスクリーンショットを足してみた。
 ついでにこのページのトップにもスクリーンショットを貼る。
 
+### メニュー
+
+iPadに送るとかの作り方が分からなかったが、Window以下のメニューはだいたいデフォルトで良さそうなのでroleをwindowMenuとする事で残す事に成功。
+
+ファイル周りとview周りのメニューを作った物に変えてページの上のほうのボタンで代用していたのをメニューに変更。
+
+これで作りかけな感じは大分無くなってきたな。
+
 ### アイコン周り
 
 [How to Generate Mac and Windows Icons for an Electron Forge App](https://chasingcode.dev/blog/electron-generate-mac-windows-app-icons/)に詳しく書いてある。
@@ -116,3 +124,8 @@ Message Passingのソースを見てたらBulmaといのを使っているので
 
 https://github.com/breadthe/electron-forge-svelte/blob/master/package.json
 
+よし、アイコン描いた！
+
+![screenshot](https://raw.githubusercontent.com/karino2/MdMinaosi/main/misc/icons/png/256x256.png)
+
+少し様子見て問題無ければタグ打ってまたリリースだな。
