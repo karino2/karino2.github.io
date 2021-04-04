@@ -24,9 +24,12 @@ layout: page
 - [https://github.com/karino2/MdMinaosi](https://github.com/karino2/MdMinaosi)
 - [バイナリリリース: https://github.com/karino2/MdMinaosi/releases](https://github.com/karino2/MdMinaosi/releases)
 
-**v0.1.0**
+**v0.1.1**
 
-Markdownを読んで表示し、誤植を見つけたらタップして直す、という基本的な機能は出来たのでv0.1.0としてリースする。
+- Markdownを表示し、誤植を見つけたらタップして直すという基本機能
+- メニューからのファイルオープン、及びドラッグアンドドロップでのファイルオープン
+- appアイコン
+
 現状はMac版しかビルド方法が分からなかったのでバイナリはMac版のみ。LinuxとかWindowsのビルドってMacでやるの大変なのかね？
 
 ![screenshot](https://raw.githubusercontent.com/karino2/MdMinaosi/main/misc/screenshot_md_minaosi.png)
