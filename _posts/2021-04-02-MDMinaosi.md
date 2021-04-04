@@ -3,6 +3,8 @@ title: Markdown見直し用ツール、MDMinaosi
 layout: page
 ---
 
+![icon](https://raw.githubusercontent.com/karino2/MdMinaosi/main/misc/icons/png/256x256.png)
+
 # 動機
 
 最近Message Passingでmarkdownを良く書くのだが、誤植チェックに見直すのが辛い。
@@ -125,7 +127,4 @@ iPadに送るとかの作り方が分からなかったが、Window以下のメ�
 [https://github.com/breadthe/electron-forge-svelte/blob/master/package.json](https://github.com/breadthe/electron-forge-svelte/blob/master/package.json)
 
 よし、アイコン描いた！
-
-![screenshot](https://raw.githubusercontent.com/karino2/MdMinaosi/main/misc/icons/png/256x256.png)
-
 少し様子見て問題無ければタグ打ってまたリリースだな。
