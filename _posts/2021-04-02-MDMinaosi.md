@@ -122,7 +122,7 @@ iPadに送るとかの作り方が分からなかったが、Window以下のメ�
 
 上記ページからリンクされてたテンプレート、Maker周りの参考になるか？
 
-https://github.com/breadthe/electron-forge-svelte/blob/master/package.json
+[https://github.com/breadthe/electron-forge-svelte/blob/master/package.json](https://github.com/breadthe/electron-forge-svelte/blob/master/package.json)
 
 よし、アイコン描いた！
 
