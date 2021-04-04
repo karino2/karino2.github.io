@@ -24,11 +24,13 @@ layout: page
 - [https://github.com/karino2/MdMinaosi](https://github.com/karino2/MdMinaosi)
 - [バイナリリリース: https://github.com/karino2/MdMinaosi/releases](https://github.com/karino2/MdMinaosi/releases)
 
-**v0.1.1**
+**v0.1.2**
 
 - Markdownを表示し、誤植を見つけたらタップして直すという基本機能
 - メニューからのファイルオープン、及びドラッグアンドドロップでのファイルオープン
 - appアイコン
+- DockへのDnD
+- Open Recent
 
 現状はMac版しかビルド方法が分からなかったのでバイナリはMac版のみ。LinuxとかWindowsのビルドってMacでやるの大変なのかね？
 
@@ -162,3 +164,8 @@ extendInfoではそのままInfo.plistの内容を書けそう。
 Info.plistの内容はApplication下にコピーするだけだといまいち反映されないので一旦削除したりする必要はありそう。
 
 という事で無事DnDも対応出来たヽ(´ー｀)ノ
+
+### C-xとか効かないのはEditメニューが無いせいだ
+
+ショートカットの所でハンドルしているので、メニューが無いとtextareaでキーボードショートカットが効かないのね。
+という事でメニューも追加。
