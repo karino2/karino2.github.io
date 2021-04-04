@@ -131,3 +131,34 @@ iPadに送るとかの作り方が分からなかったが、Window以下のメ�
 
 よし、アイコン描いた！
 少し様子見て問題無ければタグ打ってまたリリースだな。
+
+現状はMacのアイコンを決め打ちしているが、makerで指定出来ないのかな？とググって以下を見つけた。[SO: Setting platform dependant icon via electron-forge electronPackagerConfig](https://stackoverflow.com/questions/48790003/setting-platform-dependant-icon-via-electron-forge-electronpackagerconfig)
+そのうち対応しよう。
+
+### Open Recent対応
+
+やっぱりOpen Recentが欲しい、という事でググってみたら、[最近使った書類 (Windows & macOS)](https://www.electronjs.org/docs/tutorial/recent-documents)を見つけて、簡単そうなので対応する。
+setApplicationMenuをapp readyより後に呼ばないといけない、というのにハマるが（それならサンプルを最初からそうしておいてくれ…）、
+それ以外は割と簡単に実装出来た。なかなかいい感じだ。
+DockのRecent docも開けるようになってますます快適。
+
+ここまで出来ると、Dockへのドラッグアンドドロップの対応もやりたくなるが、やり方が良く分からない…
+
+### DockへのファイルのDnD対応
+
+いろいろググって、以下から、Info.plistに.mdの関連付けが無いと駄目なんじゃないか？と予想をつける。
+
+[Mac: dropping file/folder onto dock does not add to process.argv](https://github.com/electron/electron/issues/1926)
+
+electron-forgeでやるんだろうな、とググって以下を見つける [How to associate file types with an electron app?](https://github.com/electron-userland/electron-forge/issues/492)
+
+extendInfoではそのままInfo.plistの内容を書けそう。
+上記リンクとは微妙に名前が違うが、packagerConfigで良さそうだな。[Electron Forge: Configuration](https://www.electronforge.io/configuration)からElectron Packager API docsのリンクをたどるとextendInfoがある。
+
+[qiita: Electron で Markdownプレゼン作成ツールを作って公開するまで](https://qiita.com/yhatt/items/0bf65699a538d5508c33)
+
+自分の場合は見るだけなので、LSHandlerRankはAlternateか？本家のドキュメントに解説が無いので良く分からないが。
+
+Info.plistの内容はApplication下にコピーするだけだといまいち反映されないので一旦削除したりする必要はありそう。
+
+という事で無事DnDも対応出来たヽ(´ー｀)ノ
