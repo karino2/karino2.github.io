@@ -169,3 +169,18 @@ Info.plistの内容はApplication下にコピーするだけだといまいち�
 
 ショートカットの所でハンドルしているので、メニューが無いとtextareaでキーボードショートカットが効かないのね。
 という事でメニューも追加。
+
+### Github Actionsで複数ビルドとかのメモ
+
+そのうち気が向いたらチャレンジする。
+
+- [Build and Publish a Multi-Platform Electron App on GitHub](https://dev.to/erikhofer/build-and-publish-a-multi-platform-electron-app-on-github-3lnd)
+  - [github: electron-publish-example](https://github.com/erikhofer/electron-publish-example)
+
+これが一番シンプルで良い気がする。package.jsonの書き方もこれを真似たい気がする。
+
+以下ググってて見かけた関連しそうなもの。
+
+- [Is possible to make "deb" and "rpm" on Mac OSX? #436](https://github.com/electron-userland/electron-forge/issues/436)
+- [Qiita: [メモ] GitHub Actions を使って Electron の multi-platform-build をやる](https://qiita.com/jrsyo/items/76e476aa25bf4f8f8e79)
+- [github: action-electron-forge](https://github.com/jsoma/action-electron-forge)
