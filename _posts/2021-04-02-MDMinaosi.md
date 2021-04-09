@@ -137,6 +137,19 @@ iPadに送るとかの作り方が分からなかったが、Window以下のメ�
 現状はMacのアイコンを決め打ちしているが、makerで指定出来ないのかな？とググって以下を見つけた。[SO: Setting platform dependant icon via electron-forge electronPackagerConfig](https://stackoverflow.com/questions/48790003/setting-platform-dependant-icon-via-electron-forge-electronpackagerconfig)
 そのうち対応しよう。
 
+追記: アイコンメモ。
+
+1024x1024で、円の時は上は64ピクセルあける。四角の時は96ピクセルあける。
+
+```
+$ npm install --save-dev electron-icon-builder
+```
+
+でpackages.jsonのscriptsに、
+```
+    "icon-make": "./node_modules/.bin/electron-icon-builder --flatten --input=./misc/icon_original.png --output=./misc",
+```
+
 ### Open Recent対応
 
 やっぱりOpen Recentが欲しい、という事でググってみたら、[最近使った書類 (Windows & macOS)](https://www.electronjs.org/docs/tutorial/recent-documents)を見つけて、簡単そうなので対応する。
