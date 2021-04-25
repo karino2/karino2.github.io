@@ -42,7 +42,7 @@ Add the following in hellophotino.fsproj.
 
 In Program.fs.
 
-```
+```fsharp
 open PhotinoNET
 open System.Reflection
 
@@ -107,7 +107,7 @@ You need to allow custom scheme loading in html. That is, do not specify `Conten
 
 Add custom scheme handling in `Program.fs`. (I add rescss too).
 
-```
+```fsharp
 let winConfig (options: PhotinoWindowOptions) =
     let asm = Assembly.GetExecutingAssembly()
 
@@ -143,7 +143,7 @@ So I always pack messages with JSON.
 
 For Program.fs:
 
-```
+```fsharp
 open System.Text.Json
 
 type Message = {Type: string; Body: string}
@@ -164,7 +164,7 @@ let receiveMessage (wnd:Object) (message:string) =
 
 For client.js side:
 
-```
+```js
 const sendMessage = (type, body) => {
     window.external.sendMessage(JSON.stringify({Type:type, Body: body}))
 }
