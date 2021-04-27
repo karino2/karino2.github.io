@@ -15,7 +15,7 @@ guashが出来てきたので、どんなものなのか、幾つか例を書い
 export GUASH_DIR=$(mktemp -d)
 
 guash_readtext "何か言ってね！"
-guash_doquery -d
+guash_doquery
 ```
 
 これをターミナルから実行すると、こんな画面が出る。
@@ -32,7 +32,7 @@ guash_doquery -d
 export GUASH_DIR=$(mktemp -d)
 
 guash_readtext "何か言ってね！"
-RES=$(guash_doquery -d)
+RES=$(guash_doquery)
 
 echo "$(date):$RES"
 ```
@@ -49,7 +49,7 @@ guash特有の事を見ると、まずGUASH_DIRというのをexportする必要
 
 ```
 guash_readtext "何か言ってね！"
-guash_doquery -d
+guash_doquery
 ```
 
 ここまでだと単なる面倒なreadという感じですね。
@@ -65,7 +65,7 @@ export GUASH_DIR=$(mktemp -d)
 
 guash_readtext "１つ目！"
 guash_readtext "２つ目！"
-guash_doquery -d
+guash_doquery
 ```
 
 すると以下のような画面が出ます。
@@ -90,7 +90,7 @@ export GUASH_DIR=$(mktemp -d)
 
 guash_readtext "１つ目！"
 guash_readtext "２つ目！"
-RES=($(guash_doquery -d))
+RES=($(guash_doquery))
 
 echo "RES1=${RES[0]}, RES2=${RES[1]}"
 ```
@@ -102,6 +102,35 @@ RES1=ほげほげ, RES2=いかいか
 ```
 
 1つのダイアログが二回出るのでは無く、２つの入力フィールドを備えたダイアログが出る、というのがポイント。
+
+なお、最初の二行はいつも同じなので、
+
+```
+#!/usr/bin/env bash
+export GUASH_DIR=$(mktemp -d)
+```
+
+これをしてくれるguashというスクリプトも付属しております。
+
+```
+$ cat ~/bin/guash
+#!/usr/bin/env bash
+
+export GUASH_DIR=$(mktemp -d)
+/usr/bin/env bash $1
+```
+
+これを使うと、先程の最初の二行は以下のように一行で書ける。
+
+```
+#!/usr/bin/env guash
+
+guash_readtext "１つ目！"
+guash_readtext "２つ目！"
+RES=($(guash_doquery))
+
+echo "RES1=${RES[0]}, RES2=${RES[1]}"
+```
 
 ### Filterでpercolみたいな事をする
 
@@ -116,11 +145,10 @@ RES1=ほげほげ, RES2=いかいか
 次に、この結果から一つを選ぶ、というスクリプトを書くとこんな感じ。
 
 ```
-#!/usr/bin/env bash
-export GUASH_DIR=$(mktemp -d)
+#!/usr/bin/env guash
 
 ls /bin | guash_filter "binから何か選んでね！"
-guash_doquery -d
+guash_doquery
 ```
 
 ![filter]({{"/assets/images/2021-04/guash_filter.png" | absolute_url}})
@@ -153,12 +181,11 @@ ls /bin | guash_filter "binから何か選んでね！"
 スクリプトはこんなの。
 
 ```
-#!/usr/bin/env bash
-export GUASH_DIR=$(mktemp -d)
+#!/usr/bin/env guash
 
 ls /etc | guash_filter "etcから何か選んでね"
 guash_readtext "コピー先のファイル名を教えてね"
-RES=($(guash_doquery -d))
+RES=($(guash_doquery))
 
 cp /etc/${RES[0]} ~/${RES[1]}
 ```
@@ -174,7 +201,7 @@ cp /etc/${RES[0]} ~/${RES[1]}
 ```
 ls /etc | guash_filter "etcから何か選んでね"
 guash_readtext "コピー先のファイル名を教えてね"
-RES=($(guash_doquery -d))
+RES=($(guash_doquery))
 ```
 
 一行目でフィルタリングのカラムを、二行目で名前を入力するカラムを作っています。
@@ -196,12 +223,11 @@ layout: page
 そこで、以下みたいなコードを書いた。
 
 ```
-#!/usr/bin/env bash
-export GUASH_DIR=$(mktemp -d)
+#!/usr/bin/env guash
 
 guash_readtext "ファイルのbasename"
 guash_readtext "タイトル"
-RES=($(guash_doquery -d))
+RES=($(guash_doquery))
 
 DEST=$(dirname $0)
 FILENAME="$DEST/"`date +%F`"-${RES[0]}.md"
@@ -226,12 +252,11 @@ lnコマンドは引数の順番をひたすら忘れる。
 という事で以下のようなスクリプトを書いた。
 
 ```
-#!/usr/bin/env bash
-export GUASH_DIR=$(mktemp -d)
+#!/usr/bin/env guash
 
 ls -t ~/work/GitHub/karino2.github.io/_posts | guash_filter "Src file"
 guash_readtext "Dest name"
-RES=($(guash_doquery -d))
+RES=($(guash_doquery))
 
 ln ~/work/GitHub/karino2.github.io/_posts/${RES[0]} ~/Google\ ドライブ/DriveText/TeFWiki/${RES[1]}.md
 ```
@@ -250,7 +275,8 @@ guash_filterとguash_readtextは、GUASH_DIRにGUIを作るためのデータを
 
 guash_doqueryはこの２つのファイルの内容からダイアログを生成します。
 
-guash_doqueryの-dというオプションは、ダイアログの入力が終わったらGUASH_DIRを削除する、という事を意味します。
+guash_doqueryはデフォルトでは終了にGUASH_DIRを削除します。
+なお、デバッグなどで削除してほしくない時は-kというオプションをつけると残したままに出来ます。
 
 ### コンセプト的な話
 
