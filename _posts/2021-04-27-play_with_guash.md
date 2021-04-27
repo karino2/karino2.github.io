@@ -275,7 +275,7 @@ guash_filterとguash_readtextは、GUASH_DIRにGUIを作るためのデータを
 
 guash_doqueryはこの２つのファイルの内容からダイアログを生成します。
 
-guash_doqueryはデフォルトでは終了にGUASH_DIRを削除します。
+guash_doqueryはデフォルトでは終了時にGUASH_DIRを削除します。
 なお、デバッグなどで削除してほしくない時は-kというオプションをつけると残したままに出来ます。
 
 ### コンセプト的な話
