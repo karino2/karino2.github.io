@@ -1,5 +1,5 @@
 ---
-title: 書籍感想: No Rules Rulesを読んだがいまいちだった
+title: 書籍感想： No Rules Rulesを読んだがいまいちだった
 layout: page
 ---
 Netflixの会社の本を何か読みたい、と思って読んだNo Rules Rules、
