@@ -3,7 +3,7 @@
 DEST=$(dirname $0)
 guash_readtext "ファイルのbasename"
 guash_readtext "タイトル"
-IFS="\n"
+IFS=$'\n'
 RES=($(guash_doquery))
 
 FILENAME="$DEST/"`date +%F`"-${RES[0]}.md"
