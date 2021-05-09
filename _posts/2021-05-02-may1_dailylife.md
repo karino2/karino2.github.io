@@ -71,7 +71,7 @@ Photino.NETのissueには無かったが、その参照先のPhotino.Nativeの�
 ### ハウスダストとの戦いに勝利か
 
 昨日、今日と朝起きた時に目やにも無く、割と通常状態。
-昨日はちょこちょこ目のかゆみが出てコロコロしたが、今日はあまりそれも無い。
+昨日はちょこちょこ目のかゆみが出て2〜3時間に一回絨毯をコロコロしたが、今日はあまりそれも無い。
 掃除機ももう毎日じゃなくてもいいかなぁ、とも思ったが、一応今日もかけておく。
 
 アレルギー反応って花粉症とかもそうだが、発症している状態だと些細なアレルゲンでも反応するのだけど、
@@ -80,3 +80,93 @@ Photino.NETのissueには無かったが、その参照先のPhotino.Nativeの�
 今日くらいだと、もはや少し気をつけて掃除するだけで普通の生活を送れるので、回復したと言って良い気がする。
 
 現状維持かこのまま更に改善していくなら、もう問題は解決した気がするが、どうかなぁ。
+
+### ゴールデンウィークというか室内活動の充実について
+
+イタリア語の復習は順調に進めている。これは軌道に乗ったかな。
+将棋も割と順調に再開できたし、読書もまぁまぁ。
+
+ギターは少し触るようにはなってきたが伸び悩みがあるな。アドリブを練習しようとしているが、同じのばかり弾いている。うーん。
+これはなにか考える必要がありそう。
+
+プログラム関連がいまいち。
+趣味でなにか書く事も読み進める技術書もやろうと思えばあるのだが、今月で仕事を撤退する事を思えば今月は仕事の後始末を優先したい気もする。
+そういう時にオフの日にプログラム関連やると仕事のモチベーションが減るんだよなぁ。
+じゃあ仕事すればいいのだけれど、オフの日に働くのもなぁ、という感じでいまいち何も手につかない。
+
+まぁ気にせず始めてしまえば良いという気もするが。
+
+MDMinaosiみたいなののAndroid版が欲しいのだが、そのためにはちゃんとしたMarkdownのレンダラーを作る方が良さそうなんだよなぁ。
+まぁ作ってみるといいかもしれない。
+
+## 2021-05-05
+
+JetPack Composeのドキュメントや動画を見ている。なかなか面白いな。
+TeFWikiにいろいろリンクやメモなどを貼っていってるが、これはプライベートじゃないから公開しても良いんだよなぁ。
+GitHubのWikiに公開する方法でも整えようかしら。
+
+＞整えた [GitHubのWIkiでTeFWikiの一部を公開する](https://karino2.github.io/2021/05/05/gwiki_tefwiki.html)
+
+JetPack Composeのドキュメントの一部をBOOX Note3で読みたくなったので、BOOX Note3でもTeFWIki環境を整える。
+フォルダが作れないのでファイラーも入れるなど（tetra free）。
+
+なかなか快適だな。共有しているデバイスが増えれば増えるほどTeFWikiは便利になっていく。ログインが要らないのがいいね。
+
+そのままJetpack Composeのドキュメントを読む。
+
+[karino2wiki: JetpackCompose](https://github.com/karino2/karino2.github.io/wiki/JetpackCompose)
+
+## 2021-05-08
+
+ゴールデンウィークはまったり進行。
+月末に仕事を撤収するためちょこちょこやっておきたい事はあるが、日数は限られているし、どうせ休むならプロジェクト立ち上がる前の今のうちという事で早めにしてくれ、
+とは向こうに言われた事なので、終わった所までで良かろう。
+
+今日はJetpackComposeのドキュメントの続きを読んでいたら、LiveDataが出てきたので周辺を軽く眺める。
+
+- [karino2wiki: JetpackCompose](https://github.com/karino2/karino2.github.io/wiki/JetpackCompose)
+- [karino2wiki: LiveData](https://github.com/karino2/karino2.github.io/wiki/LiveData)
+
+LiveDataはまぁ悪くないんだが、ViewModelとかはパットしないなぁ。無駄に登場人物が多いのはセンスのなさの現れという気がする。
+そのまま要求を実装し過ぎなんだよな。
+
+Jetpack Composeは大分理解は深まったが、ドキュメントはちょっとこれじゃ分からんね。recompose周辺のインターナルの解説が必要な気がする。
+
+関係無いが、このTeFWikiの一部をGithubのWikiとして公開するの、なかなか良いな。自分のオンラインの発信に欠けていたものに思う。
+TeFWikiのサイトのHowTo的な情報としてやり方をまとめても良いかもしれない。
+
+[MDMinaosi](https://karino2.github.io/2021/04/02/MDMinaosi.html)っぽいMarkdown Editorを作ろうと思ってJetpack Composeを眺めているのだが、
+Markdown Editor作るのに必要な程度の理解は得られたかな。
+
+MDMinaosiと違ってAndroid版では日記とか書くのにも使いたいのだよなぁ。変更はちょっとだけなんだが、同じアプリとするか別のMarkdown Edtiroとするか悩ましい。かなり似たものだが…
+
+### 床保護マットを買ってみる
+
+数時間に一回机の周りをコロコロするのも面倒なので、机の周りだけフローリングにならないかなぁ、と思い以下をポチる。
+
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=karino203-22&language=en_US&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07MBVW7NN&linkId=01cf85f26afef524db950323dfc4d295"></iframe>
+
+クイックルワイパー的なヤツの方が手間が無いので、これで良くなれば掃除の手間が減っていいかな、と。
+
+いつも少し症状が出ても机の周りをコロコロすればとりあえず症状が収まるので、とりあえず机の周りだけ試してみる。
+なんで机の周りにホコリがたまるのかは良く分からない所だが。
+椅子とかスリッパとかが絨毯と擦れてホコリが生まれているんじゃないか、と予想しているが、どうなんだろう。
+
+### 夜
+
+少しJetpack Composeのサンプルを触ってみると、スクロールがガクガクでこれ大丈夫なの？と心配になる。ちゃんと速くなるのかなぁ。
+
+イタリア語を軽くやる。リハビリという事でちょっとずつでも触れておくのが大切やね。
+
+## 2021-05-09
+
+ウニを摘出した時の足の裏の傷が痛むので、一日家でコーディングしていた。
+Jetpack ComposeでMarkdownのレンダラを書いていた。
+
+- [https://github.com/karino2/MDTouch](https://github.com/karino2/MDTouch)
+  - [karino2wiki: JetpackCompose](https://github.com/karino2/karino2.github.io/wiki/JetpackCompose)
+
+ちゃんと作れば需要はありそうだが、まずは自分のMarkdown Editorを作って使う所からはじめて、ライブラリ化はちゃんと自分で使うようになってから考える。
+
+Jetpack Composeはたまにwidthの伝搬が良くわからない所もあるが、割と複雑なコード書いてもちゃんと動くのはいいね。
+パフォーマンスがちゃんと良くなって正式版が出たらいいかもしれない。
