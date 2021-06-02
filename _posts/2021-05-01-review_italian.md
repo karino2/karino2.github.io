@@ -50,8 +50,15 @@ AnkiDroidは以前のは一旦破産、という事でやるのをやめて、�
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=karino203-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4560088268&bc1=ffffff&lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"> </iframe>
 
 この教材は普通の対話型の入門書として、めっちゃ普通ではあるけれど短く良くまとまっているのでかなり自分評価高い。
+復習に全部やり直すのにちょうど良い分量で、一課あたりの対話の長さがそれなりでインプットの量がちょうど良い。
 Kindle化されてる中でこの手の唯一の入門書じゃないか。
+
 ただマルコのキャラがめっちゃうざいので読んでてイラっとする(^^;  
 イタリア人っぽいのかもしれんが。
 
 かつてやった時のブログはこちら： [ニューエクスプレスプラス イタリア語](https://karino2.github.io/2020/07/08/newexpress_italy.html)
+
+### 進め方
+
+まず音声を聞いて聞き取れない所はスクリプトを見る。
+そのあとスクリプトを読んで分からない所が無いかチェックし、分からない単語などはAnkiDroidに加えていく感じで、サラサラ進めよう。
