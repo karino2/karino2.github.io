@@ -20,3 +20,28 @@ layout: page
 きみどりさん([@kani_beam__](https://twitter.com/kani_beam__))にお願いした。
 
 今後はシリーズ物としてきみどりさんに頼んでいってもいいかもなぁ、とか思ってます。
+
+----
+
+### Pixel 3で落ちる
+
+Pixel 3で落ちる、と言われて、ログを見せてもらうと、`RecognizerIntent.getVoiceDetailsIntent(this)`がnullを返す模様。
+うーん、なんでか良く分からないけれど、[DroidSpeechのissue #6](https://github.com/vikramezhil/DroidSpeech2.0/issues/6)で同じ症状に対して、[fixのcommit](https://github.com/ronnyporsch/DroidSpeech2.0/commit/f00a70c416e057af7223aaee5c8cc86b1616ace1)で、`Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)`を指定するようにしている。
+
+ドキュメントを読んでもそんな変更があるようには見えないが、真似して自分のコードでは`RecognizerIntent.getVoiceDetailsIntent(this) ?: Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)`と変更してみた。＞認識されなくなった
+
+ソースコードを読むと、`ACTION_WEB_SEARCH`と`ACTION_GET_LANGUAGE_DETAILS`でresolveするので、これのpackage visibility filtering対応が要るんじゃないか？
+という事で以下を追加。
+
+```
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.WEB_SEARCH" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.GET_LANGUAGE_DETAILS" />
+        </intent>
+    </queries>
+```
+
+これで無事動いた。うーん、これ、ドキュメントに書いておいてくれないと、中でなんのintent使ってるかなんて知らないよなぁ。
