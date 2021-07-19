@@ -97,3 +97,11 @@ webサイトの方の[Anki Web](https://ankiweb.net/)をBiologyで探すと、
 やはり図解と解説に合わせて覚えて行く方がずっと手早い。
 
 ついでにコースを進める過程で出てくるピルビン酸とかの、いくつか重要そうな化合物の英語名も登録していく。
+
+### 2021-07-19
+
+そのまま[MITx 7.00x Introduction to Biology - The Secret of Lifeの受講記録](https://karino2.github.io/2021/07/19/the_secret_of_life.html)を受けつつ生物関連の単語を調べて、
+重要そうなのはAnkiDroidに登録していく。
+だいぶ生物の語彙は増えてきたな。
+
+やはり動画講義と合わせるのが語彙増強には良い気がする。
