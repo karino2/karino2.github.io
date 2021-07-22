@@ -1,5 +1,5 @@
 ---
-title: github pagesでブロッグのスタイルを指定したい
+title: github pagesでブロックのスタイルを指定したい
 layout: page
 ---
 message passingで、記事の最後にコメントとして、ブロックを追加出来るようになっているのだが、これが便利だなぁ、と思う。
