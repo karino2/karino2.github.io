@@ -24,3 +24,26 @@ BOOXのpen SDKを使って、デフォルトのノートアプリみたいにレ
 それを[GooglePlay: Autosync for Google Drive](https://play.google.com/store/apps/details?id=com.ttxapps.drivesync)などのフォルダsyncアプリで共有する前提で。
 
 明示的なexport無しで共有出来て、将来デバイスを乗り換える時もそのまま続きのノートを書いていけるようにする。
+
+# 開発記録
+
+とりあえず時系列で簡単に経過を書いていく。
+
+### 2021-07-23
+
+カキオクからひっぺがしたキャンバスをpen SDKとつなげて、書いた物がpngとして保存されるまでが動いた。
+setRawDrawingEnabledするとハロメニューが使えなくなるが、まぁこれは仕方ないか。
+
+プロジェクト名にfor BOOXを入れ忘れたが、まぁ当面はBOOX用しか存在しないからいいか。
+
+あとはページナビゲーションとページ作成だけ作れば最低限は使えるな。＞つけた
+
+たまにY軸が凄く下に飛んだ点が間に挟まるのだが、なんなのだろう？適当に差分見て無視する事に。
+
+ActivityのonStop呼ばれたあとにonStartが来るケースで画面が真っ黒になるなぁ。
+これはSurfaceViewとActivityをうまく紐付けていないからなんだが、こういうのってJetpack Commpose苦手なんだよなぁ。
+まぁ適当なmutableLiveDataなboolをonStartとonStopで切り替えて処理すれば良いのだけれど。
+
+丸一日コード書いている感じだったが、割と使える所まで来た。
+
+ちゃんと完成させる決意をして、きみどり先生にアイコンを頼む。
