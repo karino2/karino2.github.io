@@ -8,7 +8,7 @@ layout: page
 
 結構分量が多いので、ブログにメモでも書きつつ進めようと思う。
 
-[GoogleDrive: PngNoteでのThe Secret of Lifeのノート](https://drive.google.com/drive/folders/1M-748kUW_zdKV9swPTFgsjslILkE5C_e?usp=sharing)
+[PngNoteでのThe Secret of Lifeのノート](https://karino2.github.io/ImageGallery/TheSecretOfLife_PngNote.html)
 
 ### 第一印象、分量多い！
 
@@ -99,6 +99,8 @@ p93で、Oは3.5、Nは3.0となっている一方、Cは2.5、Hは2.1となっ�
 
 BOOX用に作ってる手書きノートアプリのドッグフードも兼ねてそっちにノートを取ってるのでこっちにはあまり書かないかもしれないが。
 なお、PCで動画を見てBOOXでノート取るの、なかなか体験が良い。
+
+以下で公開する事に＞ [PngNoteでのThe Secret of Lifeのノート](https://karino2.github.io/ImageGallery/TheSecretOfLife_PngNote.html)
 
 ### タンパク質とその構造
 
