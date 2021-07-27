@@ -21,3 +21,12 @@ Lesson 1のActivityのbass line 10個をもう一度やる。その後歌の奴�
 
 その後のActivity Fiveを聞いて歌いつつ、すぐに分からない物をギターで弾いて確認したり。
 Activity Fiveで分からない奴は覚えたいな。
+
+### 2021-07-19
+
+ここ数日、普段からCD1 track2をドレミで歌ったり1, 2, 3で歌ったりして怪しい部分をinternalizeしていっていた。
+だいぶ覚えてきたので次に進む。
+
+次は、2 Hearing Major Triads.
+
+Activity Fourの手前まで進める。1, 4, 5の和音を歌ったり弾いたりする。
