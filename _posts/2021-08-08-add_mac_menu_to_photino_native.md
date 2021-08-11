@@ -137,4 +137,12 @@ photino.NativeのPhotino.Mac.mmの`Photino::Register()`に、golangの方の上�
 
 サンプルでそれっぽくカットとか全選択が動いたのでguashに組み込む。＞起動しない
 
-今回の変更関係なく、カスタムビルドのPhotino.Nativeに対して.NET Callすると落ちているっっぽい。
+今回の変更関係なく、カスタムビルドのPhotino.Nativeに対して.NET Callすると落ちているっぽい。
+
+さらに調べると、どうもphotino.Nativeのmainブランチで追加された引数に、photino.NETのdebugブランチの途中のバージョンで対応してあるっぽい…
+なんじゃそりゃ。
+
+という事でdebugブランチの途中のコミットから独自ブランチを作った所、無事呼べるようになる。
+とりあえず自分のローカルはこれでいいか。
+
+今は凄い開発途中っぽいのでPRとかは作らずにこのdebugブランチとやらがmainになるのを待つか…
