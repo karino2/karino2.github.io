@@ -286,9 +286,20 @@ haploidのnormalと交配でdominant-recessiveを判定したり、
 - assay (薬品などの）分析、評価
 - obituary 死亡記事
 - smidgen 少量の
+- ornithologist 鳥類学者
 
 スペイン風邪の大流行で肺炎の研究が進み、そこで有害な種のバクテリアを殺して無害な種のバクテリアに混ぜると有害なバクテリアが取り出せる、という事から始まる。
 なんか凄いタイムリーな感じの偶然だよなぁ。
 
 死んだバクテリアと生きたバクテリアを混ぜて死んだバクテリアの種類のバクテリアが生きた状態で取り出せるって、
 バクテリアとウィルスの違いってなんなのか、かなり曖昧だよなぁ、とか思う。
+
+### 二重螺旋構造
+
+ワトソン-クリックの論文を読めと熱く語ってたので読んで見る。以下。
+
+[https://www.nature.com/scitable/content/molecular-structure-of-nucleic-acids-a-structure-13997975/](https://www.nature.com/scitable/content/molecular-structure-of-nucleic-acids-a-structure-13997975/)
+
+これはなかなか歴史に残る論文だなぁ。この無駄の無さと、いかにもこれが正解というか真理という感じがして。
+実験の結果をすべてうまく説明し、既存のメカニズムで自然に構成されていて、さらにこれが遺伝物質である事が構造から予想される。
+これは！って感じだよなぁ。
