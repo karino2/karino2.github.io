@@ -348,6 +348,8 @@ Details of DNA Replicationで複製が5'から3'に向かう理由を説明し�
 
 tRNAのあたりはちょっと記憶が曖昧だったので教科書を読み直したり。
 
+開始コドンはAUGでメチオニンでもある。開始コドンがテーブルに無いのでここに記す。
+
 ### セントラルドグマ、例外的な話
 
 イースト菌は真核生物。E.coliは原核生物。良く忘れるのでメモしておく。
@@ -367,7 +369,13 @@ polycistronic message。cistronicは同じstrandに多くのことがある、�
 
 ### ベータグロビンの変異
 
+英単語
+
 - capillaries 毛細血管
+- fetus 胎児
+- placenta 胎盤
+- primate 霊長類
+- secretion 分泌
 
 変異の種類
 
