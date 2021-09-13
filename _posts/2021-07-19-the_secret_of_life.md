@@ -7,6 +7,7 @@ layout: page
 といってもお金は払わないで見るだけ。
 
 結構分量が多いので、ブログにメモでも書きつつ進めようと思う。
+週5〜10時間で16 Weekだって。2コマ1年分くらい？長い…
 
 [PngNoteでのThe Secret of Lifeのノート](https://karino2.github.io/ImageGallery/TheSecretOfLife_PngNote.html)
 
@@ -390,3 +391,36 @@ polycistronic message。cistronicは同じstrandに多くのことがある、�
 - Transposon
 - Deletion (geneが丸々なくなる）
 - Strange (100,000塩基離れた所の削除などが影響を与えるなど, locus control region）
+
+# Recombinant DNA
+
+このユニットは、３つのシークエンスになっている。
+
+1. クローン
+2. Finding a specific gene in the Library
+3. Analyzing a Gene
+
+一日一シークエンスずつ進めていこうかな。
+
+### クローン
+
+- palindrome 回文
+- assay 分析、分析物
+- slurp 音をたててすすり飲む
+
+### Gene Library
+
+- cDNA(Complementary DNA)： RNAを複製するためにreverse transcriptaseしたDNA。
+- bone marrow 骨髄
+- autoclave 減菌用高圧釜
+
+### 塩基配列決定
+
+- reagent 試薬
+
+Deffective dNTPsを使った塩基配列決定の話。すごく詳しい。教科書を見直すとここはサラッとしか触れられてなかった。
+こういう短い配列の決定からちゃんと学ぶってゲノムやるなら大切だよな（ゲノムやる予定は今の所無いが）。
+
+### PCR
+
+- in vitro 試験管で
