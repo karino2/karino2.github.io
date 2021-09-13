@@ -18,6 +18,8 @@ layout: page
 
 そして今日無事普通の生活に復帰。
 
+DMMいろいろレンタルのWiMaxを返却しに佐川急便まで自転車で持っていく。
+延長しても良かったが、なんかスマホのバッテリ消費が5GHzにすると早くなったりするのがルーター変えても治らないのかを確認したくなったので変えてみる。
 
 ### Googleドライブのurlが永続化出来ない
 
@@ -26,3 +28,51 @@ layout: page
 [SO: Persisted SAF URI from Google Drive changes after a few days, content is unreachable](https://stackoverflow.com/questions/67895059/persisted-saf-uri-from-google-drive-changes-after-a-few-days-content-is-unreach)
 
 うーん、Google Drive側の変更っぽいな。
+ローカルにファイルを置いてAutosyncアプリでsyncするように変えよう。
+
+### 夜
+
+message passingのドラフトを書いたりaudibleを聴いたりジョブズ本を読んだりして過ごす。
+なんかもっとプログラム的な活動が欲しい気がするな。
+
+audibleについてはそのうち独立した記事としてなにか書きたいが、なかなかいい気がしている。ちょっと高いけど。
+ストレッチしながら聞くのが目が休められていい感じだ。
+
+## 2021-09-04 (土)
+
+何故かDMMいろいろレンタルの届け先住所が前のシェアハウスになってて、着払いで送ってもらったものが今日届いた。770円。
+まぁこんな日もある。
+新しいWiFiルーターは今の所順調な雰囲気。
+
+## 2021-09-06 (月)
+
+[c-lesson](https://karino2.github.io/c-lesson/)を見直していて、jekyllでh1がh2より小さいの、なんなんだろう？とググって以下のissueに当たる [h2 has a larger font than h1 in Chrome](https://github.com/jekyll/minima/issues/113)。
+
+うーん、h1は一回しか使わないべきで既に使われているって、これは納得出来ないものがあるなぁ。
+Markdown上でシャープ一回を使うべきでは無い、という事になるが、それは単にマークダウンを読みにくくするだけで何もメリットが無い。
+こういう変なこだわり、嫌だったら使うな、という所でやるならいいと思うけれど、github pagesのデフォルトがそれってのはお互い不幸だよな。
+
+自前のスタイルを当てるかなぁ。＞あてた
+
+## 2021-09-07 (火)
+
+うっかりどうでもいいなろう小説を読んでたら朝だった。うーん、夜型になりそうだなぁ。
+
+Amazonで頼んだ桃が届く。思ったよりひとつがでかくて数が少ないなぁ。まぁいいか。
+
+昼間はedXのThe secret of lifeをやる。一日一シークエンスで進めているが結構たいへん。
+
+edXが終わったあとはaudibleで史上最強の哲学入門を聴いたりする。もうすぐ終わりそうだな。
+
+## 2021-09-09 (木)
+
+audiobook.jpの聴き放題に入っていたから、というだけで聴き始めた新しい地政学。
+
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=karino203-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=4492444564&linkId=9eb6a31725fb955bda4153eac518dc5a"></iframe>
+
+思った以上に当たりだな。
+経済学的に特におかしい所が無い、割とちゃんとした議論でありながら中国脅威論を語る、珍しい本。
+近年の国際ニュースのまとめ的にも優れている。
+この前に聞いた「史上最強の哲学入門」がその辺ひどい内容だったので、書いている人の教養の度合いの違いが目立つな。
+
+audiobook.jpの聴き放題サービス、結構気に入ったので今後も継続していくかな。
