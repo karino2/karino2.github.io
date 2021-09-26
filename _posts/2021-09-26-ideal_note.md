@@ -4,7 +4,7 @@ layout: page
 ---
 最近生物のノートのページが長すぎる気がしている。
 
-[MITx 7.00x Introduction to Biology - The Secret of Lifeの受講記録 | なーんだ、ただの水たまりじゃないか](https://karino2.github.io/2021/07/19/the_secret_of_life.html)
+[MITx 7.00x Introduction to Biology - The Secret of Lifeの受講記録](https://karino2.github.io/2021/07/19/the_secret_of_life.html)
 
 また、上記ページからリンクしているPngNoteもページ数多すぎな気がする。
 
@@ -46,7 +46,7 @@ Unitごとに単一ページとしてjekyllのブログとして公開されれ�
 
 一方で、例えば上記edXのコースは、その前に読んだ大学生物の教科書と内容的にはかなり重複がある。
 
-[アメリカ版 新・大学生物学の教科書 | なーんだ、ただの水たまりじゃないか](https://karino2.github.io/2021/06/21/biology_text_bluebacks.html)
+[アメリカ版 新・大学生物学の教科書](https://karino2.github.io/2021/06/21/biology_text_bluebacks.html)
 
 これらは完全に別として良いのか？というのは悩ましい所。
 
@@ -57,4 +57,4 @@ Unitごとに単一ページとしてjekyllのブログとして公開されれ�
 テキストのノートはWikiの中にサブWiki的なのが作れて、ノートごとに分けられて、別々のGithubのWikiとして公開出来ればいいかもしれない。
 
 最近主にノートをとってる生物のノートだと、計算とかがあまり間に入らないので、以前のようにマークダウンと手書きの融合、みたいな欲求はあまり無い。
-（[GoodfellowのDeepLearning本を読む | なーんだ、ただの水たまりじゃないか](https://karino2.github.io/2018/05/22/212.html)みたいなのね）
+（[GoodfellowのDeepLearning本を読む](https://karino2.github.io/2018/05/22/212.html)みたいなのね）
