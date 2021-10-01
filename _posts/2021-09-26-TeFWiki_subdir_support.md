@@ -8,6 +8,9 @@ layout: page
 
 これはTeFWikiにフォルダ対応を入れる事でどうにか出来ないか？
 
+これは継続的に更新したいのでWikiの方でも書いている。[RandomThoughts/サブWiki](https://karino2.github.io/RandomThoughts/%E3%82%B5%E3%83%96Wiki)
+
+
 ### 要件
 
 要件としては
