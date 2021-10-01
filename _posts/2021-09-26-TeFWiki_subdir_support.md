@@ -46,3 +46,13 @@ Recent Pagesとかもそのフォルダ以下だけにしたい。listFilesを�
 ファイルとしては外から入ってくるリンクはあっても、外に出ていくリンクは無い、という風に。
 
 なんか良さそうな気がするな。
+
+
+## 作業記録
+
+### 2021-09-27
+
+とりあえずElectron版で対応して少し使ってみて、良さそうだったらAndroid版も対応していこう。
+
+git wikiで公開してみた。公開例: [RandomThoughts](https://karino2.github.io/RandomThoughts/Home)
+
