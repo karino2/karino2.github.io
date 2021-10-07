@@ -6,7 +6,8 @@ layout: page
 なので日曜だけは弁当を買ったりUber Eatsしたりしていたのだが、
 いい加減面倒になってきたのと、身の回りの評判が良かったのでBASE FOODのパンを導入してみる事にした。
 
-[BASE FOOD](https://basefood.co.jp/)
+- [BASE FOOD](https://basefood.co.jp/)
+- [RandomThoughts/BaseFood](https://karino2.github.io/RandomThoughts/BaseFood)
 
 なお、友達クーポンあるので試してみたい人は行ってくれたらクーポン出します。（キックバックもある奴）
 
