@@ -57,7 +57,7 @@ BiochemistryからTeFWikiのサブWiki機能とPngNoteの罫線機能を実戦�
 
 ただ突然Final Examに取り掛かるのは辛いので、リハビリのためにやりかけだったBiochemistryのpH計算を進める。
 
-BiochemistryのサブWikiもレポジトリを作って公開。まだほとんど中身は無いが。＞[Biochemistry 705x | karino2’s Note of Biochemistry 705x of edX](https://karino2.github.io/Biochemistry705x/Home)
+BiochemistryのサブWikiもレポジトリを作って公開。まだほとんど中身は無いが。＞[Biochemistry 705x、karino2’s Note of Biochemistry 705x of edX](https://karino2.github.io/Biochemistry705x/Home)
 
 ついでに公開するサブWikiとPngNoteを全部コピーしてgit addとcommitとpushするようなスクリプトを書く。
 これでコマンド一発で全部公開出来るようになった。よしよし。
