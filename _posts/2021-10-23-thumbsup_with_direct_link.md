@@ -2,10 +2,10 @@
 title: thumbsupで各画像へのリンクを貼れるようにする
 layout: page
 ---
-PngNoteのノートを公開するのに使っている[gautamkrishnar/github-pages-gallery](https://github.com/gautamkrishnar/github-pages-gallery)で、各ページにリンクが貼りたくなったので調べて作業した。
+PngNoteのノートを公開するのに使っている[github-pages-gallery](https://github.com/gautamkrishnar/github-pages-gallery)で、各ページにリンクが貼りたくなったので調べて作業した。
 画像自体へのリンクは貼れるのだが、「16ページから19ページに該当するノートがある」みたいな時にはギャラリーを16ページを選ばれた状態で開きたい。
 
-github pages galleryは、[thumbsup · Static gallery generator](https://thumbsup.github.io/)というのを使って[sachinchoolur/lightGallery](https://github.com/sachinchoolur/lightGallery)というjsライブラリを使ったページを生成する。
+github pages galleryは、[thumbsup · Static gallery generator](https://thumbsup.github.io/)というのを使って[lightGallery](https://github.com/sachinchoolur/lightGallery)というjsライブラリを使ったページを生成する。
 このlightGalleryにはhashというプラグインがあって、それを有効にすると各ページへのurlが作れるようになって、このurlを使えば望む挙動をさせられる。
 これをthumbsupのテーマで実現する。
 
