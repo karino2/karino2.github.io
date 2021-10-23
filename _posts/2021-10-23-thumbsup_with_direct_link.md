@@ -55,5 +55,6 @@ themeというフォルダをほってそこに展開したtheme下を置く。
 
 ドキュメントにはlightGallery呼び出しの所でpluginsのプロパティを追加する必要があると書いてあるが、どうもこれは古い情報っぽくて、
 現在はscriptタグを追加するだけでプラグインは有効になっている模様。
+これで、[こんな感じで18ページ目にリンクが貼れる](https://karino2.github.io/ImageGallery/Biochemistry705x.html#lg=1&slide=17)ようになった。
 
-参考: [RandomThoughts/GithubPagesGallery](https://karino2.github.io/RandomThoughts/GithubPagesGallery)
+作業時に調べたメモ: [RandomThoughts/GithubPagesGallery](https://karino2.github.io/RandomThoughts/GithubPagesGallery)
