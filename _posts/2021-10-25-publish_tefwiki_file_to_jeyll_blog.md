@@ -18,7 +18,7 @@ layout: page
 3. 1のパスのbasenameをタイトルにヘッダと1の中身をつなげたものを、2のベースネーム+日付のファイル名のパスに生成
 4. 1のファイルを削除
 
-という事で入力は1と2の２つだから[RandomThoughts/guash](https://karino2.github.io/RandomThoughts/guash)のスクリプトで良さそう。
+という事で入力は1と2の２つだからguashのスクリプト（[RandomThoughts/guash](https://karino2.github.io/RandomThoughts/guash)）で良さそう。
 
 という事で書いてみたらこんな感じになった。
 
