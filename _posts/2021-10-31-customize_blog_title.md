@@ -12,11 +12,11 @@ layout: page
 [Overriding the SEO Title Tag · Issue #366 · jekyll/jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag/issues/366)
 
 これを見ると、seoには`title=false`という指定が出来るらしい。上記issueではdefault.htmlでtitleを書いているというが、
-今default.htmlを見るとheadタグはhead.html側に入っているっぽいので、head.htmlを持ってきて以下のように修正。
+今default.htmlを見るとheadタグはhead.html側に入っているっぽいので、head.htmlを持ってきて以下のように修正。（エスケープ方法知らんので中括弧を全角にしてある）
 
 ```
-  {%- seo title=false -%}
-  <title>{{ page.title | append: " - " | append: site.title | strip_html }}</title>
+  ｛%- seo title=false -%｝
+  <title>｛｛ page.title | append: " - " | append: site.title | strip_html ｝｝</title>
 ```
 
 最新のhead.htmlは新しすぎるようで一部ファイルが無いとか言われたのでちょっと古いのに戻して動いた。
@@ -25,3 +25,5 @@ layout: page
 [最近の外出とデジタルライフスタイル - なーんだ、ただの水たまりじゃないか](https://karino2.github.io/2021/10/25/digital_lifestyle_thesedays.html)
 
 うんうん、いいんじゃないか？
+
+関連記事: [GIthubPages - RandomThoughts](https://karino2.github.io/RandomThoughts/GIthubPages)
