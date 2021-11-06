@@ -1,5 +1,5 @@
 ---
-title: Re: Re: 老眼鏡
+title: Re： Re： 老眼鏡
 layout: page
 ---
 [ほぉ、一生さんも老眼対策ですか。](https://blog2.issei.org/2021/11/05/lesebrille/?utm_source=dlvr.it&utm_medium=twitter)
