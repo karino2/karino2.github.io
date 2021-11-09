@@ -20,7 +20,7 @@ layout: page
 
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=karino203-22&language=en_US&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B000OROAKU&linkId=4240e0ff8251eaae5cf2eac86d32b598"></iframe>
 
-これ。まぁ大きさ以外は特にこだわりは無い。なんでもいいと思う。
+これ。大きいのがほしかったので百均では無く通販で。まぁ大きさ以外は特にこだわりは無い。なんでもいいと思う。
 
 ### 床で使ってみた印象
 
