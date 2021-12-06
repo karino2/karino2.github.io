@@ -8,7 +8,7 @@ edXの700xの最後の所でclasscentralというのも見てみてくれよ、�
 
 例えば生物は以下。
 
-[600+ Biology Courses [2021] | Class Central](https://www.classcentral.com/subject/biology)
+[600+ Biology Courses [2021] - Class Central](https://www.classcentral.com/subject/biology)
 
 関係無いのも結構引っかかるが、興味が湧くコースも結構見かけるし、レビューも参考になる。
 
