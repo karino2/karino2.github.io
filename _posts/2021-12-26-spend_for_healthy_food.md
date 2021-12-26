@@ -53,3 +53,5 @@ BASE BREADのプレーンは、バターの代わりにオリーブオイルに�
 
 余談だが、手軽さともあまりトレードオフが無いよなぁ。
 [配食サービス](https://karino2.github.io/RandomThoughts/配食サービス)や[BaseFood](https://karino2.github.io/RandomThoughts/BaseFood)やミューズリは、これ以上手軽に出来ないくらい手軽なものだが、健康という面でもなかなか良い。
+
+参考リンク: [食事関連 - RandomThoughts](https://karino2.github.io/RandomThoughts/%E9%A3%9F%E4%BA%8B%E9%96%A2%E9%80%A3)
