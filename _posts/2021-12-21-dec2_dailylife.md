@@ -11,13 +11,13 @@ layout: page
 
 ### The Grammar Of Graphicsに再チャレンジ
 
-無事[【書籍】ggplot2、ElegantGraphicsForDataAnalysis](https://karino2.github.io/RandomThoughts/【書籍】ggplot2、ElegantGraphicsForDataAnalysis.md)も読み終わってGrammar of Graphicsというのがどういう物かもだいぶ理解が進んだので、以前挫折した[【書籍】TheGrammarOfGraphics](https://karino2.github.io/RandomThoughts/【書籍】TheGrammarOfGraphics.md)に再挑戦する事に。
+無事[【書籍】ggplot2、ElegantGraphicsForDataAnalysis](https://karino2.github.io/RandomThoughts/【書籍】ggplot2、ElegantGraphicsForDataAnalysis)も読み終わってGrammar of Graphicsというのがどういう物かもだいぶ理解が進んだので、以前挫折した[【書籍】TheGrammarOfGraphics](https://karino2.github.io/RandomThoughts/【書籍】TheGrammarOfGraphics)に再挑戦する事に。
 
 どうかな〜。
 
 ### Calclarkリリース
 
-[Calclark](https://karino2.github.io/RandomThoughts/Calclark.md)、無事Playにリリースされてた。
+[Calclark](https://karino2.github.io/RandomThoughts/Calclark)、無事Playにリリースされてた。
 
 [Calclark - Apps on Google Play](https://play.google.com/store/apps/details?id=io.github.karino2.calclark)
 
@@ -69,14 +69,14 @@ JAXなんでこんな早いの？って言われて、JAXというものを知�
 箱のりんごが配達されたという通知が来て、そんなのを頼んでいた事を思い出す。食べ終わるまで沖縄行けないやん。
 まぁいい。
 
-[【書籍】科学者たちが語る食欲](https://karino2.github.io/RandomThoughts/【書籍】科学者たちが語る食欲.md) を聞き終わる。参考になった部分もあるのでいろいろ試していきたい。
+[【書籍】科学者たちが語る食欲](https://karino2.github.io/RandomThoughts/【書籍】科学者たちが語る食欲) を聞き終わる。参考になった部分もあるのでいろいろ試していきたい。
 
 ### 午後
 
 タリーズが混んでいたので、駅前のパン屋の上のレストランとカフェを試してみる。
 思ったより混んでいるがタリーズよりはマシだな。選択肢としてはアリかもしれないが、モスの方が良い気もする。
 
-[【書籍】財政赤字の神話](https://karino2.github.io/RandomThoughts/【書籍】財政赤字の神話.md)読み終わり。
+[【書籍】財政赤字の神話](https://karino2.github.io/RandomThoughts/【書籍】財政赤字の神話)読み終わり。
 
 ### プチダイエット開始
 
@@ -89,11 +89,11 @@ JAXなんでこんな早いの？って言われて、JAXというものを知�
 
 ## 2021-12-20 (月)
 
-午前中は[【書籍】TheGrammarOfGraphics](https://karino2.github.io/RandomThoughts/【書籍】TheGrammarOfGraphics.md)を読書。Coordまで来た。Aesまで行けば基本は一通りマスターしたといって良いと思うのであと一歩やね。
+午前中は[【書籍】TheGrammarOfGraphics](https://karino2.github.io/RandomThoughts/【書籍】TheGrammarOfGraphics)を読書。Coordまで来た。Aesまで行けば基本は一通りマスターしたといって良いと思うのであと一歩やね。
 
 ### 午後
 
-[【書籍】ファストアンドスロー](https://karino2.github.io/RandomThoughts/【書籍】ファストアンドスロー.md)を読み始め。
+[【書籍】ファストアンドスロー](https://karino2.github.io/RandomThoughts/【書籍】ファストアンドスロー)を読み始め。
 サンプルを読み終わったのでポチる。
 
 そのあとRSS消化とともにJAXのペーパーを軽く読む。
