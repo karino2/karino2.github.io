@@ -4,12 +4,12 @@ layout: page
 ---
 大した話しでは無いのだが、雑記の中に埋もれさせるのもなぁ、という内容なので独立した記事にしておく。
 
-jekyllでは、リンクの表示文字列の方にパイプ記号があると、liquidと解釈されてうまく動かない。
+jekyllでは、リンクの表示文字列の方にパイプ記号があると、liquidと解釈されるとかでうまく動かない。
 例えばこんなの。
 
 [How to Write a Command-Line Tool with Kotlin Multiplatform | by Jean-Michel Fayard | ProAndroidDev](https://proandroiddev.com/how-to-write-a-command-line-tool-with-kotlin-multiplatform-b598247fe880)
 
-テーブルとして解釈されちゃうんだよなぁ。
+テーブルとして解釈されてるように見えるが、とにかくリンクにはならない。
 
 一方で、webのページからmarkdownのリンクを生成するブラウザのextensionはパイプ記号が含まれる事が多い。
 
