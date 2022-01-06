@@ -82,3 +82,7 @@ layout: page
 コンテンツを消費出来るのも良い。
 
 という事でとても良い買い物だった。
+
+以後はこちらに書く。
+
+[ステッパー - RandomThoughts](https://karino2.github.io/RandomThoughts/%E3%82%B9%E3%83%86%E3%83%83%E3%83%91%E3%83%BC)
