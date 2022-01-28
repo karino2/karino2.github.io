@@ -55,6 +55,8 @@ TeFWiki側ではファイルが消えるのでデッドリンクになるけれ�
 
 guashはhomebrewで公開したいなぁ。
 
+追記：した。＞[guashをhomebrew tapでインストール出来るようにした - なーんだ、ただの水たまりじゃないか](https://karino2.github.io/2022/01/28/homebrew_tap_for_guash.html)
+
 ## 独自拡張のちょっとした差異
 
 たとえば自分はwikilinkで書いた名前は、最後に自動で`.md`を付加して扱っている。
