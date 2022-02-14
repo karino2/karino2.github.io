@@ -17,3 +17,5 @@ layout: page
 
 手頃なjsのライブラリとか無いかなぁ、と少しググった所、[editorjs](https://karino2.github.io/RandomThoughts/editorjs)はなかなかこの目的に良さそうに思う（[テーブルエディタ](https://karino2.github.io/RandomThoughts/テーブルエディタ)にググった時のメモを残した）。
 これを[photino](https://karino2.github.io/RandomThoughts/photino)でさっき言った感じにすれば良いのでは無いか？
+
+追記： 実装してみた。
