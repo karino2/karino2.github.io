@@ -24,7 +24,8 @@ layout: page
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">イメージ通りのものではあるが、便利なのかはまだ良く分からず… <a href="https://t.co/dEMNHGUbKu">pic.twitter.com/dEMNHGUbKu</a></p>&mdash; karino2@平民階級 (@karino2012) <a href="https://twitter.com/karino2012/status/1493066104918638592?ref_src=twsrc%5Etfw">February 14, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+----
 
 さらに追記: リリースした。
 
-[stdin, stdoutを使ったGUIのmdテーブルエディタ、mdvtblをリリース](2022-02-15-mdvtbl_release.md)
+[stdin, stdoutを使ったGUIのmdテーブルエディタ、mdvtblをリリース](https://karino2.github.io/2022/02/15/mdvtbl_release.html)
