@@ -33,3 +33,8 @@ WYSIWYGのテーブル編集の出来が微妙だったり、そもそもそう�
 いわば poorman's プラグイン！
 
 使ってみると結構いいと思うんですがどうでしょう？
+
+## 関連ページ
+
+- [マークダウンのテーブルを編集するツールを考える - なーんだ、ただの水たまりじゃないか](https://karino2.github.io/2022/02/14/table_editor_idea.html)
+- [mdvtbl - RandomThoughts](https://karino2.github.io/RandomThoughts/mdvtbl)
