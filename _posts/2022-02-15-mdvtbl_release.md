@@ -1,5 +1,5 @@
 ---
-title: stdin, stdoutを使ったGUIのmdテーブルエディタ、mdvtblをリリース
+title: mdvtblをリリース ー GUIのmdテーブルエディタ、stdin, stdoutでやりとり
 layout: page
 ---
 テキストエリアなどでクリップボードを介してGFMのマークダウンのテーブルを編集するツール、mdvtblをリリースしました。
