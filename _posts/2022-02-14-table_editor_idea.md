@@ -26,6 +26,6 @@ layout: page
 
 ----
 
-さらに追記: リリースした。
+### さらに追記: リリースした。
 
 [stdin, stdoutを使ったGUIのmdテーブルエディタ、mdvtblをリリース](https://karino2.github.io/2022/02/15/mdvtbl_release.html)
