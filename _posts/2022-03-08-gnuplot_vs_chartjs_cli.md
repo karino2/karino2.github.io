@@ -16,3 +16,14 @@ anacondaでmatplotlibなどの環境作ったりRStudio入れてプロットす�
 
 一方でコマンドラインから気軽に使える何かを考えるとひたすらphotinoでjsホストで良いのでは無いか、という気もして、
 Unix的に使うGUIのツールはこの形で作り直す方がよりUnix的なのでは無いか、とも思ってしまう。
+
+### 追記： 結局chart.jsを組み込んだツールを作ってしまった
+
+インストールに挫折して作ってしまった。
+
+[htmnix_chart - RandomThoughts](https://karino2.github.io/RandomThoughts/htmnix_chart)
+
+圧倒的に依存も少ないし結果も綺麗だし、もうこれでいいや。
+homebrew tap作ってもいいのだが、今の所自分しか使わなさそうなのでこのままで。
+
+欲しい人居たら言ってくれればtap作ります。
