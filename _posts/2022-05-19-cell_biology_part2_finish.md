@@ -7,6 +7,7 @@ edXのCell Biologyの三部作の真ん中、Part2の[Cell Biology: The Cytoskel
 MITのコース的には7.06の２つ名、7.062に相当するもののedX版という事で7.062xが正式名称と思われる。
 
 - [Home - CellBiology706x](https://karino2.github.io/SubWiki/CellBiology706x/Home) ノート用サブWiki
+- [ClassCentralに書いた自分のレビュー](https://www.classcentral.com/course/cell-biology-2-22832?review-id=196149)
 
 MITの生物学のコースとしては、706xの前に700xや705xがあり、ブログにいくつか感想も書いた。詳細は以下のWikiから辿れる＞[MITxBio - RandomThoughts](https://karino2.github.io/RandomThoughts/MITxBio)
 
