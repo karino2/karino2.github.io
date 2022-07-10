@@ -1,5 +1,5 @@
 ---
-title: edXのCell BiologyのコースのPart3の感想
+title: edXの7.06x、Cell Biologyのコース Part3の感想
 layout: page
 ---
 [edXのCell Biology Part2の感想](https://karino2.github.io/2022/05/19/cell_biology_part2_finish.html)に引き続き、Part 3、[Cell Biology: Cell-Cell Interactions](https://www.edx.org/course/cell-biology-3)を先程終えたので感想などを書いておく。

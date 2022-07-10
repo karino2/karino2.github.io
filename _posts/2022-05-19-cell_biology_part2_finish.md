@@ -1,5 +1,5 @@
 ---
-title: edXのCell Biology Part2の感想
+title: edXの7.06x、Cell Biology Part2の感想
 layout: page
 ---
 edXのCell Biologyの三部作の真ん中、Part2の[Cell Biology: The Cytoskeleton and Cell Cycle](https://www.edx.org/course/cell-biology-2)
