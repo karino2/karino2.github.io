@@ -74,7 +74,6 @@ C言語に抽象データ型そのものは無いので、ここでは新しい�
 
 ```
 adt Polar{
-  init(double x, double y)
   double toX()
   double toY()
 }
