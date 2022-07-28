@@ -58,8 +58,7 @@ Polar SomeFunc3(Polar z) { ... }
 つまりデータ型というのは普通は、
 
 1. intやfloatなどのprimitive型
-2. primitive型を組合わせた型
-3. 2をさらに組み合わせた型
+2. primitive型を組合わせた型（およびそれをさらに組み合わせたもの）
 
 という感じで定義されるものです。
 
