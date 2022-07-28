@@ -131,7 +131,7 @@ Polar SomeFunc4(Polar w){ ... }
 というのが大切なんです。
 
 ```
-strut Polar{
+struct Polar{
   doulbe radius;
   double theta;
 };
