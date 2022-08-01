@@ -16,9 +16,9 @@ layout: page
 それよりも、上記の記事を理解する為の補助輪のようなものを意図している。
 特にシンタックスの周りのややこしさを解説したいと思っている。
 
-## まずはDiscriminated uninの復習から
+## まずはdiscriminated unionの復習から
 
-F#にはDiscriminated union型というのがある。
+F#にはdiscriminated union型というのがある。
 ２つの型のorを表す型。
 
 例えば以下のようなもの。
