@@ -1,8 +1,8 @@
 ---
-title: F#のsingle case union入門
+title: F#のSingle case union入門
 layout: page
 ---
-[fsharp-lesson](https://karino2.github.io/fsharp-lesson/)でF#を書かせていた所、やっている人が二人ともsingle case unionで少し混乱しているようだった。
+[fsharp-lesson](https://karino2.github.io/fsharp-lesson/)でF#を書かせていた所、やっている人が二人ともSingle case unionで少し混乱しているようだった。
 確かにシンタックス的にややこしいので、
 そういう入門的な解説を軽くしておきたい。
 
@@ -68,7 +68,7 @@ type IntOrBool =
   | I of int
 ```
 
-IntOrBoolといいつつintでしか無い型になってしまったが、とにかくこれがsingle case union。
+IntOrBoolといいつつintでしか無い型になってしまったが、とにかくこれがSingle case union。
 一つだけならわざわざ改行する必要も無いので以下のようにも書けるし、普通こう書く。
 
 ```
@@ -109,7 +109,7 @@ emailDomain contact.FirstName
 
 だが、型としてはstring型なので、これが通ってしまう。
 
-こういう時にEmailAddressを、中身はstring型だが専用の型として作り、この型以外のstringを入れようとしたらコンパイルエラーになるようにするのに、single case unionは使われる。
+こういう時にEmailAddressを、中身はstring型だが専用の型として作り、この型以外のstringを入れようとしたらコンパイルエラーになるようにするのに、Single case unionは使われる。
 
 ```
 type EmailAddress = E of string
@@ -126,8 +126,8 @@ let emailDomain (address:EmailAddress) = ...
 emailDmain contact.FirstName # 今度はコンパイルエラー
 ```
 
-これがsingle case unionの使われ方です。
-primitive型しか情報を持たないのだが型として特別なものにしたい、という時に使われるのがsingle case union。
+これがSingle case unionの使われ方です。
+primitive型しか情報を持たないのだが型として特別なものにしたい、という時に使われるのがSingle case union。
 さらなるご利益などは冒頭のfun and profitのリンク先を読んでみてください。
 
 この文書ではシンタックス的なややこしさについて以下に解説を加えたいと思います。
