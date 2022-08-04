@@ -185,3 +185,43 @@ aの型はEmailAddress1であって、EmailAddress2では無い、という事�
 - Single case unionはcaseが一つしか無いDiscriminated unionである
 - コンベンションとして、型名とcase identifierを同じものにする事になっている
 - けれどコードの中では両者の違いは理解出来ている必要がある
+
+## おまけ： Single case unionからどうやって値を取り出すの？
+
+matchで取れるのは分かるとして、毎回そんな事やるの？というとそんな事はやらない。
+
+match以外での取り出す方法としては、
+
+1. letで取り出す
+2. 関数の引数の所でパターンマッチ
+
+の２つをおさえておけばいいんじゃないか。
+
+### letで取り出す例
+
+```
+let email = EmailAddress "hogeika2@gmail.com"
+
+let (EmailAddress content) = email
+
+content
+```
+
+このようにletの左辺でパターンマッチで取り出す事が出来る。
+ちょっと野暮ったいけどとりあえずこれさえ知っておけば基本的には困らない。
+
+### 関数の引数で取り出す例
+
+letさえ知っておけば困る事は無いだろうけれど、実際はもっと簡単に済ませられる事は多い。
+
+だいたいは、関数の引数で取り出してしまう方が簡単だし、出番も多い。
+例えば以下のようなコード。
+
+```
+let email = EmailAddress "hogeika2@gmail.com"
+
+let someFunc (EmailAddress content) =
+    content + "hogehoge"
+```
+
+このように、someFuncという関数の引数の所でパターンマッチで中を取り出せる。
