@@ -225,3 +225,50 @@ let someFunc (EmailAddress content) =
 ```
 
 このように、someFuncという関数の引数の所でパターンマッチで中を取り出せる。
+
+## おまけその2: 名前がぶつかったらどうする？
+
+single caseに限った話じゃないのですが、Discriminated unionで名前がぶつかった時などに戸惑う人も多いので、その辺の事も。
+
+短い例を書くのが難しいので、少し人工的な例になってしまいますが、
+まずsingle case unionを以下のように定義して、
+
+```
+type Identifier = Identifier of string
+```
+
+そのあと別の所で以下のようにIdentifierを含んだ型を作ろうとしたとします。
+
+```
+type Expression =
+    | Identifier of Identifier
+    | Project of string
+```
+
+こうすると、型を作るコンストラクタとして`Identifier`を使うと、どちらの型か分からない。
+最初の方のIdentifierを作ろうと以下のコードを実行すると、
+
+```
+let a = Identifier "abc"
+```
+
+あとに定義された方が優先されるので、引数がIdentifierじゃなくてstringなのでエラーと言われる。これはExpressionのcase identifierのIdentifierが勝ってしまうからです。
+
+こういう時は型名をqualifierにつけて区別出来る。
+
+```
+let a = Identifier.Identifier "abc"
+```
+
+Expression型のIdentifierのケースを作るなら以下みたいになる。
+
+```
+let b = Identifier (Identifier.Identifier "a")
+```
+
+ややこしいですね(^^;
+
+なお、他の型とExpressionの方のIdentifierがぶつかった時は`Expression.Identifier`と書けば良い。
+
+この辺の話は意外と知らないで困る人を見かけるので追記しておきます。
+
