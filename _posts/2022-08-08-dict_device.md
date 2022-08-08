@@ -1,5 +1,5 @@
 ---
-title: 電子辞書はどうなんだろう（Re: フランス語はじめました）
+title: 電子辞書はどうなんだろう（Re： フランス語はじめました）
 layout: page
 ---
 [電子辞書か〜](https://blog2.issei.org/2022/08/06/franzoesich/)。
