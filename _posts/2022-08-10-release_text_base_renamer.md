@@ -5,10 +5,11 @@ layout: page
 I release TextBaserRenamer. [TextBaseRenamer - Apps on Google Play](https://play.google.com/store/apps/details?id=io.github.karino2.textbaserenamer)
 
 TextBaseRenamer is an Android bulk file rename app.
-After you launch the app and choose the target folder, the app shows two text areas named "Before" and "After".
+After you launch the app and choose the target folder, the app shows two text areas named "Before" and "After", with file names in both panes.
 
 You can edit the "After" pane for new names.
 Then this app scans both panes line by line and renames files of the name that matches the "Before" line to the "After" line.
+Almost like calling `"mv $Before.line[n] $After.line[n]"`.
 
 If you delete lines from both panes, the app skips those files.
 
