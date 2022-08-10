@@ -7,7 +7,7 @@ I release TextBaserRenamer. [TextBaseRenamer - Apps on Google Play](https://play
 TextBaseRenamer is an Android bulk file rename app.
 After you launch the app and choose the target folder, the app shows two text areas named "Before" and "After", with file names in both panes.
 
-![before, scresnshot](https://raw.githubusercontent.com/karino2/TextBaseRenamer/main/misc/home_portrait.png)
+![before, scresnshot](https://raw.githubusercontent.com/karino2/TextBaseRenamer/main/misc/home_portrait.png){:height="50%" width="50%"}
 
 
 You can edit the "After" pane for new names.
