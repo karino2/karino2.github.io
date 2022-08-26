@@ -43,6 +43,14 @@ SOからのリンクは切れていたが、githubにうつっていてNuGetも�
 ただ挙動はdeveelrlと同じ。
 しかもコードがかなり幅を決め打ちにしている感じになっているので、直すならdeveelrlの方が楽そうに見えた。
 
+### radline
+
+これは最初に試したものだが。 [spectreconsole/radline: A .NET library to read and display keyboard input.](https://github.com/spectreconsole/radline)
+
+確定をすると改行されてしまう。
+カーソルの位置が本来の位置の半分の所の次の行に表示されている。
+バックスペースする都度毎回次の行に表示される。
+
 ### 試さなかったもの
 
 mono readlinesというのはバイナリが置いてあるだけで2004年だったので試さなかった。Macで動か無さそうだし。
