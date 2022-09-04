@@ -59,3 +59,10 @@ mono readlinesというのはバイナリが置いてあるだけで2004年だ�
 
 dotnetのreadlineっぽいライブラリで日本語扱えるの、なにか無いんですかね？
 無いって事は無いと思うんだが…
+
+
+## 追記： 自分で作った ReCJKLine
+
+結局無さそうだし大して大変でも無いので、作ってみました。
+
+＞ [.NET用の日本語の扱えるreadlineっぽいライブラリ、ReCJKLineを作りました](https://karino2.github.io/2022/09/04/dotnet_readlnelike_recjkline.html)
