@@ -140,29 +140,29 @@ layout: page
 
 以下の３つは仕事との関連が薄い読書（２つ目は割と仕事でもあるが）
 
-- [[【書籍】人類と気候の10万年史]]
-- [[【書籍】まつもとゆきひろ、言語のしくみ]]
-- [[【書籍】プログラミングの心理学]]
+- [【書籍】人類と気候の10万年史](https://karino2.github.io/RandomThoughts/【書籍】人類と気候の10万年史)
+- [【書籍】まつもとゆきひろ、言語のしくみ](https://karino2.github.io/RandomThoughts/【書籍】まつもとゆきひろ、言語のしくみ)
+- [【書籍】プログラミングの心理学](https://karino2.github.io/RandomThoughts/【書籍】プログラミングの心理学)
 
 以下３つは仕事の一貫として必要なところだけ読んだ感じ。
 
-- [[【書籍】IntroductionToAlgorithms]]
-- [[【書籍】TheArtOfComputerProgramming]]
-- [[【書籍】PrinciplesOfDigitalImageProcessing]]
+- [【書籍】IntroductionToAlgorithms](https://karino2.github.io/RandomThoughts/【書籍】IntroductionToAlgorithms)
+- [【書籍】TheArtOfComputerProgramming](https://karino2.github.io/RandomThoughts/【書籍】TheArtOfComputerProgramming)
+- [【書籍】PrinciplesOfDigitalImageProcessing](https://karino2.github.io/RandomThoughts/【書籍】PrinciplesOfDigitalImageProcessing)
 
-最近は[[オーディオブック]]をあまり聞いていない。年間サブスクリプションが割と無駄になってしまっている。もうちょっと聴くものを増やしたい気もしている。
-[[【書籍】プログラミングの心理学]]はどうでも良いことの読書という点で割とうまく機能しているようにも思う。
+最近は[オーディオブック](https://karino2.github.io/RandomThoughts/オーディオブック)をあまり聞いていない。年間サブスクリプションが割と無駄になってしまっている。もうちょっと聴くものを増やしたい気もしている。
+[【書籍】プログラミングの心理学](https://karino2.github.io/RandomThoughts/【書籍】プログラミングの心理学)はどうでも良いことの読書という点で割とうまく機能しているようにも思う。
 
 ただ全体的にもうちょっと本を読みたい一年だったなぁ。
 
-また、コミックスを10万円分くらい買った。前からいつかはやろうと思っていた、ブックウォーカーの初回50%オフを使って、いつか買いたいと思っているものを買うというのをやった。＞[[電子書籍]]
+また、コミックスを10万円分くらい買った。前からいつかはやろうと思っていた、ブックウォーカーの初回50%オフを使って、いつか買いたいと思っているものを買うというのをやった。＞[電子書籍](https://karino2.github.io/RandomThoughts/電子書籍)
 
 コロナであまり漫画喫茶とかにも行かなくなって、ピッコマで駄作の無料マンガとかを読む時間が増えていたのでそれならもっと有意義な漫画読む方がいいよな、と思って買ってみた。
 ブックウォーカーのセールやポイントの仕組みは前から気になっていたことでもあるので、実際に試してみて割と学びも多い。
 
 ## ライフスタイル的なこと
 
-今年は[[ワーケーション]]的な面でいろいろとやりたいと思っていたことが出来た年だったように思う。
+今年は[ワーケーション](https://karino2.github.io/RandomThoughts/ワーケーション)的な面でいろいろとやりたいと思っていたことが出来た年だったように思う。
 茨城に行ったり伊豆に行ったり奄美に行ったり、割とアクティブにいろいろやれた。
 一昨年がやりたいと思いつつ全然出来なかった項目なので、今年は割と良かったんじゃないか。
 特に奄美大島は結構面倒も多いのにちゃんと実現して、とても満足度が高い日々を送れているので、自分評価高い。
