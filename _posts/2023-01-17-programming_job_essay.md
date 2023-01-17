@@ -8,6 +8,8 @@ layout: page
 
 [最近もらった本: Being Geek - Backnumbers: Steps to Phantasien](https://bn.dodgson.org/bn/2011/07/16/)
 
+2011年。10年ちょい前か〜。
+
 別の本の感想のついでに書かれていた事だが、
 Coders at Workの話よりも、周辺の話に共感する部分が多かった。
 
