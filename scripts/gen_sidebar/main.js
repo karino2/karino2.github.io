@@ -4,7 +4,14 @@ const path = require('path')
 const fs = require('fs/promises')
 const {encode} = require('html-entities')
 
-const g_TEXTTL_DIR = "../../TextTL"
+
+if (process.argv.length != 3) {
+  console.log("Usage: main.js <TextTL path>")
+  console.log(process.argv.length)
+  process.exit(1)
+}
+
+const g_TEXTTL_DIR = process.argv[2]
 const g_OUTPUT_PATH = "../../_includes/mysidebar.html"
 
 // const g_ITEM_LIMIT = 5
@@ -92,7 +99,6 @@ const contents2html = (contents) => {
 const loadDirToHtml = async (dirPath) => {
   const paths = await readFilePaths(dirPath, g_ITEM_LIMIT)
   const limited = paths.length <= g_ITEM_LIMIT ? paths : paths.slice(0, g_ITEM_LIMIT)
-  limited.reverse()
   const contents = await Promise.all(
       limited
       .map( async pathpair => {
@@ -104,6 +110,7 @@ const loadDirToHtml = async (dirPath) => {
 
   const html = contents2html(contents)
   return `<div class="karino2-sidebar">
+            <h2>てきすとTL</h2>
             ${html}
 </div>`
 }
