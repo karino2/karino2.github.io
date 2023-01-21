@@ -1,0 +1,14 @@
+{
+  "name": "gen_sidebar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "conv": "node main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "html-entities": "^2.3.3"
+  }
+}
