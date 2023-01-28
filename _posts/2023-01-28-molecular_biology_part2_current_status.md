@@ -2,7 +2,7 @@
 title: 最近の分子生物学 Part2の進捗
 layout: page
 ---
-以前途中で期限が来てcloseしてしまった[[728x]]の分子生物学のコースが1月18日から再オープンしていて、続きから始めている。
+以前途中で期限が来てcloseしてしまった[728x](https://karino2.github.io/RandomThoughts/728x)の分子生物学のコースが1月18日から再オープンしていて、続きから始めている。
 その近況など。
 
 全7 Unitのうち、さきほどUnit 3のHistone Modificationsのあたりが終わった。
