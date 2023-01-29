@@ -7,7 +7,9 @@
     {% include header.html %}
 
     <main class="page-content" aria-label="Content">
-      {% include mysidebar.html %}
+      {% if page.layout == "home" %}
+        {% include mysidebar.html %}
+      {% endif %}
       <div class="wrapper">
         {{ content }}
       </div>
