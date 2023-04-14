@@ -13,6 +13,7 @@ if (process.argv.length != 3) {
 
 const g_TEXTTL_DIR = process.argv[2]
 const g_OUTPUT_PATH = "../../_includes/mysidebar.html"
+const g_RELATIVE_PERM_ROOT = "TextTL_site/md"
 
 // const g_ITEM_LIMIT = 5
 const g_ITEM_LIMIT = 30
@@ -58,10 +59,11 @@ const readDays = async(dirPath, yearstr, monthstr) => {
 const readFilePathsAt = async(dirPath, yearstr, monthstr, daystr) => {
   const targetPath = path.join(dirPath, yearstr, monthstr, daystr)
   const files = await fs.readdir(targetPath)
+  const permDir = path.join(g_RELATIVE_PERM_ROOT, yearstr, monthstr, daystr)
   return files
       .filter( fname => fname.match(/^[0-9]+\.txt$/) )
       .sort( (a, b) => a < b ? 1 : -1)
-      .map(fname => { return {fullPath: path.join(targetPath, fname), fname: fname} })
+      .map(fname => { return {fullPath: path.join(targetPath, fname), permDir: permDir, fname: fname} })
 }
 
 const readFilePaths = async(dirPath, count) => {
@@ -85,10 +87,11 @@ const readFilePaths = async(dirPath, count) => {
 const para2html = (json) => {
   let encoded = encode(json.content)
   let dtstr = json.date.getTime().toString()
+  let permlink = json.permlink
 
   return `<div class="box" dt="${dtstr}">
             ${encoded}
-            <div class="content is-small">${json.date}</div>
+            <div class="content is-small">${json.date} <a href="${permlink}">permlink</a></div>
           </div>`
 }
 
@@ -101,10 +104,13 @@ const loadDirToHtml = async (dirPath) => {
   const limited = paths.length <= g_ITEM_LIMIT ? paths : paths.slice(0, g_ITEM_LIMIT)
   const contents = await Promise.all(
       limited
-      .map( async pathpair => {
-          const date = new Date(parseInt(pathpair.fname.substring(0, pathpair.fname.length - 4)))
-          const content = await fs.readFile(pathpair.fullPath)
-          return {fullPath: pathpair.fullPath, date: date, content: content}
+      .map( async pathtuple => {
+          const basename = pathtuple.fname.substring(0, pathtuple.fname.length - 4)
+          const date = new Date(parseInt(basename))
+          const content = await fs.readFile(pathtuple.fullPath)
+          let permPath = path.join(pathtuple.permDir, `${basename}.html`)
+
+          return {fullPath: pathtuple.fullPath, date: date, permlink: permPath, content: content}
       })
   )
 

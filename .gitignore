@@ -4,3 +4,4 @@ _posts/newfile.app/
 .jekyll-cache/
 _site/
 scripts/gen_sidebar/node_modules/
+.jekyll-metadata
