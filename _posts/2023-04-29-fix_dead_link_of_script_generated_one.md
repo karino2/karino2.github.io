@@ -85,3 +85,9 @@ for line in sys.stdin:
     line = re.sub(pat, replace, line)
     print(line, end="")
 ```
+
+### 余談
+
+こういう雑用系のスクリプトはBingチャットに適当に書かせてちょこちょこ直すのが楽でいいですね。
+Python忘れてて面倒だなぁ、と思っていたけれど、
+雛形があればすぐ思い出すのでめちゃ楽だった。
