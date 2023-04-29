@@ -4,7 +4,8 @@ layout: page
 ---
 
 RandomThoughtsでは[書籍](https://karino2.github.io/RandomThoughts/書籍)のページはスクリプトで作っているのだが、
-どうもこれで作られるリンクがいくつかdead linkになっているので直したい。
+どうもこれで作られるリンクがいくつかdead linkになっている。
+いいかげん直すか、と原因を調べる事に。
 
 書籍のページのリンクは以下の段階で生成される
 
