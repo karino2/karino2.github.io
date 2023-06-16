@@ -3,7 +3,7 @@ title: ロボット掃除機のある生活
 layout: page
 ---
 新居はロボット掃除機をはじめて導入してみた。
-機種などは[ロボット掃除機](https://karino2.github.io/RandomThoughts/ロボット掃除機)を参照の事。
+機種などは[RandomThoughts:ロボット掃除機](https://karino2.github.io/RandomThoughts/ロボット掃除機)を参照の事。
 で、一ヶ月くらい使ってみてだいぶ慣れてきたので、その感想などを書きたい。
 
 まず一文で言えば、なかなか良くて気に入った。
