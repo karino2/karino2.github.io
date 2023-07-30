@@ -9,7 +9,7 @@ layout: page
 ```
  % cat _includes/kotlin_quote.html
 <div class="kotlin-quote">
-{{ include.body | xml_escape }}
+{% raw %}{{ include.body | xml_escape }}{% endraw %}
 </div>
 ```
 
@@ -24,12 +24,12 @@ layout: default
   <script src="https://unpkg.com/kotlin-playground@1" data-selector=".kotlin-quote"></script>
 
   <div class="post-content" itemprop="articleBody">
-      {{ content }}
+      {% raw %}{{ content }}{% endraw %}
   </div>
 
-  {% if site.disqus.shortname %}
+  {% raw %}{% if site.disqus.shortname %}
     {% include disqus_comments.html %}
-  {% endif %}
+  {% endif %}{% endraw %}
 </article>
 ```
 
@@ -43,15 +43,15 @@ layout: page
 
 kotlin playgroundのサンプルです。
 
-{% capture cod1 %}
+{% raw %}{% capture code1 %}{% endraw %}
 class Contact(val id: Int, var email: String)
 
 fun main(args: Array<String>) {
     val contact = Contact(1, "mary@gmail.com")
     println(contact.id)
 }
-{% endcapture %}
-{% include kotlin_quote.html body=cod1 %}
+{% raw %}{% endcapture %}
+{% include kotlin_quote.html body=code1 %}{% endraw %}
 ```
 
 captureでくくってincludeすれば間のコードが実行出来る。
