@@ -1,5 +1,5 @@
 ---
-title: CppUnzip ヘッダーオンリーでzlibだけで動くunzipライブラリを作った
+title: CppUnzip： ヘッダーオンリーでzlibだけで動くunzipライブラリを作った
 layout: page
 ---
 ちょっとzipをバラす必要が出てきて、zipなんて大抵のシステムで今どきあるだろう、と思ったのだが、C++だと意外と手頃なのが無い。
