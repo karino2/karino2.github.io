@@ -65,3 +65,28 @@ serveを試すにはどうしたらいいんだ？
 ```
 
 これでブラウザから`http://localhost:4000`でアクセス出来た。いかにも忘れそうなのでシェルスクリプトにしておく。
+
+### 追記: RelativeLinksを使いたい場合は以下
+
+リンクで.mdファイルへのリンクを貼ったものがGithub Pages上では動くがローカルでは動かない。
+これは`jekyll-relatie-links`というプラグインがやっているらしい。
+
+これが入っているdocker imageは無いかな？と探したら幾つかあるのだが、どうもjekyll/jekyllと同じ使い方では動かないので自分で書く事にした。
+
+以下のようなDockerfileを書いて、
+
+[kotlin-web-site-ja/docker at master · karino2/kotlin-web-site-ja](https://github.com/karino2/kotlin-web-site-ja/tree/master/docker)
+
+```
+$ pushd docker
+$ docker build -t karino2/jekyll . 
+$ popd
+```
+
+とかして、以下のように実行しています。
+
+```
+$ docker run --rm --volume="$PWD:/srv/jekyll" -it -p 4000:4000 karino2/jekyll jekyll serve
+```
+
+config.ymlには書かなくても有効になっているっぽい。
