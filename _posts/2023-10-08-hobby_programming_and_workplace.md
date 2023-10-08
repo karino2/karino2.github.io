@@ -56,4 +56,5 @@ layout: page
 
 例えば今日書いていたのは [ツアー副読本：コレクション - karino2のあおぞらAndroid開発教室](https://karino2.github.io/kotlin-lesson/tour_collections.html) だが、
 少なくとも業務は関係無いし、凄い時間は掛かっている。
+これを友人にやってもらって反応をもらって直して、みたいなコミュニケーションは、
 自分の感覚としては昔のweb日記に掛けてた時間と似た何かに思う。
