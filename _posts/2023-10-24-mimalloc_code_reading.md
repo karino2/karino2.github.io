@@ -773,6 +773,16 @@ slab allocator的な事をしているのでは無くて、単純に先頭から
 
 これとページやarenaの関係がまだ良く分からないが、mi_segments_page_find_and_allocateのあたりは割と理解出来た気がする。
 
+### mi_segment_span_allocateを簡単に見る
+
+さて、sliceの連続領域の後ろ側（使わない側）を理解したので使う側の処理である、先程splitの後で出てきていたmi_segment_span_allocateを軽く見てみよう。
+
+と思ったが結構長い処理だし見れば分かるので、やっている事を簡単に要約するだけにする。
+
+- slices（メタデータ）を使用中だ、的な情報を設定する（offset, slice_countを0, xblock_sizeを1にする）
+- 先頭のsliceをpage_tにキャストして初期化して返す
+
+
 ### ここまでを簡単に振り返る
 
 呼び出しは以下のように進んできている。
