@@ -85,7 +85,7 @@ const readFilePaths = async(dirPath, count) => {
 }
 
 const para2html = (json) => {
-  let encoded = encode(json.content)
+  let encoded = encode(json.content.toString())
   let dtstr = json.date.getTime().toString()
   let permlink = json.permlink
 
