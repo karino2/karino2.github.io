@@ -10,7 +10,7 @@ So I made an epub for his site.
 I choose only relevant for concurrent programming and skip some empty pages.
 [1024cores.epub](/assets/binary/2023-11-04/1024cores.epub)
 
-His site is under CC BY-NC-SA 3.0. This epub is also CC BY-NC-SA 3.0.
+His site is under [CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/). This epub is also CC BY-NC-SA 3.0.
 
 I can't open this epub in Google Play Books (I don't know the reason), but I can read by other apps like Rakuten Kobo and Bookwalker (I use Rakuten Kobo for reading).
 
