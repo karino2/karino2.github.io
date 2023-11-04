@@ -7,8 +7,8 @@ It's dated around the early 2010s, but still relevant enough.
 I am eager to write him to write a book about concurrency programs in C++, but there is no such book as of now.
 
 So I made an epub for his site. 
-I choose only relevant for concurrent programming and skip some empty pages.
-[1024cores.epub](/assets/binary/2023-11-04/1024cores.epub)
+I choose only relevant pages for concurrent programming and skip some empty pages.
+Link: [1024cores.epub](/assets/binary/2023-11-04/1024cores.epub)
 
 His site is under [CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/). This epub is also CC BY-NC-SA 3.0.
 
