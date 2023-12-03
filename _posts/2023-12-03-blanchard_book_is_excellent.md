@@ -7,9 +7,8 @@ layout: page
 <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=karino203-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0BYCVQ27N&linkId=11916275380c76384c0acec519891472"></iframe>
 
 これはなかなか素晴らしい本だった。
-読んでた時のメモはこちら。
 
-[【書籍】21世紀の財政政策 - RandomThoughts](https://karino2.github.io/RandomThoughts/%E3%80%90%E6%9B%B8%E7%B1%8D%E3%80%9121%E4%B8%96%E7%B4%80%E3%81%AE%E8%B2%A1%E6%94%BF%E6%94%BF%E7%AD%96)
+読んでた時のメモはこちら。＞[【書籍】21世紀の財政政策 - RandomThoughts](https://karino2.github.io/RandomThoughts/%E3%80%90%E6%9B%B8%E7%B1%8D%E3%80%9121%E4%B8%96%E7%B4%80%E3%81%AE%E8%B2%A1%E6%94%BF%E6%94%BF%E7%AD%96)
 
 国の経済政策には金融政策と財政政策があるが、この本は財政政策の本。
 r-gが負、というのが当面維持されるとすると財政赤字はそんなにコストが無い、という事なのだが、
