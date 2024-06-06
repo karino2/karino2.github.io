@@ -2,7 +2,7 @@
 title: 今週の土曜にプログラム雑談のyoutubeライブをします！
 layout: page
 ---
-今週のpodcastでも言いましたが、2024/6/8 20:00〜21:00で、プログラム雑談のYoutubeライブをやります。
+今週のpodcastでも言いましたが、2024/6/8 20:00〜21:00で、プログラム雑談の番外編としてYoutubeライブをやります。
 
 [プログラム雑談ライブ：Swiftのactorとasync/awaitの話を中心として - YouTube](https://www.youtube.com/watch?v=7eVsO31L3Bc)
 
