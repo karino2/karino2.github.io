@@ -32,7 +32,7 @@ layout: page
 いろいろ調べると、Amazonのプライベートブランドと楽天でレトルトの玄米とか発芽玄米があり、これが値段が一食100円ちょっとで評判が良い。
 最近は自分の中のAmazon信頼度が低めなので、楽天にあったレトルト発芽玄米を試してみる事に。
 
-<a href="https://hb.afl.rakuten.co.jp/ichiba/3e90b021.5028c8fa.3e90b022.be83f001/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyamatane%2F10000078%2F&link_type=pict&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><img src="https://hbb.afl.rakuten.co.jp/hgb/3e90b021.5028c8fa.3e90b022.be83f001/?me_id=1308289&item_id=10000078&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fyamatane%2Fcabinet%2F04875641%2F06750788%2F10000078_240307_thum.jpg%3F_ex%3D240x240&s=240x240&t=pict" border="0" style="margin:2px" alt="" title=""><br>
+<a href="https://hb.afl.rakuten.co.jp/ichiba/3e90b021.5028c8fa.3e90b022.be83f001/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyamatane%2F10000078%2F&link_type=pict&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><img src="https://hbb.afl.rakuten.co.jp/hgb/3e90b021.5028c8fa.3e90b022.be83f001/?me_id=1308289&item_id=10000078&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fyamatane%2Fcabinet%2F04875641%2F06750788%2F10000078_240307_thum.jpg%3F_ex%3D240x240&s=240x240&t=pict" border="0" style="margin:2px" alt="" title=""><br>レトルト発芽玄米ごはん</a>
 
 購入時点では3990円に265ポイントがつくので、一食103円くらい。
 ドラッグストアよりちょっと高いが、買いに行く面倒さを思えばアリか、と試してみた。
