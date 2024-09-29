@@ -5,7 +5,7 @@ layout: page
 MFのソフトボードが気に入っていて、Little Marleyに続きKuma Fishも買ってみてしばらく乗ったので、その比較をブログにしてみる。
 
 
-[[サーフボード]]
+[サーフボード](https://karino2.github.io/RandomThoughts/%E3%82%B5%E3%83%BC%E3%83%95%E3%83%9C%E3%83%BC%E3%83%89)
 
 ## スペックなど
 
