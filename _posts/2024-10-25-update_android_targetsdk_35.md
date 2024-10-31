@@ -223,3 +223,40 @@ Minという言葉の意味は分かりにくいが、子供を最小のintrinsi
 ### AndroidViewで中のViewがクリップされずにcanvas.drawColorなどが画面全体を塗りつぶしてしまう
 
 これは以前別のアプリの更新の時にも遭遇したもので、clipToOutlineをtrueにしてやれば良い。
+
+## MDTouch
+
+これもComposeを使っているが、前回のverion catalog周りの作業で別にversion catalog使わなくても良い方法は想像がつくのでその方法で試してみる。
+
+### compose compiler関連
+
+トップレベルのbuild.gradleに以下を
+
+```
+plugins {
+    id 'org.jetbrains.kotlin.plugin.compose' version '2.0.0' apply false
+}
+```
+
+app下のbuild.graldeに以下を書く。
+
+```
+plugins {
+    ...
+    id 'org.jetbrains.kotlin.plugin.compose'
+}
+```
+
+あとはカキオクでやったのと同じ設定。
+
+### import androidx.compose.material.icons.XXXX 系が失敗
+
+material-icons-extendedというのが必要になったらしい。
+
+[Missing material icons in Android Jetpack Compose - Stack Overflow](https://stackoverflow.com/questions/71960545/missing-material-icons-in-android-jetpack-compose)
+
+以下を追加。
+
+```
+    implementation "androidx.compose.material:material-icons-extended:$compose_version"
+```
