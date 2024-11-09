@@ -260,3 +260,49 @@ material-icons-extendedというのが必要になったらしい。
 ```
     implementation "androidx.compose.material:material-icons-extended:$compose_version"
 ```
+
+## GuitarScoreVisualizer
+
+これはいろいろ古いので大掛かりだった。ここまでに書いた事はいろいろやった。
+
+### support libraryをandroidxに
+
+
+appcompatがsupport library時代のものだったので、これを直す。
+
+```
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+```
+
+これを入れて、importを全部手で直した。
+
+ビルドするとandroidXがtrueじゃないとか言われるので、gradle.propertiesを最近のプロジェクトから持ってくる。
+さらにswitchでR.id.XXXがfinalじゃないとか言われるので、gradle.propertiesに以下も追加
+
+```
+android.nonFinalResIds=false
+```
+
+### ACTION_GET_CONTENTでダウンロード下のファイルが選べなくなった
+
+なんか以前そのうち有効になるとか言っていたScoped Storageの影響かな。SAFのコードは手持ちにあるので探して持ってくればいいのだが、
+だいたいkotlinなんだよなぁ。GuitarScoreVisualizerはJava時代のコードなのでややかったるい。
+
+SAF対応したが、以下のコードでは同じようにグレーアウトされて選べなかった。
+
+```
+    Intent intent = new Intent();
+    intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
+    intent.addCategory(Intent.CATEGORY_OPENABLE);
+    intent.setType("*/*");
+    startActivityForResult(intent, REQUEST_OPEN_FILE);
+```
+
+setActionではなくIntentのコンストラクタの引数に渡したら選べるようになった（なんで？）
+
+```
+    Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+    intent.addCategory(Intent.CATEGORY_OPENABLE);
+    intent.setType("*/*");
+    startActivityForResult(intent, REQUEST_OPEN_FILE);
+```
