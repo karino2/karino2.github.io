@@ -18,7 +18,7 @@ repo-lfのレポジトリでパッチファイルを生成し、それをunix2do
 
 1. git format-patchでrepo-lfからパッチファイルを作る
 2. パッチファイルをunix2dosでcrlfにする
-3. `git am < ファイル名` でapplyする
+3. `git am < ファイル名` でrepo-crlfにapplyする
 
 これでなんとなく動いた。format-patchはどうも出力ファイル名が指定出来ないらしい（Copilotさんが言ってた）ので、
 適当にmvしたりするシェルスクリプトを作る。
