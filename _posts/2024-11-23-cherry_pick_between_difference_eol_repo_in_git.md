@@ -3,10 +3,10 @@ title: gitで改行コードが異なるレポジトリ間でチェリーピッ�
 layout: page
 ---
 ほとんど同じ内容のレポジトリだが大人の事情で両者が分かれていて、共通の祖先も持っていない。
-そしてなぜか知らないがレポジトリ内部のコードが片方はlf、もう片方はcrlfになってしまっている（sucks!）
+そしてなぜか知らないがレポジトリ内部の改行コードが片方はlf、もう片方はcrlfになってしまっている（sucks!）
 
 こういうときにcherry pickすると全行がconflictになってしまって面倒な事になる。
-autocrlfや.gitattributesは基本的にはレポジトリ内部をlfで統一する前提になっているので、こういうケースはうまくハンドル出来ない、という理解でいる（間違っていたら誰か教えて）。
+autocrlfや.gitattributesは基本的にはレポジトリ内部をlfで統一する前提になっているもので、レポジトリの内部の改行コードが違うケースはうまくハンドル出来ない、という理解でいる（間違っていたら誰か教えて）。
 
 こういう時に、cherry pick的な事をやるシェルスクリプトを作りたい。
 
@@ -14,7 +14,7 @@ autocrlfや.gitattributesは基本的にはレポジトリ内部をlfで統一�
 
 ### 基本方針
 
-パッチファイルを生成し、それをunix2dosでcrlfにしてamする。
+repo-lfのレポジトリでパッチファイルを生成し、それをunix2dosでcrlfにしてrepo-crlfにamする。
 
 1. git format-patchでrepo-lfからパッチファイルを作る
 2. パッチファイルをunix2dosでcrlfにする
@@ -38,3 +38,5 @@ unix2dos mytemp.patch
 git am < mytemp.patch
 rm mytemp.patch
 ```
+
+なんか無駄に面倒な感じだが、やっている事は単純。
