@@ -85,6 +85,15 @@ line 1:4 no viable alternative at character ' '
 もう元の文法ファイルから生成させるのも困難ないにしえのLexerなので、QLexerのreportErrorをオーバーライドして、
 空白のこのメッセージの時だけ無視する。
 
+### AlarmでのHTTP Getが失敗するようになった
+
+バックグラウンドタスクの制限の模様。
+
+- [About Background work  -  Android Developers](https://developer.android.com/develop/background-work)
+- [Getting started with WorkManager  -  Background work  -  Android Developers](https://developer.android.com/develop/background-work/background-tasks/persistent/getting-started)
+
+WorkManager対応する。合ってるか良く分からないので、数日様子を見る。＞駄目だった。バックグラウンドから通信するとやはりunresolved hostになってしまう。
+
 ## いつなに
 
 
