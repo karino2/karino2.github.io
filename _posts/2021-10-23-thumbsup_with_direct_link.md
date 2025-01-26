@@ -17,18 +17,22 @@ themeというフォルダをほってそこに展開したtheme下を置く。
 次にalbum.hbsで、
 
 ```
+{% raw %}
     <!-- LightGallery -->
     <script src="{{relative 'public/lightgallery/js/lightgallery-all.min.js'}}"></script>
     <script src="{{relative 'public/lightgallery/js/lg-exif.min.js'}}"></script>
+{% endraw %}
 ```
 
 となっている所にlg-hashを追加する。
 
 ```
+{% raw %}
     <!-- LightGallery -->
     <script src="{{relative 'public/lightgallery/js/lightgallery-all.min.js'}}"></script>
     <script src="{{relative 'public/lightgallery/js/lg-exif.min.js'}}"></script>
     <script src="{{relative 'public/lightgallery/js/lg-hash.min.js'}}"></script>
+{% endraw %}
 ```
 
 最後にconfig.jsonで
