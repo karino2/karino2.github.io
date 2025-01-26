@@ -5,6 +5,14 @@
   margin-right: 10px;
 }
 
+@media only screen and (max-width: 768px) {
+  /* For mobile */
+  .karino2-sidebar {
+    display: none;
+  }
+}
+
+
 .is-small {
   font-size: 0.75rem;
 }
