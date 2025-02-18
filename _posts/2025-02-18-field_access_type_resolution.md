@@ -19,7 +19,7 @@ let hello (items: []Item) =
   one.fs
 ```
 
-Headは型解決により `Head: []Item->Item` になるので、oneの型は `item` になるから `one.fs` はstringになる、
+Headは型解決により `Head: []Item->Item` になるので、oneの型は `Item` になるから `one.fs` はstringになる、
 というのが期待値だが、oneをパースしている時点でこれをどう扱うべきか？
 という問題。
 
