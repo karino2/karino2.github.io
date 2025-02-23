@@ -8,6 +8,7 @@ F# 互換にはせずにGo向けにいろいろ変えたので、別言語とし
 
 - [github: karino2/folang](https://github.com/karino2/Folang/)
    - [日本語版README_ja.md]([folang/README_ja.md at main · karino2/folang](https://github.com/karino2/folang/blob/main/README_ja.md))
+- [Folang: Transpiler for F#-like functional languages ​​to Go : r/golang](https://www.reddit.com/r/golang/comments/1iw3tz7/folang_transpiler_for_flike_functional_languages/) redditのポスト
 
 トランスパイラなので生成結果は.goファイルになります。go instlalでインストールしていけるのが良い。
 
