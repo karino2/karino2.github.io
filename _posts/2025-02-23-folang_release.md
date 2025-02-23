@@ -16,6 +16,8 @@ F# 互換にはせずにGo向けにいろいろ変えたので、別言語とし
 
 READMEから抜粋。
 
+### パイプライン
+
 ```
 package main
 import frt
@@ -53,6 +55,8 @@ func main() {
     })), frt.Println)
 }
 ```
+
+### 型推論
 
 ```
 package main
