@@ -15,6 +15,8 @@ folang自身で再実装する前にもうちょっと良く考えてみよう�
 
 ## IR上に存在するものには、全てタイプパラメータに型がassignされている
 
+追記: これは多相ヴァリアントをサポートすると間違いである事が判明＞[UnionのGenericsでは、assignされてないタイプパラメータを持つ変数がありうる](https://karino2.github.io/2025/03/01/non_assigned_type_param_on_union.html)
+
 コード上では、すべてのタイプパラメータには型がassignされている。
 ただしこのassignされている型は現在定義中の関数のtype parameterな事はある。
 
