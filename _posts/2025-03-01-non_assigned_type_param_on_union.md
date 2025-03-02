@@ -73,3 +73,39 @@ nilは`List<int>`の型でも`List<string>`の型でも使える、特別なも�
 `AorB<int>`であると同時に`AorB<string>`でもある、というのが正しい解釈に思う。
 
 実装としてはvを参照するごとに`'a`に別々のType Variableを振っていく、とかでいいのか？
+
+## 追記: 関数もassignされてないタイプパラメータがASTに現れうる
+
+[Arantium Maestum](https://zehnpaard.hatenablog.com/)のzehnpaardさんに教えてもらったが、
+`fun x->x`なども同じような挙動をしている。
+
+```
+> let a = fun x -> x ;;
+val a: x: 'a -> 'a
+```
+
+こうやって作ったaは複数の型で使える。
+
+```
+> a 123 ;;
+val it: int = 123
+
+> a "123" ;;
+val it: string = "123"
+```
+
+現状の[Folang](https://karino2.github.io/RandomThoughts/Folang)の実装では、ルートの関数定義は特別扱いしていて関数ファクトリをscopeに登録するようになっていて、
+これはASTには現れない。
+ASTに現れる時には全てType Variableが振られてそれが解決されている。
+だからaも何かのType Variableが振られて、一回`a 123`と使われるともうint以外では使えなくなる。
+
+この理解は間違えていて、ASTにファクトリが登録出来るのが正しそうだ。
+
+けれどこちらのケースは実用上はそんなには問題にならない。
+基本的にはinner 関数は親の関数のtype parameterでのgenericな関数にはなっているので、
+それで困るのは同じ関数内で複数回別の型に対して使う場合だけだからだ。
+実際自分のFolangの振る舞いの方が正解だ、と言われても、比較対象がなければそういうものだと思う（自分もF#で試すまでそう思っていた）。
+
+Unionのof無しのケースはそれとは対照的に、実用上めちゃ困るし、他の解釈は難しい。
+
+ちなみにGolangは関数リテラルのGenericsは無くて、関数リテラルじゃないinner関数もないのでこういう場合は無い。
