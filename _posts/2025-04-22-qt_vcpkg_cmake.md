@@ -111,3 +111,10 @@ Found OpenGL: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platfo
 Found OpenGL: /usr/X11R6/lib/libGL.dylib
 ```
 
+## 雑感
+
+qt-cmakeを使うのでは無くて、vcpkgのtoolchainをメインにしてqt関連の設定を全部手動でやる方が正しいかもしれない。
+vcpkgでQtをインストールしてそれを使えばそんなに難しくないかも？
+
+ただCMakeLists.txtがすでにmoc周りとかでいろいろな試行錯誤をやった結果のなにかなので、
+もう一度その辺を見直す気力は沸かず（Qt開発あるある）
