@@ -118,3 +118,73 @@ vcpkgでQtをインストールしてそれを使えばそんなに難しくな�
 
 ただCMakeLists.txtがすでにmoc周りとかでいろいろな試行錯誤をやった結果のなにかなので、
 もう一度その辺を見直す気力は沸かず（Qt開発あるある）
+
+## Mac上でvcpkgが15.0用にビルドされるがQtの方は12.0になってしまう問題（追記）
+
+Macでリンクしたら以下のようなワーニングが大量に出た
+
+```
+ld: warning: object file (/xxx/MyApp/build/vcpkg_installed/x64-osx/debug/lib/liblzma.a[77](riscv.c.o)) was built for newer 'macOS' version (15.0) than being linked (12.0)
+```
+
+正直15.0用で構わないのだけれど、Qtのtoolchainの中で12に容赦なく設定されるので、
+12じゃないと駄目なのかなぁ、と思いvcpkgの方を12にする方法を模索する。
+
+VCPKG_OSX_DEPLOYMENT_TARGETを指定すれば良いようだけど
+
+- CMakeLists.txtで指定＞駄目
+- `-D`でコマンドラインから指定＞駄目
+- CMakePresets.jsonで指定＞`Manually-specified variables were not used by the project`と言われて実際バイナリもotoolで見ると効いていない
+
+という事で、カスタムのtripletsを作る以外の方法では目的のバイナリを降って越させる事が出来なかった。
+
+という訳で、カスタムのtirpletを作った。
+
+### カスタムのtripletを作る
+
+CMakeLists.txtをおいているのと同じディレクトリに、
+
+custom_vcpkg_triplets/x64-osx-12.cmake
+
+というファイルを作り、x64-osxのtripletをコピペしてさらにVCPKG_OSX_DEPLOYMENT_TARGETを追加する。
+
+```
+set(VCPKG_TARGET_ARCHITECTURE x64)
+set(VCPKG_CRT_LINKAGE dynamic)
+set(VCPKG_LIBRARY_LINKAGE static)
+
+set(VCPKG_CMAKE_SYSTEM_NAME Darwin)
+set(VCPKG_OSX_ARCHITECTURES x86_64)
+set(VCPKG_OSX_DEPLOYMENT_TARGET 12.0) # <-この行を追加
+```
+
+### vcpkg.jsonでoverlay-tripletsを指定
+
+
+```
+{
+  // ...
+
+  "vcpkg-configuration": {
+    "overlay-triplets": [ "./custom_vcpkg_triplets" ]
+  }
+}
+```
+
+### CMakeLists.txtでVCPKG_TARGET_TRIPLETを指定
+
+```
+if(CMAKE_HOST_APPLE)
+set(VCPKG_TARGET_TRIPLET "x64-osx-12")
+endif()
+```
+
+### 結果の確認
+
+以下などをして、
+
+```
+$ otool -l build/vcpkg_installed/x64-osx-12/lib/libbz2.a | less
+```
+
+LC_BUILDのあたりとかを見る。
