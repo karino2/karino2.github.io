@@ -46,7 +46,7 @@ avgとresult_u8というカーネルが作られ（後者は最終結果を入�
 
 今風にデモのgifも貼っておきます。
 
-![モザイクフィルタのデモgif](https://github.com/karino2/MFG/blob/main/docs/ja/imgs/mosaic_demo.gif)
+![モザイクフィルタのデモgif](https://raw.githubusercontent.com/karino2/MFG/refs/heads/main/docs/ja/imgs/mosaic_demo.gif)
 
 ## ざっくりとした特徴
 
