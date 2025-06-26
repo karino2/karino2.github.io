@@ -27,3 +27,5 @@ layout: page
 そういうの無いかね？
 
 誰か知ってたら教えて。
+
+追記: omo先生にこのサイトを教えてもらう。いいかも。 [Tech and Society Lab - The Anxious Generation](https://www.anxiousgeneration.com/research)
