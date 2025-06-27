@@ -28,4 +28,5 @@ layout: page
 
 誰か知ってたら教えて。
 
-追記: omo先生にこのサイトを教えてもらう。いいかも。 [Tech and Society Lab - The Anxious Generation](https://www.anxiousgeneration.com/research)
+- 追記: omo先生にこのサイトを教えてもらう。いいかも。 [Tech and Society Lab - The Anxious Generation](https://www.anxiousgeneration.com/research)
+  - さらに追記: 幾つか見てみたがいかにも自分の欲しい結論を並べているだけという感じでいまいちだった
