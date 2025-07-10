@@ -5,7 +5,9 @@ layout: page
 [MFG](https://modernfilterlanguageforgpu.org/)のドキュメントを増やしていくにあたり、概念的な所は動画の方が説明しやすいなぁ、と思い、
 幾つか動画を作っていく事にした。
 
-- [youtubeプレイリスト: MFGプログラムシリーズ](https://youtu.be/PzP-xLJzAZg?si=IkDj1kEpDE-kssAm)
+- [youtubeプレイリスト: MFGプログラムシリーズ](https://youtube.com/playlist?list=PL3J_mLcl4YCf1AHEjZO4PjdaIexukpb6e&si=FRNK6egcI-dPxzTj)
+
+
 
 MFGの解説については、基本的にはドキュメントの拡充を中心に進める予定で、
 動画はあくまで補助的な内容の予定。
