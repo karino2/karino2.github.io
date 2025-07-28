@@ -278,7 +278,7 @@ def result_u8 |x, y| {
   let fxy = to_ncoord([x, y])
   let fwh = input_u8.extent() |> f32(...)
   let ratio = fwh.y/fwh.x
-  let eps = 1.0/fwh # 1ピクセルあたりの差分
+  let eps = 1.0/(fwh*divNum) # 1ピクセルあたりの差分を4分割
   let coverSum = rsum(0..<divNum, 0..<divNum) |rx, ry| {
     let fxy2 = fxy + f32[rx, ry]*eps
     # あとは先程と同じ
@@ -292,10 +292,10 @@ def result_u8 |x, y| {
 }
 ```
 
-![images/MFG_BasicShape/2025_0725_131953.png]({{"/assets/images/MFG_BasicShape/2025_0725_131953.png" | absolute_url}})
+![images/MFG_BasicShape/2025_0728_201048.png]({{"/assets/images/MFG_BasicShape/2025_0728_201048.png" | absolute_url}})
 
 キレイな円になりました。
-拡大しているとぼやけて見えますが、ふつうのサイズだとキレイな円です。
+拡大しているとすごくキレイという感じでも無いですが、ふつうのサイズだとキレイな円です。
 
 このコードをぱっと見て理解するのはなかなか難しいですね。
 ただ、良く見ると前のコードでfxyを使っていた所をfxy2にするだけ、という事を理解できれば、
@@ -304,12 +304,12 @@ fxy2をどうやって作っているかに着目すれば良くなります。
 fxy2は以下のように作っています。
 
 ```
-  let eps = 1.0/fwh # 1ピクセルあたりの差分
+  let eps = 1.0/(fwh*divNum) # 1ピクセルあたりの差分を4分割
   # 中略
     let fxy2 = fxy + f32[rx, ry]*eps
 ```
 
-epsというのは、ノーマライズされた座標で、1ピクセルの幅が幾つになるか、という値を表します。
+epsというのは、ノーマライズされた座標で、1ピクセルの幅を4分割したものが幾つになるか、という値を表します。
 そして `rx, ry` はrsumのループ変数なので、0から3までの値をとるので、これでサブピクセルのノーマライズされた座標を計算している事になります。
 
 このサブピクセルで範囲に入っていれば1.0、入っていなければ0.0として足し合わせて、合計を4x4で割れば被覆率となります。
@@ -342,4 +342,4 @@ def result_u8 |x, y| {
 
 適当な拡大率でアンチエイリアスのある無しでどのくらい違うのかを見ると面白いです。
 
-![images/MFG_BasicShape/2025_0728_165943.gif]({{"/assets/images/MFG_BasicShape/2025_0728_165943.gif" | absolute_url}})
+![images/MFG_BasicShape/2025_0728_201808.gif]({{"/assets/images/MFG_BasicShape/2025_0728_201808.gif" | absolute_url}})
