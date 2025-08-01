@@ -343,3 +343,5 @@ def result_u8 |x, y| {
 適当な拡大率でアンチエイリアスのある無しでどのくらい違うのかを見ると面白いです。
 
 ![images/MFG_BasicShape/2025_0728_201808.gif]({{"/assets/images/MFG_BasicShape/2025_0728_201808.gif" | absolute_url}})
+
+以下に続く: [MFGで基本図形を描いてみよう（後編） - なーんだ、ただの水たまりじゃないか](https://karino2.github.io/2025/08/01/draw_shape_on_MFG_part2.html)
