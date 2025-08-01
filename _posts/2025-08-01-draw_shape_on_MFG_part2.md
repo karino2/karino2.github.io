@@ -251,14 +251,16 @@ def result_u8 |x, y| {
 
 **点vが三角形の中の場合**
 
-![images/MFG_BasicShape/2025_0727_210201.png]({{"/assets/images/MFG_BasicShape/2025_0727_210201.png" | absolute_url}})
+![images/MFG_BasicShape/2025_0801_103032.png]({{"/assets/images/MFG_BasicShape/2025_0801_103032.png" | absolute_url}})
 
-この場合、全員が同じ方向を答えるはずです。左と言うか右というかは最初にどちら側を向いているかの問題になりますが、
+この図の点線（点vを向いている）が実線の右にあるか左にあるか、というのを各自に聞く訳ですね。
+
+点vが三角形の中にある場合、全員が同じ方向を答えるはずです。左と言うか右というかは最初にどちら側を向いているかの問題になりますが、
 とにかく全員にとって同じ側に見えるならそれは三角形の中、という意味になります。
 
 **点vが三角形の外の場合**
 
-![images/MFG_BasicShape/2025_0727_210544.png]({{"/assets/images/MFG_BasicShape/2025_0727_210544.png" | absolute_url}})
+![images/MFG_BasicShape/2025_0801_103416.png]({{"/assets/images/MFG_BasicShape/2025_0801_103416.png" | absolute_url}})
 
 この場合、一人だけ違う向きを答えることになります。
 
