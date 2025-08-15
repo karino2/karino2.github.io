@@ -8,6 +8,8 @@ layout: page
 
 確かに。という事でこれを直す過程をブログにしてみようと思う。
 
+今回も[MFGStudio](https://modernfilterlanguageforgpu.org/#mfg_studio)で開発していく。
+
 ## 開発時のメモが以下にある
 
 クリスタライズフィルタを作った当時の開発過程は、以下にノートがある。
