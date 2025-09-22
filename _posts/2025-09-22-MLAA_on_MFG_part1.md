@@ -616,6 +616,138 @@ i32v4を２つ渡す事にしています。
 エンディアンはバイナリ処理に慣れているとリトルエンディアンで統一した方が読みやすい人も多いと思いますが、
 今回はビッグエンディアンで並べています。
 
+### 今回実装したコード全体
+
+最後に今回実装したコードの全体を載せておきます。
+結果はMFGStudioのnon_aa_color_shape.mdzに適用して確認すると分かりやすいと思います。
+
+```
+@title "MLAA Separation Line"
+
+let DIFF_THRESHOLD= 1.0/12.0 # これ以上RGB距離があればedgeとみなす。
+
+# u8[right, bottom, 0, 0]を返す。
+@bounds( (input_u8.extent(0)-1), (input_u8.extent(1)-1))
+def edge |x, y|{
+   let col0 = input_u8(x, y) |> to_xyza(...)
+
+   let colRight = input_u8(x+1, y) |> to_xyza(...)
+   let colBottom = input_u8(x, y+1) |> to_xyza(...)
+
+   let eb = distance(colBottom, col0) > DIFF_THRESHOLD
+   let er = distance(colRight, col0) > DIFF_THRESHOLD
+
+   # 今の所u8v2よりu8v4の方が最適化が効くのでu8v4にしておく。
+   u8[er, eb, 0, 0]
+}
+
+let edgeEx = sampler<edge>(address=.ClampToEdge)
+
+# i32を4ビットずつに分けてビッグエンディアンの8次元タプルとして返す。
+fn split8 |v: i32| {
+  let e1 = v&0xf
+  let e2 = (v>>4)&0xf
+   let e3 = (v>>8)&0xf
+   let e4 = (v>>12)&0xf
+  let e5 = (v>>16)&0xf
+  let e6 = (v>>20)&0xf
+   let e7 = (v>>24)&0xf
+   let e8 = (v>>28)&0xf
+  i32[e8, e7, e6, e5, e4, e3, e2, e1]
+}
+
+# ベクトルの各要素を0xfまでの数値とみなして32ビットにパックする。（結果はi32）
+# 並び順はsplit8と同じで、v2が上位ビット。
+fn merge8 |v2: i32v4, v1: i32v4| {
+   let [e4, e3, e2, e1] = v1
+   let [e8, e7, e6, e5] = v2
+   (e8 << 28) | (e7 << 24) | (e6 << 20) | (e5 <<16 ) | (e4 << 12) | (e3 << 8) | (e2 << 4) | e1
+}
+
+let SEP_MAX_LENGTH = 8
+
+@bounds( (input_u8.extent(0)-1), (input_u8.extent(1)-1))
+def sepLineLen |x, y|{
+   let eLenBRTL = reduce(init=[0, 0], 0..<SEP_MAX_LENGTH) |i, accm|{
+      # v8, bpos, bneg, rpos, rneg, toppos, topneg, leftpos, leftneg
+      let flag = split8(accm.x)
+      let prevLen = split8(accm.y)
+
+      let [ortho0, cur0] = edgeEx(x+i, y).xy |> i32(...)
+      let [_, cur1] = edgeEx(x-i, y).xy |> i32(...)
+      let [ortho1, _] = edgeEx(x-i-1, y).xy |> i32(...)
+      let [cur2, ortho2] = edgeEx(x, y+i).xy |> i32(...)
+      let [cur3, _] = edgeEx(x, y-i).xy |> i32(...)
+      let [_, ortho3] = edgeEx(x, y-i-1).xy |> i32(...)
+
+      # Top
+      let [_, cur4] = edgeEx(x+i, y-1).xy |> i32(...)
+      # Topと直行するrightは一つ下
+      # 以下だが、これはortho0と同じ
+      # let [ortho4, _] = edgeEx(x+i, y).xy |> i32(...)
+      let ortho4 = ortho0
+
+      # Top Negative方向
+      let [_, cur5] = edgeEx(x-i, y-1).xy |> i32(...)
+      # これはortho1と同じ
+      # let [ortho5, _] = edgeEx(x-i-1, y).xy |> i32(...)
+      let ortho5 = ortho1
+
+      # Left
+      let [cur6, _] = edgeEx(x-1, y+i).xy |> i32(...)
+      # Leftと直行するbottomは一つ右隣り、これはortho2と同じ
+      # let [_, ortho6] = edgeEx(x, y+i).xy |> i32(...)
+      let ortho6 = ortho2
+
+      # Left neg（上方向）
+      let [cur7, _] = edgeEx(x-1, y-i).xy |> i32(...)
+      # 以下はortho3と同じ
+      # let [_, ortho7] = edgeEx(x, y-i-1).xy |> i32(...)
+     let ortho7 = ortho3
+
+      let cur = [cur0, cur1, cur2, cur3, cur4, cur5, cur6, cur7]
+      let ortho = [ortho0, ortho1, ortho2, ortho3, ortho4, ortho5, ortho6, ortho7]
+
+      let newF = flag | (!cur) | ortho
+      let newL =
+      ifel(flag, prevLen, ...)
+      elif(!cur, [*vec4(0), *vec4(0)], ...)
+      else(prevLen+1)
+
+      # 8次元はベクトルとして扱えないので4次元ごとにバラす
+      let newF_Merge = merge8([newF.0, newF.1, newF.2, newF.3], [newF.4, newF.5, newF.6, newF.7])
+      let newL_Merge = merge8([newL.0, newL.1, newL.2, newL.3], [newL.4, newL.5, newL.6, newL.7])
+
+      [newF_Merge, newL_Merge]
+   }
+   # 最後まで見つからなかった場合、長さは0にリセットすべき。
+   let flag = split8(eLenBRTL.x)
+   let len = split8(eLenBRTL.y)
+   let res = ifel(flag, len, [*vec4(0), *vec4(0)]) 
+   merge8([res.0, res.1, res.2, res.3], [res.4, res.5, res.6, res.7])
+}
+
+let sepLineLenEx = sampler<sepLineLen>(address=.ClampToBorderValue, border_value=0)
+
+def result_u8 |x, y| {
+  let sepLenM = sepLineLenEx(x, y)
+  let slv = split8(sepLenM)
+ 
+  # テスト確認用
+  let sepLen = slv.7
+
+  # sepLenは0から8。
+  # この結果をR成分としてデバッグ表示してみる。
+  # 0.0〜1.0を8等分してガンマ補正する。
+  # u8に戻すのは面倒なので
+  let r = 1.0*f32(sepLen)/f32(SEP_MAX_LENGTH)
+  let debVal = [0.0, 0.0, r, 1.0] |> lbgra_to_u8color(...) 
+
+
+  ifel(sepLen > 0, debVal, input_u8(x, y))
+}
+```
+
 ## 前編まとめ
 
 - MLAAは色の不連続な変化の形状に着目してエイリアスっぽい所を探すアンチエイリアスの手法だよ
