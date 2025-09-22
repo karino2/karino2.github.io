@@ -329,9 +329,30 @@ breakに相当するもう処理してないよ、という状態をフラグで
 2. 既に前のピクセルまでの時点でrightのエッジに既にぶつかっている（処理しない）
 3. 前までのbottomがずっとエッジで、しかもまだrightのエッジにもぶつかっていない（処理する）
 
-1も2も前のピクセルの時点で処理が終わっている、という事さえ表せばいいので、同じ値で良さそうに思う。
-どちらを1にするかはどちらでも良いですが、初期値を0にして1に変更する方が感覚的に分かりやすいので、
-1と2をフラグ1と、3をフラグ0とする事にしましょう。
+また、結果の長さには２つの種類がありそうです。
+
+1. 直行するエッジにぶつかって終わった
+2. 直行するエッジにぶつからずに終わった
+
+2は一見すると0として良さそうに思いますが、反対側のエッジが立っている時にこの数字は意味があるので（後述）、
+この種別も残す事にします。
+
+するとフラグとしては、以下の三種類になりそうです。
+
+1. エッジにぶつかって終わった
+2. エッジにぶつからずに終わった
+3. まだ終わってない
+
+フラグの値としては3種類ならなんでも良くて、今回のケースでは「エッジにぶつかって終わってない」が存在しないため、
+1と2を２つの別のビットに割り当てる必要もありません。
+
+単純に1のケースと2のケースをそれぞれ1, 2として、3のケースを0としましょう。
+
+```
+let END_NO_ORTHO = 1
+let END_WITH_ORTHO = 2
+let NOT_END = 0
+```
 
 するとreduceのinitも0ではなく、`[0, 0]`とフラグとlenをもたせるように変更します（これはいかにも8bitに収まりますが、そういう最適化は後ほど）
 
@@ -356,18 +377,18 @@ breakに相当するもう処理してないよ、という状態をフラグで
 最初にそれぞれの条件を求めて、最後にifelで組み立てる感じで書きます。
 
 ```
-  #i, accm
-  let [flag, prevLen] = accm # 条件A
-  let [edgeR, edgeB] = edgeEx(x+i, y).xy
+   #i, accm
+   let [flag, prevLen] = accm # 条件A
+   let [edgeR, edgeB] = edgeEx(x+i, y).xy
 
-  # 以下はそのままedgeRとedgeBでも良いけれど読みやすさのため機械的に各条件を変数にしていく
-  let curBottomEdge = edgeB # 条件B-2
-  let curRightEdge = edgeR # 条件B-2-2
-    
-  ifel(flag, accm, ...)
-  elif(!curBottomEdge, [1, 0], ...) # B-1, 垂直のエッジとぶつからなかったので長さは0として終了フラグを立てる
-  elif(curRightEdge, [1, prevLen+1], ...) # B-2-2
-  else([0, prevLen+1]) # B-2-1
+   # 以下はそのままedgeRとedgeBでも良いけれど読みやすさのため機械的に各条件を変数にしていく
+   let curBottomEdge = edgeB # 条件B-2
+   let curRightEdge = edgeR # 条件B-2-2
+      
+   ifel(flag != NOT_END, accm, ...)
+   elif(!curBottomEdge, [END_NO_ORTHO, prevLen], ...) # B-1, 垂直のエッジとぶつからずにbottomの端まで来た、一つ前までの長さとして終了フラグをセット
+   elif(curRightEdge, [END_WITH_ORTHO, prevLen+1], ...) # B-2-2
+   else([NOT_END, prevLen+1]) # B-2-1
 ```
 
 ではこれをデバッグ表示してみましょう。
@@ -386,18 +407,21 @@ def sepLineLen1 |x, y|{
       let curBottomEdge = edgeB # 条件B-2
       let curRightEdge = edgeR # 条件B-2-2
     
-      ifel(flag, accm, ...)
-      elif(!curBottomEdge, [1, 0], ...) # B-1, 垂直のエッジとぶつからなかったので長さは0として終了フラグを立てる
-      elif(curRightEdge, [1, prevLen+1], ...) # B-2-2
-      else([0, prevLen+1]) # B-2-1
+      ifel(flag != NOT_END, accm, ...)
+      elif(!curBottomEdge, [END_NO_ORTHO, prevLen], ...) # B-1, 垂直のエッジとぶつからずにbottomの端まで来た、一つ前までの長さとして終了フラグをセット
+      elif(curRightEdge, [END_WITH_ORTHO, prevLen+1], ...) # B-2-2
+      else([NOT_END, prevLen+1]) # B-2-1
    }
-   eLenBPosi.y
+   eLenBPosi
 }
 
-let sepLineLen1Ex = sampler<sepLineLen1>(address=.ClampToBorderValue, border_value=0)
+let sepLineLen1Ex = sampler<sepLineLen1>(address=.ClampToBorderValue, border_value=[0, 0])
 
 def result_u8 |x, y| {
-  let sepLen = sepLineLen1Ex(x, y)
+  let [flag, sepLen0] = sepLineLen1Ex(x, y)
+  # 直行しているのにぶつからなかった時はゼロとしてデバッグ表示してみる。
+  let sepLen = ifel(flag == END_WITH_ORTHO, sepLen0, 0)
+
   # sepLenは0から8。
   # この結果をR成分としてデバッグ表示してみる。
   # 0.0〜1.0を8等分してガンマ補正する。
@@ -412,17 +436,69 @@ def result_u8 |x, y| {
 
 すると以下のようになりました。
 
-![images/MLAA/2025_0917_134134.png]({{"/assets/images/MLAA/2025_0917_134134.png" | absolute_url}})
+![images/MLAA/2025_0922_150242.png]({{"/assets/images/MLAA/2025_0922_150242.png" | absolute_url}})
 
-あってそうに見えます。
+灰色のところの下辺の左側が赤くなっていない（最大長より遠くにエッジがある場合はL字の一部とはみなさない）所や、
+黄色の段々の一番右側は赤くなっていない（右にいっても画面端まで行ってしまって直行するエッジにぶつからない）所などに注目してください。
+
+### Bottomの左側の処理をする
+
+正の方向の処理が終わったので負の方向も考えてみます。
+curとortho以外の処理はほとんど同じになるので、
+一回dupして書き直したあとに、共通化出来そうな事を考えて一つにしてしまいます。
+
+この時、フラグの計算とlenの計算を分けた方がベクトライズが少し減って理解しやすいので、
+この２つの計算を分ける事にします。
+
+すると、以下のようになりました。
+
+```
+   let eLenB = reduce(init=[0, 0, 0, 0], 0..<SEP_MAX_LENGTH) |i, accm|{
+      let flag = accm.xy
+      let prevLen = accm.zw
+
+      # この辺が毎回変わる
+      let [ortho0, cur0] = edgeEx(x+i, y).xy |> i32(...)
+      let [_, cur1] = edgeEx(x-i, y).xy |> i32(...)
+      let [ortho1, _] = edgeEx(x-i-1, y).xy |> i32(...)
+
+      let cur = [cur0, cur1]
+      let ortho = [ortho0, ortho1]
+
+      let newF = ifel(flag != NOT_END, flag, ...)
+                         elif((!cur), vec2(END_NO_ORTHO), ...)
+                         elif(ortho, vec2(END_WITH_ORTHO), vec2(NOT_END))
+      let newL =  ifel(flag != NOT_END, prevLen, ...)
+                          elif(!cur, prevLen, ...)
+                          else(prevLen+1)
+      [*newF, *newL]
+   }
+```
+
+newFとifelの所、つまり以下は、ベクトル演算になっています。
+
+```
+      let newF = ifel(flag != NOT_END, flag, ...)
+                         elif((!cur), vec2(END_NO_ORTHO), ...)
+                         elif(ortho, vec2(END_WITH_ORTHO), vec2(NOT_END))
+      let newL =  ifel(flag != NOT_END, prevLen, ...)
+                          elif(!cur, prevLen, ...)
+                          else(prevLen+1)
+```
+
+flagやcurなどの変数はすべて2次元になっていて、それぞれの次元を一気に計算しています。
+newFのvec2(END_NO_ORTHO)はcurによっては片方だけが採用される事に注意してください。
+
+この手のコードはシェーダーやRやMatlabなどの言語に慣れていないと少し驚くかもしれません。
+MFGでifが文で無いのはこの辺との相性の良さが理由でもあります。
 
 ### 復数の処理を一つにまとめるべきか検討
 
-さて、これとほぼ同じような作業をあと7つやる必要があります。
+さて、これとほぼ同じような作業をあと6つやる必要があります。
 つまり以下です。
 
 1. bottomを右に伸ばしていってrightとぶつかるか？（＜ーこれを既にやった）
-2. bottomを左に伸ばしていってleftとぶつかるか？
+2. bottomを左に伸ばしていってleftとぶつかるか？（＜ーこれを既にやった）
 3. topを右に伸ばしていってrightとぶつかるか？
 4. topを左に伸ばしていってleftとぶつかるか？
 5. rightを上に伸ばしていってtopとぶつかるか？
@@ -447,52 +523,11 @@ def result_u8 |x, y| {
 どちらも試しましたが、どっちもいまいちな感じになるので、どっちでも良さそうです。
 今回は1の諦めて全部一つにまとめる、という方針でいきましょう。
 
+世の中のシェーダーのコードはだいたいぜんぶ一つにまとめて複雑な暗号的なコードを受け入れる傾向が強いですね。
+
 基本的には上から順番に一つdupして実装してみて、共通化出来ないか考える、を繰り返せば良さそう。
 
-例えば、bottomの右に伸ばすのと左に伸ばすのを一つのreduceにすると以下のようになります。
-
-```
-   let eLenB = reduce(init=[0, 0, 0, 0], 0..<SEP_MAX_LENGTH) |i, accm|{
-      let flag = accm.xy
-      let prevLen = accm.zw
-
-      # この辺が毎回変わる
-      let [ortho0, cur0] = edgeEx(x+i, y).xy |> i32(...)
-      let [_, cur1] = edgeEx(x-i, y).xy |> i32(...)
-      let [ortho1, _] = edgeEx(x-i-1, y).xy |> i32(...)
-
-      let cur = [cur0, cur1]
-      let ortho = [ortho0, ortho1]
-
-      let newF = flag | (!cur) | ortho
-      let newL =
-      ifel(flag, prevLen, ...)
-      elif(!cur, vec2(0), ...) # B-1, 垂直のエッジとぶつからなかったので長さは0として終了フラグを立てる
-      else(prevLen+1)
-      [*newF, *newL]
-   }
-   # 最後まで見つからなかった場合、長さは0にリセットすべき。
-   let resB = ifel(eLenB.xy, eLenB.zw, [0, 0]) 
-```
-
 だいたいはcurとorthoを作る所だけが違っていて、他はだいたい同じコードとなります。
-ただしこのcurとorthoを作る所がこの4倍になる訳で、最終的にはかなり複雑なコードになります。
-
-newFとifelの所、つまり以下は、ベクトル演算になっています。
-
-```
-      let newF = flag | (!cur) | ortho
-      let newL =
-      ifel(flag, prevLen, ...)
-      elif(!cur, vec2(0), ...)
-      else(prevLen+1)
-```
-
-flagやcurなどの変数はすべて2次元になっていて、それぞれの次元を一気に計算しています。
-この手のコードはシェーダーやRやMatlabなどの言語に慣れていないと少し驚くかもしれません。
-MFGでifが文で無いのはこの辺との相性の良さが理由でもあります。
-
-世の中のシェーダーのコードはだいたいぜんぶ一つにまとめて複雑な暗号的なコードを受け入れる傾向が強いですね。
 
 同じように全部まとめてしまうと、以下のようになります。
 
@@ -519,6 +554,15 @@ fn merge8 |v2: i32v4, v1: i32v4| {
 }
 
 let SEP_MAX_LENGTH = 8
+
+let END_NO_ORTHO = 1
+let END_WITH_ORTHO = 2
+let NOT_END = 0
+
+# vec8は無いのでvec4を２つ並べてspreadする。
+let END_NO_ORTHO8 = [*vec4(END_NO_ORTHO), *vec4(END_NO_ORTHO)]
+let END_WITH_ORTHO8 = [*vec4(END_WITH_ORTHO), *vec4(END_WITH_ORTHO)]
+let NOT_END8 = [*vec4(NOT_END), *vec4(NOT_END)]
 
 # Bottom, Right, Top, Left. Pos Neg each.
 @bounds( (input_u8.extent(0)-1), (input_u8.extent(1)-1))
@@ -563,11 +607,12 @@ def sepLineLen |x, y|{
       let cur = [cur0, cur1, cur2, cur3, cur4, cur5, cur6, cur7]
       let ortho = [ortho0, ortho1, ortho2, ortho3, ortho4, ortho5, ortho6, ortho7]
 
-      let newF = flag | (!cur) | ortho
-      let newL =
-      ifel(flag, prevLen, ...)
-      elif(!cur, [*vec4(0), *vec4(0)], ...)
-      else(prevLen+1)
+      let newF = ifel(flag != NOT_END, flag, ...)
+                         elif((!cur), END_NO_ORTHO8, ...)
+                         elif(ortho, END_WITH_ORTHO8, NOT_END8)
+      let newL =  ifel(flag != NOT_END, prevLen, ...)
+                          elif(!cur, prevLen, ...)
+                          else(prevLen+1)
 
       # 8次元はベクトルとして扱えないので4次元ごとにバラす
       let newF_Merge = merge8([newF.0, newF.1, newF.2, newF.3], [newF.4, newF.5, newF.6, newF.7])
@@ -575,11 +620,7 @@ def sepLineLen |x, y|{
 
       [newF_Merge, newL_Merge]
    }
-   # 最後まで見つからなかった場合、長さは0にリセットすべき。
-   let flag = split8(eLenBRTL.x)
-   let len = split8(eLenBRTL.y)
-   let res = ifel(flag, len, [*vec4(0), *vec4(0)]) 
-   merge8([res.0, res.1, res.2, res.3], [res.4, res.5, res.6, res.7])
+   eLenBRTL
 }
 ```
 
@@ -684,6 +725,15 @@ fn merge8 |v2: i32v4, v1: i32v4| {
 
 let SEP_MAX_LENGTH = 8
 
+let END_NO_ORTHO = 1
+let END_WITH_ORTHO = 2
+let NOT_END = 0
+
+# vec8は無いのでvec4を２つ並べてspreadする。
+let END_NO_ORTHO8 = [*vec4(END_NO_ORTHO), *vec4(END_NO_ORTHO)]
+let END_WITH_ORTHO8 = [*vec4(END_WITH_ORTHO), *vec4(END_WITH_ORTHO)]
+let NOT_END8 = [*vec4(NOT_END), *vec4(NOT_END)]
+
 @bounds( (input_u8.extent(0)-1), (input_u8.extent(1)-1))
 def sepLineLen |x, y|{
    let eLenBRTL = reduce(init=[0, 0], 0..<SEP_MAX_LENGTH) |i, accm|{
@@ -721,16 +771,17 @@ def sepLineLen |x, y|{
       let [cur7, _] = edgeEx(x-1, y-i).xy |> i32(...)
       # 以下はortho3と同じ
       # let [_, ortho7] = edgeEx(x, y-i-1).xy |> i32(...)
-     let ortho7 = ortho3
+      let ortho7 = ortho3
 
       let cur = [cur0, cur1, cur2, cur3, cur4, cur5, cur6, cur7]
       let ortho = [ortho0, ortho1, ortho2, ortho3, ortho4, ortho5, ortho6, ortho7]
 
-      let newF = flag | (!cur) | ortho
-      let newL =
-      ifel(flag, prevLen, ...)
-      elif(!cur, [*vec4(0), *vec4(0)], ...)
-      else(prevLen+1)
+      let newF = ifel(flag != NOT_END, flag, ...)
+                         elif((!cur), END_NO_ORTHO8, ...)
+                         elif(ortho, END_WITH_ORTHO8, NOT_END8)
+      let newL =  ifel(flag != NOT_END, prevLen, ...)
+                          elif(!cur, prevLen, ...)
+                          else(prevLen+1)
 
       # 8次元はベクトルとして扱えないので4次元ごとにバラす
       let newF_Merge = merge8([newF.0, newF.1, newF.2, newF.3], [newF.4, newF.5, newF.6, newF.7])
@@ -738,21 +789,17 @@ def sepLineLen |x, y|{
 
       [newF_Merge, newL_Merge]
    }
-   # 最後まで見つからなかった場合、長さは0にリセットすべき。
-   let flag = split8(eLenBRTL.x)
-   let len = split8(eLenBRTL.y)
-   let res = ifel(flag, len, [*vec4(0), *vec4(0)]) 
-   merge8([res.0, res.1, res.2, res.3], [res.4, res.5, res.6, res.7])
+   eLenBRTL
 }
 
-let sepLineLenEx = sampler<sepLineLen>(address=.ClampToBorderValue, border_value=0)
+let sepLineLenEx = sampler<sepLineLen>(address=.ClampToBorderValue, border_value=[0, 0])
 
 def result_u8 |x, y| {
-  let sepLenM = sepLineLenEx(x, y)
-  let slv = split8(sepLenM)
- 
+  let [flagM, lenM] = sepLineLenEx(x, y)
+  let flag = split8(flagM)
+  let sepLenO = split8(lenM)
   # テスト確認用
-  let sepLen = slv.7
+  let sepLen = ifel(flag.z == END_WITH_ORTHO, sepLenO.z, 0)
 
   # sepLenは0から8。
   # この結果をR成分としてデバッグ表示してみる。
