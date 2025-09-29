@@ -25,14 +25,14 @@ MFGで基本図形を描いてみようシリーズの後編です。
 
 x1, y1とx2, y2は適当にハードコードして、以下にしましょうか。
 
-```
+```mfg
 let v1 = [0.2, 0.3]
 let v2 = [0.5, 0.7]
 ```
 
 まずはこの点を打ってみましょう。このv1かv2の近くだったら、つまりdistanceが小さかったらfgcolを描くようにしましょう。
 
-```
+```mfg
 def result_u8 |x, y| {
   let fxy = to_ncoord([x, y])
   ifel(distance(v1, fxy) < 0.01 || distance(v2, fxy) < 0.01, 
@@ -51,13 +51,13 @@ def result_u8 |x, y| {
 
 ![images/MFG_BasicShape/2025_0726_003615.png]({{"/assets/images/MFG_BasicShape/2025_0726_003615.png" | absolute_url}})
 
-```
+```mfg
   let y3 = (v2.y - v1.y)/(v2.x-v1.x)*(fxy.x-v1.x) + v1.y
 ```
 
 となるので、全体としては以下のようなコードになりそうです。
 
-```
+```mfg
 def result_u8 |x, y| {
   let fxy = to_ncoord([x, y])
   let y3 = (v2.y - v1.y)/(v2.x-v1.x)*(fxy.x-v1.x) + v1.y
@@ -85,7 +85,7 @@ def result_u8 |x, y| {
 
 カバー率を直接求める事も出来そうですが、今回も何も考えずにサブピクセルで被覆率を求める方針にしましょう。
 
-```
+```mfg
 let divNum = 4
 
 def result_u8 |x, y| {
@@ -123,7 +123,7 @@ def result_u8 |x, y| {
 
 こうして出したx4, y4とx3, y3の距離を出して、それが幅以下なら〜というアルゴリズムに変更してみましょう。
 
-```
+```mfg
 let width=0.01
 
 def result_u8 |x, y| {
@@ -163,7 +163,7 @@ def result_u8 |x, y| {
 その分を補正してみましょう。1.0 : 1.0では無く、横を1.0, 縦をaspect比を固定した座標系で全部計算することにし、
 この座標系の点を最初にAをつけて区別しましょう。
 
-```
+```mfg
 def result_u8 |x, y| {
   let fxy = to_ncoord([x, y])
 
@@ -299,7 +299,7 @@ def result_u8 |x, y| {
 
 xとyが3次元なのに注意してください。z軸には0.0を入れておけばOKです。
 
-```
+```mfg
 @title "三角形"
 
 let fgcol = [0.0, 0.0, 1.0, 1.0]
@@ -374,7 +374,7 @@ GPUプログラムはなんだか高校の数学の問題でエレガントな�
 
 今回もサブピクセルにして前と同じことをしてみましょう。
 
-```
+```mfg
 let divNum = 4
 
 def result_u8 |x, y| {

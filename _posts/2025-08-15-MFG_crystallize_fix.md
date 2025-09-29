@@ -73,7 +73,7 @@ layout: page
 
 という事で前後の合計4つの点を縦横に見ていけばいいので、`0..<4`でrsumしてみよう。
 
-```
+```mfg
 @title "ランダムな格子点"
 
 @param_i32 GRID_INTERVAL(SLIDER, label="Grid Size", min=10, max=256, init=50)
@@ -111,7 +111,7 @@ def result_u8 |x, y| {
 現状は一つのプロジェクトにmfgを追加する方法はMFGStudioには無いが、コンソールからtouchで作る。
 
 
-```
+```mfg
 @title "格子を描く"
 
 @param_i32 GRID_INTERVAL(SLIDER, label="Grid Size", min=10, max=256, init=150)
@@ -131,7 +131,7 @@ dを求める所はabsをspreadしてminをとる、というちょっとエレ�
 これを実行して、その後に黒の点を打つフィルタを実行しましょう。
 さっきのランダムな格子点の最後を以下のように変えます。
 
-```
+```mfg
   ifel( d < 10.0, u8[0, 0, 0, 0xff], input_u8(x, y) )
 ```
 
@@ -154,7 +154,7 @@ dを求める所はabsをspreadしてminをとる、というちょっとエレ�
 前のプログラムのresult_u8の前半部分である、
 最近傍の母点とその距離をnnというテンソルにしておこう（x, yはi32の座標でzはf32の距離）。
 
-```
+```mfg
 @bounds(input_u8.extent(0), input_u8.extent(1))
 def nn |x, y| {
   let go_xy = [x, y]/GRID_INTERVAL # x y of grid coordinate, upper left
@@ -186,7 +186,7 @@ nnはピクセルの数だけ作られてしまうので結構無駄ではあり
 真面目にやるなら4色問題とかそういう話になりますが、
 母点のx, yから一意に、隣同士が大きく異なりそうな色を適当に振ればここでの目的としては十分でしょう。
 
-```
+```mfg
 def result_u8 |x, y| {
   let nearest = nn(x, y)
   let d = nearest.z
@@ -222,7 +222,7 @@ def result_u8 |x, y| {
 まずは母点にさっきと同様の式で母点の座標に応じた色をassignして表示するようにプログラムを変えてみよう。
 こんな感じか？
 
-```
+```mfg
 @bounds(GRID_WIDTH, GRID_HEIGHT)
 def gridCol |x, y|{
   let bxy = f32[x, y]
@@ -235,7 +235,7 @@ def gridCol |x, y|{
 
 これでresult_u8を以下に変える。
 
-```
+```mfg
   let col = gridCol(*nearest.xy)
 ```
 
@@ -248,7 +248,7 @@ def gridCol |x, y|{
 
 ClampToEdgeにしてみよう。
 
-```
+```mfg
 let gridColEx = sampler<gridCol>(address=.ClampToEdge)
 ```
 
@@ -265,7 +265,7 @@ let gridColEx = sampler<gridCol>(address=.ClampToEdge)
 
 nearestのxyを出しているのは以下だ。
 
-```
+```mfg
 let go_xy = [x, y]/GRID_INTERVAL # x y of grid coordinate, upper left
 
 let nearest = reduce(init=[0, 0, 999999.0], 0..<4, 0..<4) |rx, ry, accm| {
@@ -287,7 +287,7 @@ $$ (-1, -1) \leq gxy \leq (gx_{max}+2, gy_{max}+2) $$
 となっている。
 母点はこの範囲になりうるので、色の平均もこの範囲で求めてやる必要があるか。
 
-```
+```mfg
 @bounds(GRID_WIDTH+3, GRID_HEIGHT+3)
 def gridCol |x, y|{
   let bxy = f32[x, y]
@@ -300,7 +300,7 @@ def gridCol |x, y|{
 
 こうして、さらに-1からなので1を足してやれば、
 
-```
+```mfg
   let col = gridCol(*(nearest.xy+[1, 1]))
 ```
 
@@ -332,7 +332,7 @@ gridColの範囲をなめて、その各格子点である程度の範囲を調�
 
 各母点で担当候補の範囲を全部なめるコードは以下のようになるだろう。
 
-```
+```mfg
 @bounds(GRID_WIDTH+3, GRID_HEIGHT+3)
 def gridCol |x, y|{
    # x, yは+1しているので-1して格子座標系に戻す。
@@ -360,7 +360,7 @@ def gridCol |x, y|{
 
 ということでモザイクのコードを見てみる。
 
-```
+```mfg
 let clamped = sampler<input_u8>(address=.ClampToEdge)
 
 @bounds( (input_u8.extent(0)-1)/MOSAIC_WIDTH+1, (input_u8.extent(1)-1)/MOSAIC_WIDTH+1)
@@ -374,7 +374,7 @@ def avg |x, y|{
 
 アルファを掛けて足し合わせて、こうして得られた値を最後に以下のようにアルファの和で割って、アルファ自体は平均にする。
 
-```
+```mfg
   u8[*[b2, g2, r2]/a2, a2/(MOSAIC_WIDTH*MOSAIC_WIDTH)]
 ```
 
@@ -382,7 +382,7 @@ a2を割る範囲は、モザイクの場合は対象範囲がすべて足し合
 母点が同じピクセルの面積はもう少し細工をしないと求められない。
 母点が同じ時に1を返してそれをrsumで足したものになるだろう。
 
-```
+```mfg
 let g_nn = nnEx(*sxy)
 let [b, g, r, a] = i32(inputEx( *sxy ))
 
@@ -395,7 +395,7 @@ ifel( all(g_nn.xy == gxy),
 
 これを先程のコードに入れると以下みたいな感じか。
 
-```
+```mfg
 @bounds(GRID_WIDTH+3, GRID_HEIGHT+3)
 def gridCol |x, y|{
    let gxy = [x, y] - 1
@@ -429,7 +429,7 @@ def gridCol |x, y|{
 
 最後に全体のコードを貼っておく。
 
-```
+```mfg
 @title "ランダムな格子"
 
 @param_i32 GRID_INTERVAL(SLIDER, label="Grid Size", min=10, max=256, init=150)

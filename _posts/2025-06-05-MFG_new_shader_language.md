@@ -19,7 +19,7 @@ MFGStudioというQtで作ったIDE上で開発出来ます。
 特にGetting Startedを一通りやればどんな言語かは分かりますが、とりあえずここに例を書くと、
 以下みたいに書くと、
 
-```swift
+```mfg
 @title "モザイクフィルター"
 @param_i32 MOSAIC_WIDTH(SLIDER, label="サイズ", min=2, max=256, init=16)
 
@@ -76,7 +76,7 @@ Swift 6, Rust 2, R 1, シェーダー1くらい。
 
 例えばタプルの要素を取り出すのは、以下のように
 
-```swfit
+```mfg
 let tup = [1, 2, 3]
 let a = tup.2
 ```
