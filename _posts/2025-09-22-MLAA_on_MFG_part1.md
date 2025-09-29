@@ -151,7 +151,7 @@ Separation Lineは2パスで求めます。
 まずは各ピクセルについて、その右隣りと下となりのピクセルとの色の差分を見て、閾値より大きければ1とするような計算をしてみましょう。
 「隣接2ピクセル間のSeparation Line」は長いので「エッジ」と呼ぶ事にします。
 
-```swift
+```mfg
 let DIFF_THRESHOLD= 1.0/12.0 # これ以上RGB距離があればedgeとみなす。
 
 # u8[right, bottom, 0, 0]を返す。
@@ -172,13 +172,13 @@ def edge |x, y|{
 
 CIE XYZカラーへの変換は以下のようにします。
 
-```
+```mfg
    let col0 = input_u8(x, y) |> to_xyza(...)
 ```
 
 ネストが嫌でなければ、パイプライン演算子を使わずに以下のように書いても同じです。
 
-```
+```mfg
    let col0 = to_xyza(input_u8(x, y))
 ```
 
@@ -190,21 +190,21 @@ CIE XYZカラーへの変換は以下のようにします。
 
 それぞれ別の色をつけてみましょう。
 
-```
+```mfg
 let edgeEx = sampler<edge>(address=.ClampToEdge)
 
 def result_u8 |x, y| {
   let einfo = edgeEx(x, y)
   ifel(einfo.x&&einfo.y,
-        u8[0, 0, 0xff, 0xff], #右も下もエッジ、赤
-        ...)
-   elif(einfo.x,
-        u8[0, 0xff, 0, 0xff], #右だけエッジ、緑
-        ...)
-    elif(einfo.y,
-         u8[0xff, 0, 0, 0xff], #下だけエッジ、青
-         ...)
-    else(input_u8(x, y))     
+      u8[0, 0, 0xff, 0xff], #右も下もエッジ、赤
+      ...)
+  elif(einfo.x,
+      u8[0, 0xff, 0, 0xff], #右だけエッジ、緑
+      ...)
+  elif(einfo.y,
+      u8[0xff, 0, 0, 0xff], #下だけエッジ、青
+      ...)
+  else(input_u8(x, y))     
 }
 ```
 
@@ -300,7 +300,7 @@ GPUプログラムの場合は各ピクセルが長さのデータを持つ方�
 
 大枠としては以下のようなコードになります。
 
-```
+```mfg
 let SEP_MAX_LENGTH = 8
 
 # bottomを右に見ていって、右にいつぶつかるか
@@ -348,7 +348,7 @@ breakに相当するもう処理してないよ、という状態をフラグで
 
 単純に1のケースと2のケースをそれぞれ1, 2として、3のケースを0としましょう。
 
-```
+```mfg
 let END_NO_ORTHO = 1
 let END_WITH_ORTHO = 2
 let NOT_END = 0
@@ -356,7 +356,7 @@ let NOT_END = 0
 
 するとreduceのinitも0ではなく、`[0, 0]`とフラグとlenをもたせるように変更します（これはいかにも8bitに収まりますが、そういう最適化は後ほど）
 
-```
+```mfg
    let eLenBPosi = reduce(init=[0, 0], 0..<SEP_MAX_LENGTH)
 ```
 
@@ -376,7 +376,7 @@ let NOT_END = 0
 
 最初にそれぞれの条件を求めて、最後にifelで組み立てる感じで書きます。
 
-```
+```mfg
    #i, accm
    let [flag, prevLen] = accm # 条件A
    let [edgeR, edgeB] = edgeEx(x+i, y).xy
@@ -393,7 +393,7 @@ let NOT_END = 0
 
 ではこれをデバッグ表示してみましょう。
 
-```
+```mfg
 let SEP_MAX_LENGTH = 8
 
 # bottomを右に見ていって、右にいつぶつかるか
@@ -452,7 +452,7 @@ curとortho以外の処理はほとんど同じになるので、
 
 すると、以下のようになりました。
 
-```
+```mfg
    let eLenB = reduce(init=[0, 0, 0, 0], 0..<SEP_MAX_LENGTH) |i, accm|{
       let flag = accm.xy
       let prevLen = accm.zw
@@ -477,7 +477,7 @@ curとortho以外の処理はほとんど同じになるので、
 
 newFとifelの所、つまり以下は、ベクトル演算になっています。
 
-```
+```mfg
       let newF = ifel(flag != NOT_END, flag, ...)
                          elif((!cur), vec2(END_NO_ORTHO), ...)
                          elif(ortho, vec2(END_WITH_ORTHO), vec2(NOT_END))
@@ -531,7 +531,7 @@ MFGでifが文で無いのはこの辺との相性の良さが理由でもあり
 
 同じように全部まとめてしまうと、以下のようになります。
 
-```
+```mfg
 # i32を4ビットずつに分けてビッグエンディアンの8次元タプルとして返す。
 fn split8 |v: i32| {
   let e1 = v&0xf
@@ -639,7 +639,7 @@ MFGの多くの機能（swizzle演算子など）が4要素までを想定して
 復数の要素を一つのi32にパックしています。
 長さは最大で8なので4bitにおさまるため、i32に8個詰めています。
 
-```
+```mfg
 # i32を4ビットずつに分けてビッグエンディアンの8次元タプルとして返す。
 fn split8 |v: i32| {
   let e1 = v&0xf
@@ -680,7 +680,7 @@ i32v4を２つ渡す事にしています。
 最後に今回実装したコードの全体を載せておきます。
 結果はMFGStudioのnon_aa_color_shape.mdzに適用して確認すると分かりやすいと思います。
 
-```
+```mfg
 @title "MLAA Separation Line"
 
 let DIFF_THRESHOLD= 1.0/12.0 # これ以上RGB距離があればedgeとみなす。

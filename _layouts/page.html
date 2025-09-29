@@ -36,6 +36,9 @@ layout: default
   <div class="post-content" itemprop="articleBody">
       {{ content }}
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  <script src="{{ "/assets/prism-mfg.js" | relative_url }}"></script>
 
   {% if site.disqus.shortname %}
     {% include disqus_comments.html %}
