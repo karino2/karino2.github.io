@@ -1,8 +1,8 @@
 ---
-title: MFG： primsjsのシンタックスハイライトを実装しました
+title: MFG： prims.jsのシンタックスハイライトを実装しました
 layout: page
 ---
-このブログやリファレンスなどで使うためにprismjsのシンタックスハイライトが欲しかったので、
+このブログやリファレンスなどで使うためにprism.jsのシンタックスハイライトが欲しかったので、
 実装してみました。
 
 以下においてあります。
@@ -19,6 +19,9 @@ layout: page
 ## Github Pagesのjekyllにprismjsのシンタクスハイライトを適用する手順
 
 Github Pagesのデフォルトのjekyllはプラグインなどが使えないので、クライアントサイドで適用するようにします。
+
+コミットとしては、[prismjsとそのmfg拡張をシンタックスハイライトに · karino2/karino2.github.io@0682571](https://github.com/karino2/karino2.github.io/commit/06825714a969d663b563bca993a08d9d832a0f61)のコミットと、
+そのさきのいくつかの修正（モジュール化対応など）で行っています。
 
 ### 1. 一応config.ymlでnoneを指定
 
@@ -63,14 +66,14 @@ importしたオブジェクトのフィールドは公式の言語ごとのjsを
 以下のようなコードブロックを書くと、
 
 ```
- ```mfg
- @title "特に意味のないフィルタ"
+\```mfg
+@title "特に意味のないフィルタ"
 
- def result_u8 |x, y| {
-   let [b, g, r, a] = input_u8(x, y)
-   ifel(a == 0, u8[0, 0, 255, 255], u8[0, 255, 0, 255])
- }
- ```
+def result_u8 |x, y| {
+  let [b, g, r, a] = input_u8(x, y)
+  ifel(a == 0, u8[0, 0, 255, 255], u8[0, 255, 0, 255])
+}
+\```
 ```
 
 以下のようになります。
