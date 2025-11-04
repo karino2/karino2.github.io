@@ -6,3 +6,4 @@ _site/
 scripts/gen_sidebar/node_modules/
 .jekyll-metadata
 assets/images/*/Trash
+.DS_Store
