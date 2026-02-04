@@ -3,6 +3,11 @@ title: LLMの生成先としてのMFGの課題と可能性（その3）
 layout: page
 ---
 
+- [LLMの生成先としてのMFGの課題と可能性（その1）](https://karino2.github.io/2025/12/20/mfg_llm_challenges_and_possibilities_part1.html): 受け入れの難しさ
+- [LLMの生成先としてのMFGの課題と可能性（その2）](https://karino2.github.io/2025/12/22/mfg_llm_challenges_and_possibilities_part2.html)：受け入れについて現時点で思う雑多な事
+- LLMの生成先としてのMFGの課題と可能性（その3）：LLMに向いた環境を作るための独自言語制作
+
+
 ## LLMに向いた環境を作る大切さとMFGのフィルタという切り口の評価
 
 LLMのコード生成には、向いた分野と向いてない分野があるのは明らかに思う。

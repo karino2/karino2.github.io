@@ -3,7 +3,10 @@ title: LLMの生成先としてのMFGの課題と可能性（その2）
 layout: page
 ---
 
-前回： [LLMの生成先としてのMFGの課題と可能性（その1） - なーんだ、ただの水たまりじゃないか](https://karino2.github.io/2025/12/20/mfg_llm_challenges_and_possibilities_part1.html)
+- [LLMの生成先としてのMFGの課題と可能性（その1）](https://karino2.github.io/2025/12/20/mfg_llm_challenges_and_possibilities_part1.html): 受け入れの難しさ
+- LLMの生成先としてのMFGの課題と可能性（その2）：受け入れについて現時点で思う雑多な事
+- [LLMの生成先としてのMFGの課題と可能性（その3）](https://karino2.github.io/2026/01/25/mfg_llm_challenges_and_possibilities_part3.html)：LLMに向いた環境を作るための独自言語制作
+
 
 「ほら、こんなの出来た、凄いでしょ？」と言うところまでは行っても、そのあとをこれまでと同じやり方ではうまく受け入れる事が出来ず、
 デモだけで終わってしまう。
@@ -11,7 +14,7 @@ layout: page
 けれどそれは勿体無いので、受け入れ側を変えてどうにか出来ないか？という話をしたいのだけれど、
 現時点では「こうすれば良い」というのはまだ分かっていません。
 
-今回は受け入れ側について思おう事を色々書いていきたい。
+今回は受け入れ側について思う事を色々書いていきたい。
 
 ## デモとプロダクトのギャップ
 

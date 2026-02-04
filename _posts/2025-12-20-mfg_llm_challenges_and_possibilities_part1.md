@@ -8,9 +8,16 @@ layout: page
 [フィルタ言語「MFG」とAI - 株式会社ピージーエヌ](https://pgn.co.jp/blog/mfg_and_ai/#page-content)
 
 これに対するMFGという言語作者の視点や受け入れる側の話などを書いてみたい。
+
 以下のpodcastと被る内容でもある。
 
 <iframe src="https://creators.spotify.com/pod/profile/karino2/embed/episodes/373-LLMmorrita-e3cdrmv" height="102px" width="400px" frameborder="0" scrolling="no"></iframe>
+
+## シリーズのリンク
+
+- LLMの生成先としてのMFGの課題と可能性（その1）: 受け入れの難しさ
+- [LLMの生成先としてのMFGの課題と可能性（その2）](https://karino2.github.io/2025/12/22/mfg_llm_challenges_and_possibilities_part2.html)：受け入れについて現時点で思う雑多な事
+- [LLMの生成先としてのMFGの課題と可能性（その3）](https://karino2.github.io/2026/01/25/mfg_llm_challenges_and_possibilities_part3.html)：LLMに向いた環境を作るための独自言語制作
 
 ## はじめに
 
