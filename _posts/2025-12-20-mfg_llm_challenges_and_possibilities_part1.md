@@ -2,6 +2,14 @@
 title: LLMの生成先としてのMFGの課題と可能性（その1）
 layout: page
 ---
+## シリーズのリンク
+
+- LLMの生成先としてのMFGの課題と可能性（その1）: 受け入れの難しさ
+- [LLMの生成先としてのMFGの課題と可能性（その2）：受け入れについて現時点で思う雑多な事](https://karino2.github.io/2025/12/22/mfg_llm_challenges_and_possibilities_part2.html)
+- [LLMの生成先としてのMFGの課題と可能性（その3）：LLMに向いた環境を作るための独自言語制作](https://karino2.github.io/2026/01/25/mfg_llm_challenges_and_possibilities_part3.html)
+
+## はじめに
+
 先日、社内でLLMにフィルタを生成させてみた人がいた。
 詳細は以下のブログを参照。
 
@@ -12,14 +20,6 @@ layout: page
 以下のpodcastと被る内容でもある。
 
 <iframe src="https://creators.spotify.com/pod/profile/karino2/embed/episodes/373-LLMmorrita-e3cdrmv" height="102px" width="400px" frameborder="0" scrolling="no"></iframe>
-
-## シリーズのリンク
-
-- LLMの生成先としてのMFGの課題と可能性（その1）: 受け入れの難しさ
-- [LLMの生成先としてのMFGの課題と可能性（その2）：受け入れについて現時点で思う雑多な事](https://karino2.github.io/2025/12/22/mfg_llm_challenges_and_possibilities_part2.html)
-- [LLMの生成先としてのMFGの課題と可能性（その3）：LLMに向いた環境を作るための独自言語制作](https://karino2.github.io/2026/01/25/mfg_llm_challenges_and_possibilities_part3.html)
-
-## はじめに
 
 自分はLLMのコード生成にはあまり関心が無く、どちらかといえば近づいかないようにしている。
 というのは、今の仕事では特に関係が無く、この仕事はそれなりに続くものなので、この仕事が終わるまでは追っかけても仕方がないな、と思っていたから。
