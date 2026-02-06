@@ -260,7 +260,7 @@ def result_u8 |x, y| {
 
 [アトリビュートと入力ウィジェット#チェックボックス](https://karino2.github.io/MFG/ja/Reference/AttrWidget.html#checkbox)
 
-``mfg
+```mfg
 @param_i32 is_target_upper(CHECKBOX, label="上のレイヤーの影にする", init=0)
 ```
 
