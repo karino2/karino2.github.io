@@ -4,7 +4,8 @@ layout: page
 ---
 学生向けのMFGプログラムコンテスト、MFGチャレンジが無事終わりました。ありがとうございました！
 
-[MFG チャレンジ 2025 学生GPUプログラミングコンテスト結果発表](https://modernfilterlanguageforgpu.org/ja/contest_results_2025/)
+- [MFG チャレンジ 2025 学生GPUプログラミングコンテスト結果発表](https://modernfilterlanguageforgpu.org/ja/contest_results_2025/)
+  - [「MFGチャレンジ2025 学生GPUプログラミングコンテスト」結果発表のお知らせ - 株式会社ピージーエヌのプレスリリース](https://prtimes.jp/main/html/rd/p/000000008.000081568.html)
 
 学生向けという事とFireAlpaca SE 3.0のリリースが思ったよりも大変でバタバタしたのもあり、
 このブログではアナウンスしてませんでしたが。
