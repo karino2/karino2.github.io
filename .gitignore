@@ -8,3 +8,5 @@ scripts/gen_sidebar/node_modules/
 assets/images/*/Trash
 .DS_Store
 Gemfile.lock
+_posts/.stfolder
+_posts/.stfolder.removed-20260528-152826
