@@ -33,7 +33,7 @@ layout: page
 
 <a href="https://hb.afl.rakuten.co.jp/ichiba/26b83bcd.f21924d9.26b83bce.5dc9cb7a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ffa-fe%2Ff-laica%2F&link_type=pict&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"  >楽天:　浄水器 ポット LAICA ライカ ポット型浄水器 2.3L カートリッジ付き<br><img src="https://hbb.afl.rakuten.co.jp/hgb/26b83bcd.f21924d9.26b83bce.5dc9cb7a/?me_id=1359156&item_id=10000330&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Ffa-fe%2Fcabinet%2Fitem%2Fthumb%2Ff-laica_thumb.jpg%3F_ex%3D240x240&s=240x240&t=pict" border="0" style="margin:2px" alt="" title=""></a>
 
-<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=karino203-22&language=en_US&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B06XJT6H2L&linkId=223c6e202e338f0eb8028c85b754267b"></iframe>
+[amazon: Amazon｜LAICA (ライカ) ポット型浄水器 2.3L レッド PRD1610003｜浄水ポット オンライン通販](https://www.amazon.co.jp/dp/B06XJT6H2L?&linkCode=ll2&tag=karino203-22&ref_=as_li_ss_tl)
 
 最近はこの手のレビューはAmazonより楽天を信用する事にしているので、楽天の評価を見て良さそうだったのでこれにしてみた。
 なお楽天では同じ製品がいろいろな店で売っているので、レビューを見るには少し他の店も見て回る必要がある。

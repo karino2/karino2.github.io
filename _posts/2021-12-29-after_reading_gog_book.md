@@ -5,7 +5,7 @@ layout: page
 
 [【書籍】TheGrammarOfGraphics](https://karino2.github.io/RandomThoughts/【書籍】TheGrammarOfGraphics)を読み終わったので感想など。
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=karino203-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00HWUVHXK&linkId=0e7b53a6005ea66f8e781a7f8376e0e3"></iframe>
+[amazon: The Grammar of Graphics (Statistics and Computing) (English Edition)](https://www.amazon.co.jp/dp/B00HWUVHXK?&linkCode=ll2&tag=karino203-22&ref_=as_li_ss_tl)
 
 素晴らしい内容を無駄に難解に、しかも余計な事もたくさん書いた本だと思う。
 書き方にはたくさんの文句をつけたいけれど、書かれている内容の良さがすべてを補ってあまりある。

@@ -58,7 +58,7 @@ twitterを代替する時に足りてないのは1だ、と気づいた。この
 
 次に試したのがうーさーのその日暮らしをスマホで読み直す、という物だ。
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=karino203-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=B07839G9YC&bc1=ffffff&lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"> </iframe>
+[amazon: うーさーのその日暮らし（１） (星海社コミックス) eBook : 宇佐義大, ふじのきともこ: Kindleストア](https://www.amazon.co.jp/dp/B07839G9YC?&linkCode=ll2&tag=karino203-22&ref_=as_li_ss_tl)
 
 これはなかなか良かった。10秒くらいで1ページ読み終わるし、時間をもっと潰したければ次のページに行けば良い。
 おかひじき先生の絵は好きなので、眺めているのはそれなりに有意義でもある。

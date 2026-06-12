@@ -85,7 +85,7 @@ qdbmはシンプルでいいね。
 
 omo先生に勧められて見てみたら半額セールをやってたのですぐ読む気は無かったがポチる事に。
 
-<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=karino203-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B06XPJML5D&linkId=a14598dbc7df5f4592ca7a4a31540d2a"></iframe>
+[amazon: Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems (English Edition) 電子書籍: Kleppmann, Martin: 洋書](https://www.amazon.co.jp/dp/B06XPJML5D?&linkCode=ll2&tag=karino203-22&ref_=as_li_ss_tl)
 
 普段はサンプルを最後まで読むまではポチらない、を自分ルールとしているのだが、そんな高く無かったしまぁ読むかという気分ではあったので良いでしょう。
 

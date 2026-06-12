@@ -10,13 +10,13 @@ layout: page
 そこでステッパーというのを見かけて、これどうなんだろう？と思う。家の中でウォーキング的な運動になるのだろうか？
 少しググった感じ、ウェストに少し効果があるらしいツイストするタイプがいいのかしら？これとか？
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=karino203-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00BCCGL8A&linkId=c15a430fa1cb19e477f26a1a01b752c3"></iframe>
+[amazon: 東急スポーツオアシス フィットネスクラブがつくったツイストステッパー SP-100](https://www.amazon.co.jp/dp/B00BCCGL8A?&linkCode=ll2&tag=karino203-22&ref_=as_li_ss_tl)
 
 これをやりながらオーディオブックとかどうなんだろう？
 
 足だけのタイプのエアロバイクとどっちがいいのかなぁ。
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=karino203-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B079P8KWW2&linkId=9da63c30b4f15c7b8eba1508a0e9325b"></iframe>
+[amazon: アルインコ(ALINCO) フィットネスバイク エアロマグネティックミニバイク 8段階負荷 大型液晶メーター 省スペース AFB2018K テレビで紹介された 静音 組立簡単 簡単移動 テレワーク 在宅 : スポーツ＆アウトドア](https://www.amazon.co.jp/dp/B079P8KWW2?&linkCode=ll2&tag=karino203-22&ref_=as_li_ss_tl)
 
 やはり上半身が動くステッパーの方がいい気がするな。
 

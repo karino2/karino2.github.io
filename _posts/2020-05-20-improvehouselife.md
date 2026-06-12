@@ -15,7 +15,7 @@ layout: page
 
 最初はダンボール製の椅子を買うつもりだったのだが、同じくらいの値段で収納スツールという製品を見つける。
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=karino203-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=B08317XFT9&bc1=ffffff&lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"> </iframe>
+[amazon: 不二貿易 収納スツール 折りたたみ 幅38×奥行38×高さ40cm グレー ヘリンボーン柄 オットマン 収納ボックス 耐荷重80kg ファブリック ディノ 85848 : ペット用品](https://www.amazon.co.jp/dp/B08317XFT9?&linkCode=ll2&tag=karino203-22&ref_=as_li_ss_tl)
 
 物が中に入る、というのが良いし、値段も安い（自分が買った時は2000円弱）。
 届けてくれてこの値段なら使い捨てとして毎回買ってもいいかなぁ。
@@ -38,7 +38,7 @@ layout: page
 まず背もたれが欲しいな、と思った。座椅子がいいなぁ、と少し調べてみたが、
 意外と手頃なやつが高い。その代わりキャンプ用のキャプテンスタッグのがやすかった。
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=karino203-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=B002W317ZA&bc1=ffffff&lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"> </iframe>
+[amazon: キャプテンスタッグ CSFDチェア マット(グリーン) M-3335 : スポーツ＆アウトドア](https://www.amazon.co.jp/dp/B002W317ZA?&linkCode=ll2&tag=karino203-22&ref_=as_li_ss_tl)
 
 レビューは割れているが良い評価の人も結構居るので買ってみた。なお、送料が無料にならなかったのでヨドで買った。
 
@@ -55,7 +55,7 @@ layout: page
 そんな折、ふと思い立って「ひざの上、ノートPC」とかでぐぐってみたら、「ひざの上テーブル」という謎の製品群を見つける。
 こんなのあったのか。
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=karino203-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=B01GF9N0D8&bc1=ffffff&lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"> </iframe>
+[amazon: サンワダイレクト ひざ上テーブル ノートPC/タブレット用 15.6型対応 軽量 310g クッション付き ブラック 200-HUS005BK : パソコン・周辺機器](https://www.amazon.co.jp/dp/B01GF9N0D8?&linkCode=ll2&tag=karino203-22&ref_=as_li_ss_tl)
 
 ポチってみたらこれが想像以上に良い。特に上記のキャプテンスタッグの椅子と組み合わせると凄くいい感じで快適。
 机なんていらなかったんや。MBP16インチでのレビューは無いが、サイズ的には特に問題無し。

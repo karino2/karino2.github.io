@@ -32,8 +32,7 @@ layout: page
 
 No Rules Rulesの最初の方を読んでいたら、
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&t=karino203-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=B081Y3R657&linkId=5191c30947d1643e8887264f2ae8dc6a&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr">
-    </iframe>
+[amazon: No Rules Rules: Netflix and the Culture of Reinvention (English Edition)](https://www.amazon.co.jp/dp/B081Y3R657?&linkCode=ll2&tag=karino203-22&ref_=as_li_ss_tl)
 
 Netflick Culture Deckというのが有名だ、みたいなのが出てきた。知らないのでぐぐってみたらこれかな。
 

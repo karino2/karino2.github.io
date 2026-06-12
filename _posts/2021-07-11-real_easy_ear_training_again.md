@@ -4,7 +4,7 @@ layout: page
 ---
 何度もチャレンジしては途中で挫折しているReal Easy Ear Trainingを、また再開する事にする。
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=karino203-22&language=en_US&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=188321761X&linkId=10e52b49508ce1c960f1064aada8b231"></iframe>
+[amazon: The Real Easy Ear Training Book](https://www.amazon.co.jp/dp/188321761X?&linkCode=ll2&tag=karino203-22&ref_=as_li_ss_tl)
 
 毎回メジャーとマイナーが入った後くらいでさっぱり分からなくなって詰まるのだが、今回は分からなくなってもとりあえず最後まで進めてみよう、と思っている。
 

@@ -53,7 +53,7 @@ webサイトの方の[Anki Web](https://ankiweb.net/)をBiologyで探すと、
 
 ついでに昔買ったはいいがやってなかったDIALOG 1800もBOOXに入れておく。
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=karino203-22&language=en_US&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=4010527013&linkId=d9ccf7dbf99e9c6720a10f1b61662f8a"></iframe>
+[amazon: 英単語・熟語ダイアローグ 1800 三訂版](https://www.amazon.co.jp/dp/4010527013?&linkCode=ll2&tag=karino203-22&ref_=as_li_ss_tl)
 
 こちらは生物は少ないが医療系が豊富。
 

@@ -35,7 +35,7 @@ layout: page
 まぁ使わないかもしれないが、大した値段でも無かったので使わなかったら残念でした、と捨てれば良かろう。
 買ったのは以下。
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=karino203-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=B082SRDS9F&bc1=ffffff&lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"> </iframe>
+[amazon: (リンク切れ)](https://www.amazon.co.jp/dp/B082SRDS9F?&linkCode=ll2&tag=karino203-22&ref_=as_li_ss_tl)
 
 買ってみると、思ったよりよい。起きた時に喉が痛くないし、なんか部屋の中の快適度が上がってる気がする。気の所為かもしれないけれど。
 なんだかんだで結構つけてる。

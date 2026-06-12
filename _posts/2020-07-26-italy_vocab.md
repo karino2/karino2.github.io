@@ -7,7 +7,7 @@ layout: page
 どうしても初級と中級の間で量をこなすところでは手頃な電子化された教材が見つからず、紙の教材を買ってスキャンすることにした。
 
 買ったのは以下。
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=karino203-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4560086850&bc1=ffffff&lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"> </iframe>
+[amazon: 出題形式別 イタリア語検定4級5級頻出単語集《CD付》](https://www.amazon.co.jp/dp/4560086850?&linkCode=ll2&tag=karino203-22&ref_=as_li_ss_tl)
 
 ### 一周目
 

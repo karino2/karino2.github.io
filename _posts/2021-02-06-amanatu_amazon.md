@@ -11,7 +11,7 @@ layout: page
 Amazonでいいんじゃないか、という結論になる。
 探してみた所、以下の甘夏を買う事にした。
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=karino203-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=B0794PHZTG&bc1=ffffff&lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"> </iframe>
+[amazon: 訳あり 甘夏 和歌山県産 ご家庭用 8kg（箱込約8kg） : 食品・飲料・お酒](https://www.amazon.co.jp/dp/B0794PHZTG?&linkCode=ll2&tag=karino203-22&ref_=as_li_ss_tl)
 
 1980円で、27個入っていた。ただ小さいのもそれなりに入っていたので、感覚的には大きい甘夏が一つ80円くらいのものをまとめ買いしたくらいの感じ。
 普段スーパーでは一玉100円前後で買っているので、少し安いくらいかなぁ。
@@ -19,7 +19,7 @@ Amazonでいいんじゃないか、という結論になる。
 
 なお、八朔を向くのがかったるいなぁ、と言っていたら、ムッキーちゃんというのを紹介される（自分はヨドで買ったが）。
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=karino203-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=B001TUY5MO&bc1=ffffff&lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"> </iframe>
+[amazon: ナガオ ムッキーちゃん 皮むき器 ピーラー](https://www.amazon.co.jp/dp/B001TUY5MO?&linkCode=ll2&tag=karino203-22&ref_=as_li_ss_tl)
 
 安いくせに柑橘類の皮を剥くというのにこれ以上は無い完成度で、柑橘類を食べる苦労が半分以下になった。
 これまでは食べるのが楽という理由でりんごばかり食べていたが、今後は柑橘類でいいか、と思っている。

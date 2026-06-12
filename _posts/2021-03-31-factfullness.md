@@ -5,8 +5,7 @@ layout: page
 
 読み終わったので感想とか。読んでる途中の感想は[3月の日記的な事](https://karino2.github.io/2021/03/07/march_dailylife.html)の中で書いている。
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=karino203-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=B0769XK7D6&linkId=dbe508f75ed27632e813b8bd7f69a9ab&bc1=ffffff&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr">
-    </iframe>
+[amazon: Factfulness: Ten Reasons We're Wrong About The World - And Why Things Are Better Than You Think (English Edition) 電子書籍: Rosling, Hans, Rosling, Ola, Rosling Rönnlund, Anna: Kindleストア](https://www.amazon.co.jp/dp/B0769XK7D6?&linkCode=ll2&tag=karino203-22&ref_=as_li_ss_tl)
 
 ### 購入前後の話
 

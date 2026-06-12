@@ -57,7 +57,7 @@ layout: page
 
 [Conversational Resume – 法蓮草の森](https://records.dodgson.org/2023/01/13/conversational-resume/)　を読んで、「1分間英語で自分のことを話してみる」という英語教材を思い出した。
 
-<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=karino203-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=4046014563&linkId=ae52b0b1d5807691dd0097af37132fbe"></iframe>
+[amazon: カラー改訂版 CD付 1分間英語で自分のことを話してみる](https://www.amazon.co.jp/dp/4046014563?&linkCode=ll2&tag=karino203-22&ref_=as_li_ss_tl)
 
 自分は改訂される前の本を読んだが。
 

@@ -7,7 +7,7 @@ layout: page
 
 昔この本の旧版で、エゴレスプログラミングという話があった。（というか今改訂版の存在を知ってサンプル見たらちょっとおもしろそうなのでそのうち読もうと思った）
 
-<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=karino203-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00F0FQ8C4&linkId=f26711858d5db926d380ddbdfa0c8a6a"></iframe>
+[amazon: プログラミングの心理学　【25周年記念版】 eBook : ジェラルド エム ワインバーグ, 伊豆原 弓, 矢沢久雄（解説）: Kindleストア](https://www.amazon.co.jp/dp/B00F0FQ8C4?&linkCode=ll2&tag=karino203-22&ref_=as_li_ss_tl)
 
 当時は割と自分の考えに近く、仕事というのは属人化しない方がいいとも思っていて、
 しかもその後フリーランスになって短期で抜ける前提になると、そうした傾向は自分の中で強まったようにも思う。

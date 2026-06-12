@@ -7,8 +7,7 @@ layout: page
 
 現在、「ブルース・ギタリストのためのコード構成音で構築するアドリブ・ソロ」という教則ビデオで、現在AとEが終わった所。
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=karino203-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=B07B4PLV6P&linkId=1a4613586d58c1739a0e8e5670acaaeb&bc1=ffffff&lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr">
-    </iframe>
+[amazon: 現在、「ブルース・ギタリストのためのコード構成音で構築するアドリブ・ソロ」という教則ビデオで、現在AとEが終わった所](https://www.amazon.co.jp/dp/B07B4PLV6P?&linkCode=ll2&tag=karino203-22&ref_=as_li_ss_tl)
 
 AとEでこのビデオの全体の半分くらいのエクササイズをやった事になる。
 半分とはいえポジション的にはこの二つでオープンコード以外は全部をカバーしている、という作りなので、
