@@ -18,3 +18,5 @@ echo "layout: page" >> $FILENAME
 echo "---" >> $FILENAME
 echo "" >> $FILENAME
 printf '%s\n' "$CONTENT" >> $FILENAME
+
+~/bin/extract_wikilink.sh $FILENAME
